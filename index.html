@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloudb.pub</title>
+
+    <link rel="stylesheet" href="_css/static/css/bootstrap.css">
+    <link rel="stylesheet" href="_css/static/css/font-awesome/css/all.css">
+
+    <script src="_css/static/js/bootstrap.js"></script>
+    <script src="_css/static/js/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        .translate-middle1 {
+            transform: translate(-50%, -20%);
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="d-flex" style="height: 600px">
+    <div class="p-2 col-md-1"></div>
+    <div class="col-md-10 align-self-center p-2">
+         <div class="col-md-8 position-absolute top-50 start-50 translate-middle1">  <!--style="margin-top: 20%"-->
+            <!--导航-->
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist" style="z-index: 100">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-primary active" id="baidu-tab" data-bs-toggle="tab"
+                            data-bs-target="#baidu"
+                            type="button" role="tab" aria-controls="baidu" aria-selected="true">
+                        <i class="fa-solid fa-b"></i>  百度
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-success" id="bing-tab" data-bs-toggle="tab" data-bs-target="#bing"
+                            type="button" role="tab" aria-controls="bing" aria-selected="false">
+                        <i class="fa-brands fa-microsoft"></i>  Bing
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-warning" id="sogou-tab" data-bs-toggle="tab" data-bs-target="#sogou"
+                            type="button" role="tab" aria-controls="sogou" aria-selected="false">
+                        <i class="fa-solid fa-s"></i>  Sogou
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-info" id="f-tab" data-bs-toggle="tab" data-bs-target="#f"
+                            type="button" role="tab" aria-controls="f" aria-selected="false">
+                        <i class="fa-solid fa-f"></i>  F
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-danger" id="goobe-tab" data-bs-toggle="tab" data-bs-target="#goobe"
+                            type="button" role="tab" aria-controls="goobe" aria-selected="false">
+                        <i class="fa-solid fa-g"></i>  Goobe
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-secondary" id="yandex-tab" data-bs-toggle="tab"
+                            data-bs-target="#yandex"
+                            type="button" role="tab" aria-controls="yandex" aria-selected="false">
+                        <i class="fa-brands fa-yandex-international"></i>  Yandex
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-dark" id="google-tab" data-bs-toggle="tab" data-bs-target="#google"
+                            type="button" role="tab" aria-controls="google" aria-selected="false">
+                        <i class="fa-brands fa-google-plus-g"></i>  Google
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content " id="myTabContent">
+                <div class="tab-pane fade show active" id="baidu" role="tabpanel" aria-labelledby="baidu-tab">
+                    <img src="_media/baidu.png" alt="Baidu"
+                         style="position: static;margin-top: -50%;margin-left: 20%;z-index: -99;">
+
+                    <form action="https://www.baidu.com/s" target="_blank">
+<!--                        <input class="form-control" name=wd type=hidden value=baidu>-->
+                        <input class="form-control mb-3" type=text name=wd size=60 placeholder="Welcome Come To Cloudb.pub">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button class="btn btn-primary">
+                                <i class="fa-solid fa-b fa-spin"></i>  百度搜索
+                            </button>
+                            <a href="index1.html" class="btn btn-outline-primary">
+                                知识库
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="tab-pane fade" id="bing" role="tabpanel" aria-labelledby="bing-tab">
+                    <img src="_media/bing.png"
+                         alt="Bing" style="position: static;margin-top: -50%;margin-left: 20%;z-index: -99;">
+                    <form action="https://cn.bing.com/search" target="_blank">
+                        <input class="form-control mb-3" type=text name=q size=60 placeholder="Welcome Come To Cloudb.pub">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button class="btn btn-success">
+                                <i class="fa-brands fa-microsoft fa-spin"></i>  Bing
+                            </button>
+                            <a href="index1.html" class="btn btn-outline-success">
+                                知识库
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="tab-pane fade" id="sogou" role="tabpanel" aria-labelledby="sogou-tab">
+                    <img src="_media/sogou.png" alt="Sogou"
+                         style="position: static;margin-top: -50%;margin-left: 20%;z-index: -99;">
+                    <form action="https://www.sogou.com/web" target="_blank">
+                        <input class="form-control mb-3" type=text name=query size=60 placeholder="Welcome Come To Cloudb.pub">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button class="btn btn-warning">
+                               <i class="fa-solid fa-s fa-spin"></i>  Sogou
+                            </button>
+                            <a href="index1.html" class="btn btn-outline-warning">
+                                知识库
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="tab-pane fade" id="f" role="tabpanel" aria-labelledby="f-tab">
+                    <img src="_media/fsousuo.png" alt="f"
+                         style="position: static;margin-top: -50%;margin-left: 20%;z-index: -99;">
+                    <form action="https://fsoufsou.com/search" target="_blank">
+                        <input class="form-control mb-3" type=text name=q size=60 placeholder="Welcome Come To Cloudb.pub">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button class="btn btn-info">
+                              <i class="fa-solid fa-f fa-spin"></i>  F
+                            </button>
+                            <a href="index1.html" class="btn btn-outline-info">
+                                知识库
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="tab-pane fade" id="goobe" role="tabpanel" aria-labelledby="goobe-tab">
+                    <img src="_media/goobe.png" alt="Goobe"
+                         style="position: static;margin-top: -50%;margin-left: 20%;z-index: -99;">
+                    <form action="https://goobe.io/search.aspx" target="_blank">
+                        <input class="form-control mb-3" type=text name=k size=60 placeholder="程序员最好的搜索引擎!">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button class="btn btn-danger">
+                                <i class="fa-solid fa-g fa-spin"></i>  Goobe
+                            </button>
+                            <a href="index1.html" class="btn btn-outline-danger">
+                                知识库
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="tab-pane fade" id="yandex" role="tabpanel" aria-labelledby="yandex-tab">
+                    <img src="_media/yandex.png" alt="Yandex"
+                         style="position: static;margin-top: -50%;margin-left: 20%;z-index: -99;">
+                    <form action="https://yandex.com/search" target="_blank">
+                        <input class="form-control mb-3" type=text name=text size=60 placeholder="Welcome Come To Cloudb.pub">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button class="btn btn-secondary">
+                               <i class="fa-brands fa-yandex-international fa-spin"></i>   Yandex
+                            </button>
+                            <a href="index1.html" class="btn btn-outline-secondary">
+                                知识库
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="tab-pane fade" id="google" role="tabpanel" aria-labelledby="google-tab">
+                    <img src="_media/google.png" alt="Google"
+                         style="position: static;margin-top: -50%;margin-left: 20%;z-index: -99;">
+                    <form action="https://www.google.com.hk/search" target="_blank">
+                        <input class="form-control mb-3" type=text name=q size=60 placeholder="Google 必须翻墙才能访问!">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button class="btn btn-dark">
+                                <i class="fa-brands fa-google-plus-g fa-spin"></i>  Google
+                            </button>
+                            <a href="index1.html" class="btn btn-outline-dark">
+                                知识库
+                            </a>
+                            <hr>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+<!--        <div class="alert alert-primary text-danger m-2" role="alert">-->
+<!--            <i class="fa-solid fa-circle-exclamation"></i>  该搜索框直接向百度搜索发送请求,本站无任何信息收集,如果出现信息收集请联系作者:-->
+<!--            <span>-->
+<!--                <a href="mailto:xyz349925756@hotmail.com">xyz349925756@hotmail.com</a>-->
+<!--            </span>-->
+<!--        </div>-->
+        </div>
+
+
+
+    </div>
+    <div class="p-2 col-md-1"></div>
+</div>
+
+
+</body>
+</html>
