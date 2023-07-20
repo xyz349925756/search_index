@@ -1,10 +1,22 @@
-![myweb](README.assets/myweb.gif)
 
-这是一个集成百度,bing,sogou,f,goobe,yandex,google搜索引擎的小project
 
-**起因**: 因为在我自己使用电脑的时候,经常需要去输入搜索引擎地址,而且我自己的个人资料站点也是离线的,所以自己做了这么一个项目.主要是让自己使用起来很方便.
+这是一个集成百度,bing,sogou,f,yandex,google搜索引擎的小project
+
+**起因**: 在xx手段的干预下,越来越多的搜索引擎不能搜索到用户想要的结果,只能尝试多个搜索引擎搜索,每个搜索引擎的算法,关键字不同.爬虫会提取到不同的关键词,所以很多时候搜不到想要的结果就换搜索引擎尝试.
+
+在chat-GPT4诞生之后bing ai和google bard诞生了,这里就添加了这两款免费的chatgpt.中国大陆不能访问!!!
+
+![image-20230720161024844](README.assets/image-20230720161024844.png)
+
+
+
+![image-20230720161041284](README.assets/image-20230720161041284.png)
+
+
 
 **使用**: 下载项目打开index 既可搜索,知识库其他人忽略即可.如果也想要跟我一样的功能可以参考https://cloudb.pub 源码去设置.知识库我是使用docsify,有些可以使用django,gitbook等工具生成好html页面,我们直接改成index1.html既可以,如果是php,asp等直接修改index里面知识库的a 标签修改超链接路径即可. 
+
+
 
 
 
