@@ -16,6 +16,12 @@
 
 **使用**: 下载项目打开index 既可搜索,知识库其他人忽略即可.如果也想要跟我一样的功能可以参考https://cloudb.pub 源码去设置.知识库我是使用docsify,有些可以使用django,gitbook等工具生成好html页面,我们直接改成index1.html既可以,如果是php,asp等直接修改index里面知识库的a 标签修改超链接路径即可. 
 
+## 更新
+
+![image-20230917133339553](.README.assets/image-20230917133339553.png)
+
+添加百度ai,目前来看都是免费.
+
 
 
 
