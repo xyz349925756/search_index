@@ -1,411 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Localhost Search</title>
-
-    <link rel="stylesheet" href="._css/static/css/bootstrap.css">
-    <link rel="stylesheet" href="._css/static/css/font-awesome/css/all.css">
-
-    <script src="._css/static/js/bootstrap.js"></script>
-    <script src="._css/static/js/jquery-3.6.0.min.js"></script>
-
-    <style>
-        .translate-middle1 {
-            transform: translate(-50%, -20%);
-        }
-    </style>
-
+    <title>MyIndex</title>
+    <link rel="stylesheet" href="._css/bootstrap.css">
+    <link rel="stylesheet" href="._css/all.css">
+    <link rel="stylesheet" href="._css/myindex.css">
+    <script src="._js/all.js"></script>
+    <script src="._js/bootstrap.js"></script>
 </head>
-
 <body>
-    
-    
-    <img src="._media/logo-no-background.png" alt="logo"
-        style="width:10%; margin-left:80%;margin-top:5%;position: static;-webkit-user-drag:none;pointer-events: none;">
-    
-    
 
-    <div class="d-flex" style="height: 600px">
-        <div class="p-2 col-md-1"></div>
-        <div class="col-md-10 align-self-center p-2">
-            <div class="col-md-8 position-absolute top-50 start-50 translate-middle1"> <!--style="margin-top: 20%"-->
-                <!--导航-->
-
-                <ul class="nav nav-tabs" id="myTab" role="tablist" style="z-index: 100">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-primary active" id="baidu-tab" data-bs-toggle="tab"
-                            data-bs-target="#baidu" type="button" role="tab" aria-controls="baidu" aria-selected="true">
-                            <i class="fa-solid fa-b"></i> 百度
-                        </button>
-                    </li>
-
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-success" id="bing-tab" data-bs-toggle="tab" data-bs-target="#bing"
-                            type="button" role="tab" aria-controls="bing" aria-selected="false">
-                            <i class="fa-brands fa-microsoft"></i> Bing
-                        </button>
-                    </li>
-
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-warning" id="sogou-tab" data-bs-toggle="tab"
-                            data-bs-target="#sogou" type="button" role="tab" aria-controls="sogou"
-                            aria-selected="false">
-                            <i class="fa-solid fa-s"></i> Sogou
-                        </button>
-                    </li>
-
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-info" id="f-tab" data-bs-toggle="tab" data-bs-target="#f"
-                            type="button" role="tab" aria-controls="f" aria-selected="false">
-                            <i class="fa-solid fa-f"></i> F
-                        </button>
-                    </li>
-                    <!-- <li class="nav-item" role="presentation"> -->
-                    <!-- <button class="nav-link text-danger" id="goobe-tab" data-bs-toggle="tab" data-bs-target="#goobe" -->
-                    <!-- type="button" role="tab" aria-controls="goobe" aria-selected="false"> -->
-                    <!-- <i class="fa-solid fa-g"></i> Goobe -->
-                    <!-- </button> -->
-                    <!-- </li> -->
-                    <!-- <li class="nav-item" role="presentation"> -->
-                    <!-- <button class="nav-link text-secondary" id="yandex-tab" data-bs-toggle="tab" -->
-                    <!-- data-bs-target="#yandex" type="button" role="tab" aria-controls="yandex" -->
-                    <!-- aria-selected="false"> -->
-                    <!-- <i class="fa-brands fa-yandex-international"></i> Yandex -->
-                    <!-- </button> -->
-                    <!-- </li> -->
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-dark" id="google-tab" data-bs-toggle="tab" data-bs-target="#google"
-                            type="button" role="tab" aria-controls="google" aria-selected="false">
-                            <i class="fa-brands fa-google-plus-g"></i> Google
-                        </button>
-                    </li>
-                    <!--                <li class="nav-item" role="presentation">-->
-                    <!--                    <button class="nav-link text-success" id="s360-tab" data-bs-toggle="tab" data-bs-target="#s360"-->
-                    <!--                            type="button" role="tab" aria-controls="s360" aria-selected="false">-->
-                    <!--                        <i class="fa-brands fa-opera"></i>  360-->
-                    <!--                    </button>-->
-                    <!--                </li>-->
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-success" id="wx-tab" data-bs-toggle="tab" data-bs-target="#wx"
-                            type="button" role="tab" aria-controls="wx" aria-selected="false">
-                            <i class="fa-brands fa-weixin"></i> 微信搜索
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-primary" id="zh-tab" data-bs-toggle="tab" data-bs-target="#zh"
-                            type="button" role="tab" aria-controls="zh" aria-selected="false">
-                            <i class="fa-brands fa-zhihu"></i> 搜索
-                        </button>
-                    </li>
-                </ul>
-
-                <div class="tab-content " id="myTabContent">
-
-                    <div class="tab-pane fade show active" id="baidu" role="tabpanel" aria-labelledby="baidu-tab">
-                        <div class="text-center">
-                            <img src="._media/baidu.png" alt="Baidu"
-                                style="position: static;margin-top: -50%;-webkit-user-drag: none;pointer-events: none;">
-                        </div>
-
-                        <form action="https://www.baidu.com/s" target="_blank">
-                            <!--                        <input class="form-control" name=wd type=hidden value=baidu>-->
-                            <input class="form-control mb-3" type=text name=wd size=60
-                                placeholder="中国最棒的广告搜索引擎,内容匹配度:10%">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <button class="btn btn-primary">
-                                    <i class="fa-solid fa-b fa-spin"></i> 百度搜索
-                                </button>
-                                <a class="btn btn-outline-primary" href="https://chat.baidu.com/" target="_blank">
-                                    <i class="fa-solid fa-b fa-spin"></i> 百度 Ai</a>
-                                
-                            </div>
-                        </form>
-                    </div>
-
-
-                    <div class="tab-pane fade" id="bing" role="tabpanel" aria-labelledby="bing-tab">
-                        <div class="text-center">
-                            <img src="._media/bing.png" alt="Bing"
-                                style="position: static;margin-top: -50%;-webkit-user-drag: none;pointer-events: none;">
-                        </div>
-                        <form action="https://bing.com/search" target="_blank">
-                            <input class="form-control mb-3" type=text name=q size=60
-                                placeholder="Welcome Come To Cloudb.pub">
-                            <!-- <div class="mb-3 text-center text-success">Bing AI聊天入口</div> -->
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <button class="btn btn-success">
-                                    <i class="fa-brands fa-microsoft fa-spin"></i> Bing
-                                </button>
-                                <a class="btn btn-outline-success" href="https://bing.com/new/" target="_blank">
-                                    <i class="fa-brands fa-microsoft fa-spin"></i> Bing Ai</a>
-                            </div>
-                        </form>
-                    </div>
-
-
-                    <div class="tab-pane fade" id="sogou" role="tabpanel" aria-labelledby="sogou-tab">
-                        <div class="text-center">
-                            <img src="._media/sogou.png" alt="Sogou"
-                                style="position: static;margin-top: -50%;-webkit-user-drag: none;pointer-events: none">
-                        </div>
-                        <form action="https://www.sogou.com/web" target="_blank">
-                            <input class="form-control mb-3" type=text name=query size=60
-                                placeholder="Welcome Come To Cloudb.pub">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <button class="btn btn-warning">
-                                    <i class="fa-solid fa-s fa-spin"></i> Sogou
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-
-                    <div class="tab-pane fade" id="f" role="tabpanel" aria-labelledby="f-tab">
-                        <div class="text-center">
-                            <img src="._media/fsousuo.png" alt="f"
-                                style="position: static;margin-top: -50%;-webkit-user-drag: none;pointer-events: none;">
-                        </div>
-                        <form action="https://fsoufsou.com/search" target="_blank">
-                            <input class="form-control mb-3" type=text name=q size=60 placeholder="无广告搜索,结果一般,匹配度:50%">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <button class="btn btn-info">
-                                    <i class="fa-solid fa-f fa-spin"></i> F
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+<div class="container text-center">
+    <!--clock-->
+    <div class="row m-3">
+        <div class="col-2 col-md-2"></div>
+        <div class="col-8 col-md-8 clock">
+            <h5 class="mb-4 m-2">
+                <i class="fa-solid fa-calendar-days fa-sm text-danger"></i>
+                &nbsp;<span id="date" class="text-danger"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-clock fa-spin fa-sm text-info"></i>&nbsp;
+                <span id="time" class="text-info"></span>
+            </h5>
+            <hr>
+        </div>
+        <div class="col-2 col-md-2"></div>
+    </div>
 
 
 
+    <div class="row">
+        <!-- 切换背景色 -->
+        <div class="col-2 col-md-2">
+            <button onclick="changeGradient()" class="btn"><i class="fa-solid fa-lightbulb fa-beat"
+                                                              style="color: darkcyan;"></i></button>
+        </div>
+        <!--clock-->
+        <div class="col-4 col-md-4">
+
+        </div>
+
+        <!-- 超链接-->
+        <div class="col-6 col-md-6">
+        </div>
+
+    </div>
 
 
-                    <div class="tab-pane fade" id="yandex" role="tabpanel" aria-labelledby="yandex-tab">
-                        <div class="text-center">
-                            <img src="._media/yandex.png" alt="Yandex"
-                                style="position: static;margin-top: -50%;-webkit-user-drag: none;pointer-events: none">
-                        </div>
-                        <form action="https://yandex.com/search" target="_blank">
-                            <input class="form-control mb-3" type=text name=text size=60 placeholder="俄罗斯的搜索,据说很强大">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <button class="btn btn-secondary">
-                                    <i class="fa-brands fa-yandex-international fa-spin"></i> Yandex
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+    <!-- 搜素引擎 -->
+    <div class="row">
+        <div class="col-1 col-md-1"></div>
+        <div class="col-10 col-md-10">
 
-
-                    <div class="tab-pane fade" id="google" role="tabpanel" aria-labelledby="google-tab">
-                        <div class="text-center">
-                            <img src="._media/google.png" alt="Google"
-                                style="position: static;margin-top: -50%;-webkit-user-drag: none;pointer-events: none">
-                        </div>
-
-                        <form action="https://www.google.com.hk/search" target="_blank">
-                            <input class="form-control mb-3" type=text name=q size=60
-                                placeholder="世界上最好的搜索,Google 必须翻墙才能访问!">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <button class="btn btn-dark">
-                                    <i class="fa-brands fa-google-plus-g fa-spin"></i> Google
-                                </button>
-                                <a class="btn btn-outline-dark" target="_blank" href="https://bard.google.com/">
-                                    <i class="fa-brands fa-google-plus-g fa-spin"></i> bard</a>
-                            </div>
-                        </form>
-                    </div>
-
-
-
-
-                    <!--                <div class="tab-pane fade" id="s360" role="tabpanel" aria-labelledby="s360-tab">-->
-                    <!--                    <div class="text-center">-->
-                    <!--                        <img src="/._media/360.png" alt="s360"-->
-                    <!--                         style="position: static;margin-top: -50%;-webkit-user-drag: none;pointer-events: none">-->
-                    <!--                    </div>-->
-
-                    <!--                    <form id="search-form" target="_blank" action="https://www.so.com/s">-->
-                    <!--                    <div class="others-params webpage-so360 cates-webpage" style="display:none">-->
-                    <!--                        <input type="hidden" name="ie" value="utf-8">-->
-                    <!--                        <input type="hidden" name="src" value="dlm">-->
-                    <!--                        <input type="hidden" name="shb" value="1">-->
-                    <!--                        <input type="hidden" name="ls" value="n5439a5698f">-->
-                    <!--                    </div>-->
-                    <!--                <fieldset>-->
-                    <!--                  <div id="search-input">-->
-                    <!--                    <input class="form-control mb-3" type="text" name="q" autocomplete="off" id="search-kw"-->
-                    <!--                          placeholder="生活就是一个圈">-->
-                    <!--                    <div id="search-new-hotword-count" style="display: none;">8</div>-->
-                    <!--                    <div id="search-hotword" class="g-toggle"></div>-->
-                    <!--                  </div>-->
-
-                    <!--                </fieldset>-->
-                    <!--                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">-->
-                    <!--                            <button class="btn btn-success">-->
-                    <!--                                <i class="fa-brands fa-opera fa-spin"></i></i>  360-->
-                    <!--                            </button>-->
-                    <!--                        </div>-->
-                    <!--                    </form>-->
-                    <!--                </div>-->
-
-
-                    <div class="tab-pane fade" id="wx" role="tabpanel" aria-labelledby="wx-tab">
-                        <div class="text-center">
-                            <!--                 src="/._media/wxs.png"-->
-                            <img src="._media/wxs.png" alt="wxs"
-                                style="position: static;margin-top: -50%;-webkit-user-drag: none;pointer-events: none;">
-                            <!--margin-left: 30%-->
-                        </div>
-
-
-                        <form name="searchForm" id="searchForm" action="https://weixin.sogou.com/weixin">
-                            <input type="hidden" name="ie" value="utf8">
-                            <!--              <input type="hidden" name="s_from" value="input">-->
-                            <!--              <input type="hidden" name="_sug_" id="_sug_" value="n">-->
-                            <!--              <input type="hidden" name="_sug_type_" id="_sug_type_" value="">-->
-
-                            <input type="hidden" name="type" id="type" value="2">
-                            <input type="text" class="form-control mb-3" id="query" name="query" autocomplete="off"
-                                maxlength="80" placeholder="搜索微信公众号或者微信文章...">
-
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <button class="btn btn-success">
-                                    <i class="fa-brands fa-weixin fa-spin"></i> 搜文章
-                                </button>
-                                <button id="button2" class="btn btn-outline-success">
-                                    <i class="fa-brands fa-weixin fa-spin"></i> 搜微信公众号
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-
-                    <div class="tab-pane fade" id="zh" role="tabpanel" aria-labelledby="zh-tab">
-                        <div class="text-center">
-                            <img src="._media/zh.png" alt="zh"
-                                style="position: static;margin-top: -50%;-webkit-user-drag: none;pointer-events: none">
-                        </div>
-                        <form action="https://www.zhihu.com/search" target="_blank">
-                            <input type="hidden" name="type" value="content">
-                            <input class="form-control mb-3" type=text name=q size=60 placeholder="有问题,就会有答案!">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <!--                    d-grid gap-2 d-md-flex justify-content-md-center-->
-                                <button class="btn btn-primary">
-                                    <i class="fa-brands fa-zhihu fa-spin"></i> 知乎
-                                </button>
-                            </div>
-                        </form>
-
-                    </div>
-
-
-
-                    <!---->
+            <div class="text-center p-4">
+                <!--                <img src="./.media/logo-no-background.png" class="rounded" alt="logo" width="40%">-->
+                <div class="content">
+                    <h2>Cloudb</h2>
+                    <h2>Cloudb</h2>
                 </div>
-
-
-            <div class="text-end" style="padding:25px 10px">
-				<a href="http://localhost:809" class="text-primary" target="_blank">
-                     <i class="fa-brands fa-microsoft"></i></a>&nbsp;&nbsp;
-					 
-					 <a href="http://localhost:810" class="text-success" target="_blank">
-                     <i class="fa-solid fa-people-arrows"></i></a>&nbsp;&nbsp;
-					 
-					 <a href="http://localhost:811" class="text-danger" target="_blank">
-                     <i class="fa-solid fa-book-open-reader"></i></a>&nbsp;&nbsp;
-				
-				
-				
-                    <a href="http://localhost:808" class="text-info" target="_blank">
-                     <i class="fa-brands fa-leanpub"></i></a>&nbsp;&nbsp;
-					 
-					 <!-- <a href="http://localhost:807" class="text-warning" target="_blank"> -->
-                     <!-- <i class="fa-solid fa-book-open-reader"></i></a>&nbsp;&nbsp; -->
-					 
-
-                    <a href="index1.html" class="text-danger" target="_blank"><i
-                            class="fa-solid fa-book"></i></a>&nbsp;&nbsp;
-
-                    <a href="http://360.tiandi.com/?td_2_6216" target="_blank" class="text-warning"><i
-                            class="fa-brands fa-edge"></i></a>&nbsp;&nbsp;
-                    <!-- <a href="http://h.tiandi.com/?td_1_6216" target="_blank" class="text-primary"><i class="fa-brands fa-internet-explorer"></i></a>&nbsp;&nbsp; -->
-                    <a href="mailto:xyz349925756@hotmail.com" target="_blank" class="text-success"><i
-                            class="fa-solid fa-envelope"></i></a>&nbsp;&nbsp;
-                    <a href="http://wpa.qq.com/msgrd?v=3&uin=349925756&site=qq&menu=yes" target="_blank"
-                        class="text-info"><i class="fa-brands fa-qq"></i></a>&nbsp;&nbsp;
-                    <a href="https://github.com" target="_blank" class="text-secondary"><i
-                            class="fa-brands fa-github"></i></a>&nbsp;&nbsp;
-                    <a href="https://cloudb.pub" target="_blank" class="text-dark"><i
-                            class="fa-solid fa-house"></i></a>&nbsp;&nbsp;
-                    <a href="tel:18183510256" target="_blank" class="text-success"><i
-                            class="fa fa-phone "></i></a>&nbsp;&nbsp;
-                    <a href="" class="text-dark"><i class="fa-solid fa-pen"></i></a>&nbsp;&nbsp;
-                </div>
-
-
-                <!-- <div class="accordion accordion-flush" id="accordionExample">
-
-                    <div class="accordion-item m-3">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                <i class="fa-solid fa-lightbulb"></i>&nbsp;&nbsp;搜索技巧
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <h6><span class="badge bg-danger">1</span> 精准搜索加双引号或者书名号《》.例:"python"</h6>
-                                <h6><span class="badge bg-warning">2</span> 指定站点内搜索相关关键词.例:site: 52pojie.cn python</h6>
-                                <h6><span class="badge bg-primary">3</span> 标题里包含被搜索的关键字.例:intitle:python</h6>
-                                <h6><span class="badge bg-success">4</span> 精准搜索文件类型.例:python filetype:doc </h6>
-                                <h6><span class="badge bg-info">5</span> 搜索url中含有关键字的链接:例inurl:python</h6>
-                                <h6><span class="badge bg-secondary">6</span> 搜索关键词减号是排除,加号是包含,通配符*,匹配...</h6>
-                                <h6><span class="badge bg-dark">7</span> Google搜索按"/"迅速回到搜索框.</h6>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div> -->
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item m-3">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                aria-controls="flush-collapseOne">
-                                <i class="fa-solid fa-lightbulb" style="color: rgb(77, 158, 233);"></i>&nbsp;&nbsp;搜索技巧
-                            </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse"
-                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <h6><span class="badge bg-danger">1</span> 精准搜索加双引号或者书名号《》.例:"python"</h6>
-                                <h6><span class="badge bg-warning">2</span> 指定站点内搜索相关关键词.例:site: 52pojie.cn python</h6>
-                                <h6><span class="badge bg-primary">3</span> 标题里包含被搜索的关键字.例:intitle:python</h6>
-                                <h6><span class="badge bg-success">4</span> 精准搜索文件类型.例:python filetype:doc </h6>
-                                <h6><span class="badge bg-info">5</span> 搜索url中含有关键字的链接:例inurl:python</h6>
-                                <h6><span class="badge bg-secondary">6</span> 搜索关键词减号是排除,加号是包含,通配符*,匹配...</h6>
-                                <h6><span class="badge bg-dark">7</span> Google搜索按"/"迅速回到搜索框.</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="p-2 col-md-1"></div>
             </div>
 
 
-            <script>
-                $('#button2').click(function () {
-                    $('#type').val('1')
-                })
+            <div class="input-group mb-3">
+                <input type="text" id="searchQuery" class="form-control" placeholder="请输入搜索的关键">
+            </div>
 
-            </script>
+
+            <div class="btn-group p-2" role="group" aria-label="Basic mixed styles example">
+                <button onclick="searchEngine('baidu')" class="btn btn-primary"><i
+                        class="fa-solid fa-paw fa-beat fa-sm"></i>&nbsp;百度
+                </button>
+                <button onclick="searchEngine('google')" class="btn btn-danger"><i
+                        class="fa-brands fa-google fa-spin fa-sm"></i>&nbsp;Google
+                </button>
+                <button onclick="searchEngine('bing')" class="btn btn-success"><i
+                        class="fa-brands fa-microsoft fa-spin fa-spin-reverse fa-sm"></i>&nbsp;Bing
+                </button>
+                <button onclick="searchEngine('f')" class="btn btn-primary"><i
+                        class="fa-solid fa-f fa-bounce fa-sm"></i>&nbsp;f
+                </button>
+                <button onclick="searchEngine('github')" class="btn btn-dark"><i
+                        class="fa-brands fa-github fa-beat fa-sm"></i>&nbsp;GitHub
+                </button>
+                <button onclick="searchEngine('sougou')" class="btn btn-warning"><i
+                        class="fa-solid fa-dog fa-shake fa-sm"></i>&nbsp;搜狗
+                </button>
+                <button onclick="searchEngine('zhihu')" class="btn btn-primary"><i
+                        class="fa-solid fa-book-open-reader fa-fade fa-sm"></i>&nbsp;知乎
+                </button>
+                <button onclick="searchEngine('wechat')" class="btn btn-success"><i
+                        class="fa-brands fa-weixin fa-sm"></i>&nbsp;微信
+                </button>
+                <button onclick="searchEngine('wechatmp')" class="btn btn-info"><i
+                        class="fa-solid fa-comments fa-beat-fade fa-sm"></i>&nbsp;微信公众号
+                </button>
+
+
+            </div>
+            <p>
+            <h6 class="text-danger">Google,Bing Ai ,Google Bard 在中国不能使用!</h6>
+            </p>
+            <hr>
+
+
+        </div>
+        <div class="col-1 col-md-1"></div>
+    </div>
+
+
+    <!-- Columns are always 50% wide, on mobile and desktop -->
+    <div class="row">
+        <div class="col-6">
+            <a class="btn btn-outline-primary" href="https://chat.baidu.com/" target="_blank">
+                <i class="fa-solid fa-b fa-spin"></i> 百度 Ai</a>
+            <a class="btn btn-outline-success" href="https://bing.com/new/" target="_blank">
+                <i class="fa-brands fa-microsoft fa-spin"></i> Bing Ai</a>
+            <a class="btn btn-outline-danger" target="_blank" href="https://bard.google.com/">
+                <i class="fa-brands fa-google-plus-g fa-spin"></i> bard</a>
+        </div>
+        <div class="col-6">
+            <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    技巧
+                </button>
+            </p>
+
+        </div>
+    </div>
+
+
+    <!-- 搜索技巧 -->
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body text-lg-start">
+                    <h6><span class="badge bg-danger">1</span> 精准搜索加双引号或者书名号《》.例:"python"</h6>
+                    <h6><span class="badge bg-warning">2</span> 指定站点内搜索相关关键词.例:site: 52pojie.cn
+                        python</h6>
+                    <h6><span class="badge bg-primary">3</span> 标题里包含被搜索的关键字.例:intitle:python</h6>
+                    <h6><span class="badge bg-success">4</span> 精准搜索文件类型.例:python filetype:doc </h6>
+                    <h6><span class="badge bg-info">5</span> 搜索url中含有关键字的链接:例inurl:python</h6>
+                    <h6><span class="badge bg-secondary">6</span> 搜索关键词减号是排除,加号是包含,通配符*,匹配...
+                    </h6>
+                    <h6><span class="badge bg-dark">7</span> Google搜索按"/"迅速回到搜索框.</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+
+    <!-- Columns are always 50% wide, on mobile and desktop -->
+    <!--    <div class="row">-->
+    <!--        <div class="col-6">.col-6</div>-->
+    <!--        <div class="col-6">.col-6</div>-->
+    <!--    </div>-->
+
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3 text-primary">
+            <li class="nav-item"><a href="http://cloudb.pub" class="nav-link px-2" target="_blank">
+                <i class="fa-solid fa-house" style="color: #1a1e21"></i>&nbsp;Home</a></li>
+
+            <li class="nav-item"><a href="index1.html" class="nav-link px-2 " target="_blank">
+                <i class="fa-brands fa-leanpub fa-sm" style="color: #1a1e21"></i>&nbsp;Knowledge</a></li>
+
+            <li class="nav-item"><a href="http://localhost:809" class="nav-link px-2" target="_blank">
+                <i class="fa-brands fa-windows fa-sm" style="color: #1a1e21"></i>&nbsp;Soft</a></li>
+
+            <li class="nav-item"><a href="http://localhost:810" class="nav-link px-2 " target="_blank">
+                <i class="fa-solid fa-compact-disc fa-sm" style="color: #1a1e21"></i>&nbsp;ISO</a></li>
+
+            <li class="nav-item"><a href="http://localhost:811" class="nav-link px-2" target="_blank">
+                <i class="fa-solid fa-swatchbook fa-sm" style="color: #1a1e21"></i>&nbsp;Books</a></li>
+
+            <li class="nav-item"><a href="http://localhost:808" class="nav-link px-2 " target="_blank">
+                <i class="fa-solid fa-book-open-reader fa-sm" style="color: #1a1e21"></i>&nbsp;Neat Reader</a></li>
+
+            <li class="nav-item"><a href="http://360.tiandi.com/?td_2_6216" class="nav-link px-2 " target="_blank">
+                <i class="fa-brands fa-internet-explorer fa-sm" style="color: #1a1e21"></i>&nbsp;360</a></li>
+
+            <li class="nav-item"><a href="https://github.com/xyz349925756" class="nav-link px-2 " target="_blank"> <i
+                    class="fa-brands fa-square-github fa-sm" style="color: #1a1e21"></i>&nbsp;Github</a></li>
+
+            <li class="nav-item"><a href="http://localhost:807" class="nav-link px-2 " target="_blank">
+                <i class="fa-solid fa-folder-tree fa-sm" style="color: #1a1e21"></i>&nbsp;Free</a></li>
+
+        </ul>
+
+        <a href="mailto:xyz349925756@hotmail.com" target="_blank" class="text-success"><i
+                class="fa-solid fa-envelope"></i></a>&nbsp;&nbsp;
+
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=349925756&site=qq&menu=yes" target="_blank"
+           class="text-info"><i class="fa-brands fa-qq"></i></a>&nbsp;&nbsp;
+
+        <a href="tel:18183510256" target="_blank" class="text-success"><i
+                class="fa fa-phone "></i></a>&nbsp;&nbsp;
+
+        <p class="text-center text-muted">© 2023
+            <a href="https://cloudb.pub" target="_blank">Cloudb.pub</a>, All rights reserved</p>
+    </footer>
+
+
+</div>
+
+
+<script>
+    function changeGradient() {
+        var colors = ['#e0ffff', '#f5f5dc', '#ffe4e1', '#f0f8ff', '#f0e68c', '#90d1ee', '#03041965'];
+        var randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.background = "linear-gradient(to right, #e0ffff, " + randomColor + ")";
+    }
+</script>
+
+<script>
+    function searchEngine(engine) {
+        var query = document.getElementById("searchQuery").value;
+        var url;
+
+        if (engine === "baidu") {
+            url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query);
+        } else if (engine === "google") {
+            url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "bing") {
+            url = "https://www.bing.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "f") {
+            url = "https://fsoufsou.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "github") {
+            url = "https://github.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "sougou") {
+            url = "https://www.sogou.com/web?query=" + encodeURIComponent(query);
+        } else if (engine === "zhihu") {
+            url = "https://www.zhihu.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "wechat") {
+            url = "https://weixin.sogou.com/weixin?type=2&query=" + encodeURIComponent(query);
+        } else if (engine === "wechatmp") {
+            url = "https://weixin.sogou.com/weixin?type=1&query=" + encodeURIComponent(query);
+        }
+
+        window.open(url, "_blank");
+    }
+
+    document.getElementById("searchQuery").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") { // 13 表示回车键的键码
+            searchEngine("baidu"); // 默认使用百度搜索引擎
+            event.preventDefault(); // 阻止默认的回车键行为
+        }
+    });
+
+</script>
+
+<script>
+    const WEEK = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+
+    function updateTime() {
+        var now = new Date();
+
+        document.getElementById("time").innerText =
+            zeroPadding(now.getHours(), 2) + ":" +
+            zeroPadding(now.getMinutes(), 2) + ":" +
+            zeroPadding(now.getSeconds(), 2);
+
+        document.getElementById("date").innerText =
+            now.getFullYear() + "-" +
+            zeroPadding(now.getMonth() + 1, 2) + "-" +
+            zeroPadding(now.getDate(), 2) + "  " +
+            WEEK[now.getDay()];
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    function zeroPadding(num, digit) {
+        return String(num).padStart(digit, '0');
+    }
+
+</script>
 
 </body>
-
 </html>
