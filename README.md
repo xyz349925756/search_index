@@ -22,3 +22,7 @@ windows四种方式任选
 - 搭建 nginx 环境访问即可
 
 > google  这些被限制的需要代理访问.
+
+
+
+https://search-index.vercel.app/  也可以访问
