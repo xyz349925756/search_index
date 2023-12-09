@@ -1,442 +1,775 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>0256</title>
-    <link rel="stylesheet" href="._css/bootstrap.css">
-    <link rel="stylesheet" href="._css/all.css">
-    <link rel="stylesheet" href="._css/myindex.css">
+    <link rel="stylesheet" href="._css/bootstrap.css" />
+    <link rel="stylesheet" href="._css/all.css" />
+    <link rel="stylesheet" href="._css/myindex.css" />
     <script src="._js/all.js"></script>
     <script src="._js/bootstrap.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div class="container1">
+      <div class="clock1">
+        <div class="circle" id="sc" style="--clr: var(--bs-green)"><i></i></div>
+        <div class="circle circle2" id="mn" style="--clr: var(--bs-warning)"><i></i></div>
+        <div class="circle circle3" id="hr" style="--clr: var(--bs-danger)"><i></i></div>
+        <span style="--i: 1"><b>1</b></span>
+        <span style="--i: 2"><b>2</b></span>
+        <span style="--i: 3"><b>3</b></span>
+        <span style="--i: 4"><b>4</b></span>
+        <span style="--i: 5"><b>5</b></span>
+        <span style="--i: 6"><b>6</b></span>
+        <span style="--i: 7"><b>7</b></span>
+        <span style="--i: 8"><b>8</b></span>
+        <span style="--i: 9"><b>9</b></span>
+        <span style="--i: 10"><b>10</b></span>
+        <span style="--i: 11"><b>11</b></span>
+        <span style="--i: 12"><b>12</b></span>
+      </div>
 
-    <div class="container text-center">
-        <!--clock-->
-        <div class="row m-3">
-            <div class="col-1 col-md-1"></div>
-            <div class="col-10 col-md-10 clock">
-                <h5 class="mb-4 m-2">
-                    <i class="fa-solid fa-calendar-days fa-sm text-danger"></i>
-                    &nbsp;<span id="date" class="text-danger"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fa-solid fa-clock fa-spin fa-sm text-dark"></i>&nbsp;
-                    <span id="time" class="text-dark"></span>
-                </h5>
+      <div id="time1">
+        <div id="hours" style="--clr: var(--bs-danger)">00</div>
+        <div id="minutes" style="--clr: var(--bs-warning)">00</div>
+        <div id="seconds" style="--clr: var(--bs-green)">00</div>
+        <!-- <div id="ampm">AM</div> -->
+      </div>
+    </div>
 
-            </div>
-            <hr>
-            <div class="col-1 col-md-1"></div>
-        </div>
-
-
-        <div class="row">
-            <!-- 切换背景色 -->
-            <div class="col-2 col-md-2">
-                <button onclick="changeGradient()" class="btn"><i class="fa-solid fa-lightbulb fa-beat"
-                        style="color: darkcyan;"></i></button>
-            </div>
-            <!--clock-->
-            <div class="col-4 col-md-4">
-
-            </div>
-
-            <!-- 超链接-->
-            <div class="col-6 col-md-6">
-            </div>
-
-        </div>
-
-
-        <!-- 搜素引擎 -->
-        <div class="row">
-            <div class="col-1 col-md-1"></div>
-            <div class="col-10 col-md-10">
-
-                <div class="text-center p-4">
-                    <!--                <img src="./.media/logo-no-background.png" class="rounded" alt="logo" width="40%">-->
-                    <div class="content">
-                        <h2>0256.website</h2>
-                        <h2>0256.website</h2>
-                    </div>
-                </div>
-
-
-                <div class="input-group mb-3">
-                    <input type="text" id="searchQuery" class="form-control" placeholder="请输入搜索的关键">
-                </div>
-
-
-                <div class="btn-group p-2" role="group" aria-label="Basic mixed styles example">
-                    <button onclick="searchEngine('baidu')" class="btn btn-primary"><i
-                            class="fa-solid fa-paw fa-beat fa-sm"></i>&nbsp;百度
-                    </button>
-                    <button onclick="searchEngine('google')" class="btn btn-danger"><i
-                            class="fa-brands fa-google fa-spin fa-sm"></i>&nbsp;Google
-                    </button>
-                    <button onclick="searchEngine('bing')" class="btn btn-success"><i
-                            class="fa-brands fa-microsoft fa-spin fa-spin-reverse fa-sm"></i>&nbsp;Bing
-                    </button>
-                    <button onclick="searchEngine('f')" class="btn btn-primary"><i
-                            class="fa-solid fa-f fa-bounce fa-sm"></i>&nbsp;f
-                    </button>
-                    <button onclick="searchEngine('github')" class="btn btn-dark"><i
-                            class="fa-brands fa-github fa-beat fa-sm"></i>&nbsp;GitHub
-                    </button>
-                    <button onclick="searchEngine('sougou')" class="btn btn-warning"><i
-                            class="fa-solid fa-dog fa-shake fa-sm"></i>&nbsp;搜狗
-                    </button>
-                    <button onclick="searchEngine('zhihu')" class="btn btn-primary"><i
-                            class="fa-solid fa-book-open-reader fa-fade fa-sm"></i>&nbsp;知乎
-                    </button>
-                    <button onclick="searchEngine('wechat')" class="btn btn-success"><i
-                            class="fa-brands fa-weixin fa-sm"></i>&nbsp;微信
-                    </button>
-                    <button onclick="searchEngine('wechatmp')" class="btn btn-info"><i
-                            class="fa-solid fa-comments fa-beat-fade fa-sm"></i>&nbsp;微信公众号
-                    </button>
-                </div>
-
-
-
-
-                <p>
-                    <a class="btn btn-outline-warning" data-bs-toggle="collapse" href="#ai" role="button"
-                        aria-expanded="false" aria-controls="ai">
-                        <i class="fa-regular fa-comments fa-sm"></i> &nbsp;Ai
-                    </a>
-
-                    <a class="btn btn-outline-success" data-bs-toggle="collapse" href="#search" role="button"
-                        aria-expanded="false" aria-controls="search">
-                        <i class="fa-solid fa-magnifying-glass fa-sm"></i> &nbsp;Search
-                    </a>
-                    <button class="btn btn-outline-dark" type="button" onclick="rollDice()">
-                        Roll Dice
-                    </button>
-
-
-                </p>
-                <div class="collapse" id="ai">
-                    <div class="card card-body">
-                        <h6 class="text-danger">Google,Bing Ai ,Google Bard,Claude 在中国不能使用!</h6>
-                        <table class="table table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col"><i class="fa-brands fa-ideal fa-sm"></i> &nbsp;ID</th>
-                                    <th scope="col"><i class="fa-solid fa-diamond fa-sm"></i> &nbsp;Name</th>
-                                    <th scope="col"><i class="fa-solid fa-link fa-sm"></i> &nbsp;Link</th>
-                                    <th scope="col"><i class="fa-solid fa-globe fa-sm"></i> &nbsp;VPN/Proxy</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>百度</td>
-                                    <td> <a class="list-group-item list-group-item-action text-primary"
-                                            href="https://chat.baidu.com/" target="_blank">
-                                            <i class="fa-solid fa-b fa-spin"></i> 百度</a></td>
-                                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Bing AI</td>
-                                    <td><a class="list-group-item list-group-item-action text-success"
-                                            href="https://www.bing.com/new?cc=sg&setlang=zh-hans" target="_blank">
-                                            <i class="fa-brands fa-microsoft fa-spin"></i> Bing</a></td>
-                                    <td class="text-danger"><i class="fa-solid fa-check fa-beat fa-sm"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Google Bard</td>
-                                    <td> <a class="list-group-item list-group-item-action text-danger" target="_blank"
-                                            href="https://bard.google.com/">
-                                            <i class="fa-brands fa-google-plus-g fa-spin"></i> bard</a></td>
-                                    <td class="text-danger"><i class="fa-solid fa-check fa-beat fa-sm"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Claude</td>
-                                    <td> <a class="list-group-item list-group-item-action text-warning" target="_blank"
-                                            href="https://claude.ai/chats">
-                                            <i class="fa-regular fa-comment fa-beat fa-sm"></i> claude</a></td>
-                                    <td class="text-danger"><i class="fa-solid fa-check fa-beat fa-sm"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>ChatGPT</td>
-                                    <td><a class="list-group-item list-group-item-action text-info" target="_blank"
-                                            href="https://platform.openai.com/apps">
-                                            <i class="fa-solid fa-comments-dollar fa-beat fa-sm"></i> ChatGPT</a></td>
-                                    <td class="text-danger"><i class="fa-solid fa-check fa-beat fa-sm"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>P-ChatGPT</td>
-                                    <td><a class="list-group-item list-group-item-action text-dark" target="_blank"
-                                            href="https://ai.0256.website/">
-                                            <i class="fa-solid fa-comments-dollar fa-beat fa-sm"></i> P-ChatGPT</a></td>
-                                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">7</th>
-                                    <td>P-Bing Ai</td>
-                                    <td><a class="list-group-item list-group-item-action text-success"
-                                            href="https://bing.0256.website" target="_blank"
-                                            rel="noopener noreferrer"><i
-                                                class="fa-brands fa-microsoft fa-beat-fade"></i> Bing</a>
-                                    </td>
-                                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-                </div>
-
-                <div class="collapse" id="search">
-                    <div class="card card-body">
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col"><i class="fa-brands fa-ideal fa-sm"></i> &nbsp;ID</th>
-                                    <th scope="col"><i class="fa-solid fa-diamond fa-sm"></i> &nbsp;Name</th>
-                                    <th scope="col"><i class="fa-solid fa-link fa-sm"></i> &nbsp;Link</th>
-                                    <th scope="col"><i class="fa-solid fa-globe fa-sm"></i> &nbsp;VPN/Proxy</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Cloudb</td>
-                                    <td><a class="list-group-item list-group-item-action text-primary"
-                                            href="https://s.cloudb.pub" target="_blank"
-                                            rel="noopener noreferrer">https://s.cloudb.pub</a></td>
-                                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>0256</td>
-                                    <td><a class="list-group-item list-group-item-action text-primary" href="
-                                            https://s.0256.website" target="_blank"
-                                            rel="noopener noreferrer">https://s.0256.website</a></td>
-                                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="col-1 col-md-1">
-                <i id="diceIcon"></i>
-            </div>
-        </div>
-
-
-        <!-- Columns are always 50% wide, on mobile and desktop -->
-        <div class="row">
-            <div class="col-8">
-            </div>
-            <div class="col-4">
-                <p>
-                    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#jq"
-                        aria-expanded="false" aria-controls="jq">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        技巧
-                    </button>
-                </p>
-
-            </div>
-        </div>
-
-
-        <!-- 搜索技巧 -->
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <div class="collapse" id="jq">
-                    <div class="card card-body text-lg-start">
-                        <h6><span class="badge bg-danger">1</span> 精准搜索加双引号或者书名号《》.例:"python"</h6>
-                        <h6><span class="badge bg-warning">2</span> 指定站点内搜索相关关键词.例:site: 52pojie.cn
-                            python</h6>
-                        <h6><span class="badge bg-primary">3</span> 标题里包含被搜索的关键字.例:intitle:python</h6>
-                        <h6><span class="badge bg-success">4</span> 精准搜索文件类型.例:python filetype:doc </h6>
-                        <h6><span class="badge bg-info">5</span> 搜索url中含有关键字的链接:例inurl:python</h6>
-                        <h6><span class="badge bg-secondary">6</span> 搜索关键词减号是排除,加号是包含,通配符*,匹配...
-                        </h6>
-                        <h6><span class="badge bg-dark">7</span> Google搜索按"/"迅速回到搜索框.</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2"></div>
-        </div>
-
-
-        <!-- Columns are always 50% wide, on mobile and desktop -->
-        <!--    <div class="row">-->
-        <!--        <div class="col-6">.col-6</div>-->
-        <!--        <div class="col-6">.col-6</div>-->
-        <!--    </div>-->
-
-        <footer class="py-3 my-4">
-            <h6 class="text-warning"><b>Local Services</b></h6>
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3 text-primary">
-                <li class="nav-item"><a href="https://s.cloudb.pub/" class="nav-link px-2" target="_blank">
-                        <i class="fa-solid fa-house" style="color: #1a1e21"></i>&nbsp;Home</a></li>
-
-                <li class="nav-item"><a href="index1.html" class="nav-link px-2 " target="_blank">
-                        <i class="fa-brands fa-leanpub fa-sm" style="color: #1a1e21"></i>&nbsp;Knowledge</a></li>
-
-                <li class="nav-item"><a href="http://localhost:809" class="nav-link px-2" target="_blank">
-                        <i class="fa-brands fa-windows fa-sm" style="color: #1a1e21"></i>&nbsp;Soft</a></li>
-
-                <li class="nav-item"><a href="http://localhost:810" class="nav-link px-2 " target="_blank">
-                        <i class="fa-solid fa-compact-disc fa-sm" style="color: #1a1e21"></i>&nbsp;ISO</a></li>
-
-                <li class="nav-item"><a href="http://localhost:811" class="nav-link px-2" target="_blank">
-                        <i class="fa-solid fa-swatchbook fa-sm" style="color: #1a1e21"></i>&nbsp;Books</a></li>
-
-                <li class="nav-item"><a href="http://localhost:808" class="nav-link px-2 " target="_blank">
-                        <i class="fa-solid fa-book-open-reader fa-sm" style="color: #1a1e21"></i>&nbsp;Neat Reader</a>
-                </li>
-
-                <li class="nav-item"><a href="http://360.tiandi.com/?td_2_6216" class="nav-link px-2 " target="_blank">
-                        <i class="fa-brands fa-internet-explorer fa-sm" style="color: #1a1e21"></i>&nbsp;360</a></li>
-
-                <li class="nav-item"><a href="https://github.com/xyz349925756" class="nav-link px-2 " target="_blank">
-                        <i class="fa-brands fa-square-github fa-sm" style="color: #1a1e21"></i>&nbsp;Github</a></li>
-
-                <li class="nav-item"><a href="http://localhost:807" class="nav-link px-2 " target="_blank">
-                        <i class="fa-solid fa-folder-tree fa-sm" style="color: #1a1e21"></i>&nbsp;Free</a></li>
-
-            </ul>
-            <span class="text-success"><b>Contact US</b></span>
-            : &nbsp;&nbsp;
-            <a href="mailto:xyz349925756@hotmail.com" target="_blank" class="text-success"><i
-                    class="fa-solid fa-envelope"></i></a>&nbsp;&nbsp;
-
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=349925756&site=qq&menu=yes" target="_blank" class="text-info"><i
-                    class="fa-brands fa-qq"></i></a>&nbsp;&nbsp;
-
-            <a href="tel:18183510256" target="_blank" class="text-success"><i class="fa fa-phone "></i></a>&nbsp;&nbsp;
-
-            <p class="text-center text-muted">© 2023
-                <a href="https://cloudb.pub" target="_blank">Cloudb.pub</a>, All rights reserved
-            </p>
-        </footer>
-
-
+    <div id="change_color">
+      <button onclick="changeGradient()" class="btn">
+        <i
+          class="fa-solid fa-lightbulb fa-beat"
+          style="color: darkcyan"
+        ></i>
+      </button>
     </div>
 
 
+
+    <div class="container text-center">
+      <!--clock-->
+      <div class="row m-3">
+        <div class="col-1 col-md-1"></div>
+        <div class="col-10 col-md-10 clock">
+          <div id="date_div">
+            <span id="date" class="text-danger"></span>
+
+
+          </div>
+        </div>
+        <!-- <hr /> -->
+        <div class="col-1 col-md-1"></div>
+      </div>
+
+
+      <!-- 搜素引擎 -->
+      <div class="row">
+        <div class="col-1 col-md-1"></div>
+        <div class="col-10 col-md-10">
+          <div class="text-center p-4">
+            <!--                <img src="./.media/logo-no-background.png" class="rounded" alt="logo" width="40%">-->
+            <div class="content" id="welcome">
+              <!-- <h2>Cloudb</h2>
+                        <h2>Cloudb</h2> -->
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              id="searchQuery"
+              class="form-control"
+              placeholder="请输入搜索的关键"
+            />
+          </div>
+
+          <div
+            class="btn-group p-2"
+            role="group"
+            aria-label="Basic mixed styles example"
+          >
+            <button onclick="searchEngine('baidu')" class="btn btn-primary">
+              <i class="fa-solid fa-paw fa-beat fa-sm"></i>&nbsp;百度
+            </button>
+            <button onclick="searchEngine('google')" class="btn btn-danger">
+              <i class="fa-brands fa-google fa-spin fa-sm"></i>&nbsp;Google
+            </button>
+            <button onclick="searchEngine('bing')" class="btn btn-success">
+              <i
+                class="fa-brands fa-microsoft fa-spin fa-spin-reverse fa-sm"
+              ></i
+              >&nbsp;Bing
+            </button>
+            <button onclick="searchEngine('f')" class="btn btn-primary">
+              <i class="fa-solid fa-f fa-bounce fa-sm"></i>&nbsp;f
+            </button>
+            <button onclick="searchEngine('github')" class="btn btn-dark">
+              <i class="fa-brands fa-github fa-beat fa-sm"></i>&nbsp;GitHub
+            </button>
+            <button onclick="searchEngine('sougou')" class="btn btn-warning">
+              <i class="fa-solid fa-dog fa-shake fa-sm"></i>&nbsp;搜狗
+            </button>
+            <button onclick="searchEngine('zhihu')" class="btn btn-primary">
+              <i class="fa-solid fa-book-open-reader fa-fade fa-sm"></i
+              >&nbsp;知乎
+            </button>
+            <button onclick="searchEngine('wechat')" class="btn btn-success">
+              <i class="fa-brands fa-weixin fa-sm"></i>&nbsp;微信
+            </button>
+            <button onclick="searchEngine('wechatmp')" class="btn btn-info">
+              <i class="fa-solid fa-comments fa-beat-fade fa-sm"></i
+              >&nbsp;微信公众号
+            </button>
+          </div>
+
+
+        </div>
+        <div class="col-1 col-md-1">
+          <i id="diceIcon"></i>
+        </div>
+      </div>
+
+      <!-- Columns are always 50% wide, on mobile and desktop -->
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
+          <p>
+                      <!-- ai search -->
+
+          <a
+          class="btn btn-outline-warning"
+          data-bs-toggle="collapse"
+          href="#ai"
+          role="button"
+          aria-expanded="false"
+          aria-controls="ai"
+        >
+          <i class="fa-regular fa-comments fa-sm"></i> &nbsp;Ai
+        </a>
+        
+        <a
+          class="btn btn-outline-success"
+          data-bs-toggle="collapse"
+          href="#search"
+          role="button"
+          aria-expanded="false"
+          aria-controls="search"
+        >
+          <i class="fa-solid fa-magnifying-glass fa-sm"></i> &nbsp;Search
+        </a>
+       
+        <!-- <button
+            class="btn btn-outline-dark"
+            type="button"
+            onclick="rollDice()"
+          >
+            Roll Dice
+          </button> -->
+
+        <!-- ai search end -->
+            <button
+              class="btn btn-outline-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#jq"
+              aria-expanded="false"
+              aria-controls="jq"
+            >
+              <i class="fa-solid fa-lightbulb"></i>
+              技巧
+            </button>
+          </p>
+        </div>
+      </div>
+
+      <!-- 搜索技巧 -->
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+
+          <div class="collapse" id="ai">
+            <div class="card card-body">
+              <h6 class="text-danger">
+                Google,Bing Ai ,Google Bard,Claude 在中国不能使用!
+              </h6>
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <i class="fa-brands fa-ideal fa-sm"></i> &nbsp;ID
+                    </th>
+                    <th scope="col">
+                      <i class="fa-solid fa-diamond fa-sm"></i> &nbsp;Name
+                    </th>
+                    <th scope="col">
+                      <i class="fa-solid fa-link fa-sm"></i> &nbsp;Link
+                    </th>
+                    <th scope="col">
+                      <i class="fa-solid fa-globe fa-sm"></i> &nbsp;VPN/Proxy
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>百度</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-primary"
+                        href="https://chat.baidu.com/"
+                        target="_blank"
+                      >
+                        <i class="fa-solid fa-b fa-spin"></i> 百度</a
+                      >
+                    </td>
+                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Bing AI</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-success"
+                        href="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-microsoft fa-spin"></i> Bing</a
+                      >
+                    </td>
+                    <td class="text-danger">
+                      <i class="fa-solid fa-check fa-beat fa-sm"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Google Bard</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-danger"
+                        target="_blank"
+                        href="https://bard.google.com/"
+                      >
+                        <i class="fa-brands fa-google-plus-g fa-spin"></i>
+                        bard</a
+                      >
+                    </td>
+                    <td class="text-danger">
+                      <i class="fa-solid fa-check fa-beat fa-sm"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Claude</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-warning"
+                        target="_blank"
+                        href="https://claude.ai/chats"
+                      >
+                        <i class="fa-regular fa-comment fa-beat fa-sm"></i>
+                        claude</a
+                      >
+                    </td>
+                    <td class="text-danger">
+                      <i class="fa-solid fa-check fa-beat fa-sm"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>ChatGPT</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-info"
+                        target="_blank"
+                        href="https://platform.openai.com/apps"
+                      >
+                        <i
+                          class="fa-solid fa-comments-dollar fa-beat fa-sm"
+                        ></i>
+                        ChatGPT</a
+                      >
+                    </td>
+                    <td class="text-danger">
+                      <i class="fa-solid fa-check fa-beat fa-sm"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>P-ChatGPT</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-dark"
+                        target="_blank"
+                        href="https://ai.0256.website/"
+                      >
+                        <i
+                          class="fa-solid fa-comments-dollar fa-beat fa-sm"
+                        ></i>
+                        P-ChatGPT</a
+                      >
+                    </td>
+                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>P-Bing Ai</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-success"
+                        href="https://bing.0256.website"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fa-brands fa-microsoft fa-beat-fade"></i>
+                        Bing</a
+                      >
+                    </td>
+                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="collapse" id="search">
+            <div class="card card-body">
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <i class="fa-brands fa-ideal fa-sm"></i> &nbsp;ID
+                    </th>
+                    <th scope="col">
+                      <i class="fa-solid fa-diamond fa-sm"></i> &nbsp;Name
+                    </th>
+                    <th scope="col">
+                      <i class="fa-solid fa-link fa-sm"></i> &nbsp;Link
+                    </th>
+                    <th scope="col">
+                      <i class="fa-solid fa-globe fa-sm"></i> &nbsp;VPN/Proxy
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cloudb</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-primary"
+                        href="https://cloudb.pub"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >https://cloudb.pub</a
+                      >
+                    </td>
+                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>0256</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-primary"
+                        href="
+                                            https://s.0256.website"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >https://s.0256.website</a
+                      >
+                    </td>
+                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="collapse" id="jq">
+            <div class="card card-body text-lg-start">
+              <h6>
+                <span class="badge bg-danger">1</span>
+                精准搜索加双引号或者书名号《》.例:"python"
+              </h6>
+              <h6>
+                <span class="badge bg-warning">2</span>
+                指定站点内搜索相关关键词.例:site: 52pojie.cn python
+              </h6>
+              <h6>
+                <span class="badge bg-primary">3</span>
+                标题里包含被搜索的关键字.例:intitle:python
+              </h6>
+              <h6>
+                <span class="badge bg-success">4</span>
+                精准搜索文件类型.例:python filetype:doc
+              </h6>
+              <h6>
+                <span class="badge bg-info">5</span>
+                搜索url中含有关键字的链接:例inurl:python
+              </h6>
+              <h6>
+                <span class="badge bg-secondary">6</span>
+                搜索关键词减号是排除,加号是包含,通配符*,匹配...
+              </h6>
+              <h6>
+                <span class="badge bg-dark">7</span>
+                Google搜索按"/"迅速回到搜索框.
+              </h6>
+            </div>
+          </div>
+
+
+
+
+        </div>
+        <div class="col-2"></div>
+      </div>
+
+      <!-- Columns are always 50% wide, on mobile and desktop -->
+      <!--    <div class="row">-->
+      <!--        <div class="col-6">.col-6</div>-->
+      <!--        <div class="col-6">.col-6</div>-->
+      <!--    </div>-->
+
+      <footer class="py-3 my-4">
+        <!-- <h6 class="text-warning"><b>Local Services </b></h6> -->
+        <!-- <ul -->
+          <!-- class="nav justify-content-center border-bottom pb-3 mb-3 text-primary" -->
+        <!-- > -->
+          <!-- <li class="nav-item"> -->
+            <!-- <a href="https://cloudb.pub/" class="nav-link px-2" target="_blank"> -->
+              <!-- <i class="fa-solid fa-house" style="color: #dc3545"></i -->
+              <!-- >&nbsp;Home</a -->
+            <!-- > -->
+          <!-- </li> -->
+
+          <!-- <li class="nav-item"> -->
+            <!-- <a href="index1.html" class="nav-link px-2" target="_blank"> -->
+              <!-- <i class="fa-brands fa-leanpub fa-sm" style="color: #0dcaf0"></i -->
+              <!-- >&nbsp;Knowledge</a -->
+            <!-- > -->
+          <!-- </li> -->
+
+          <!-- <li class="nav-item"> -->
+            <!-- <a -->
+              <!-- href="http://localhost:809" -->
+              <!-- class="nav-link px-2" -->
+              <!-- target="_blank" -->
+            <!-- > -->
+              <!-- <i class="fa-brands fa-windows fa-sm" style="color: #198754"></i -->
+              <!-- >&nbsp;Soft</a -->
+            <!-- > -->
+          <!-- </li> -->
+
+          <!-- <li class="nav-item"> -->
+            <!-- <a -->
+              <!-- href="http://localhost:810" -->
+              <!-- class="nav-link px-2" -->
+              <!-- target="_blank" -->
+            <!-- > -->
+              <!-- <i -->
+                <!-- class="fa-solid fa-compact-disc fa-sm" -->
+                <!-- style="color: #ffc107" -->
+              <!-- ></i -->
+              <!-- >&nbsp;ISO</a -->
+            <!-- > -->
+          <!-- </li> -->
+
+          <!-- <li class="nav-item"> -->
+            <!-- <a -->
+              <!-- href="http://localhost:811" -->
+              <!-- class="nav-link px-2" -->
+              <!-- target="_blank" -->
+            <!-- > -->
+              <!-- <i class="fa-solid fa-swatchbook fa-sm" style="color: #6f42c1"></i -->
+              <!-- >&nbsp;Books</a -->
+            <!-- > -->
+          <!-- </li> -->
+
+          <!-- <li class="nav-item"> -->
+            <!-- <a -->
+              <!-- href="http://localhost:808" -->
+              <!-- class="nav-link px-2" -->
+              <!-- target="_blank" -->
+            <!-- > -->
+              <!-- <i -->
+                <!-- class="fa-solid fa-book-open-reader fa-sm" -->
+                <!-- style="color: #20c997" -->
+              <!-- ></i -->
+              <!-- >&nbsp;Neat Reader</a -->
+            <!-- > -->
+          <!-- </li> -->
+
+          <!-- <li class="nav-item"> -->
+            <!-- <a -->
+              <!-- href="http://360.tiandi.com/?td_2_6216" -->
+              <!-- class="nav-link px-2" -->
+              <!-- target="_blank" -->
+            <!-- > -->
+              <!-- <i -->
+                <!-- class="fa-brands fa-internet-explorer fa-sm" -->
+                <!-- style="color: #1a1e21" -->
+              <!-- ></i -->
+              <!-- >&nbsp;360</a -->
+            <!-- > -->
+          <!-- </li> -->
+
+          <!-- <li class="nav-item"> -->
+            <!-- <a -->
+              <!-- href="https://github.com/xyz349925756" -->
+              <!-- class="nav-link px-2" -->
+              <!-- target="_blank" -->
+            <!-- > -->
+              <!-- <i -->
+                <!-- class="fa-brands fa-square-github fa-sm" -->
+                <!-- style="color: #000000" -->
+              <!-- ></i -->
+              <!-- >&nbsp;Github</a -->
+            <!-- > -->
+          <!-- </li> -->
+
+          <!-- <li class="nav-item"> -->
+            <!-- <a -->
+              <!-- href="http://localhost:807" -->
+              <!-- class="nav-link px-2" -->
+              <!-- target="_blank" -->
+            <!-- > -->
+              <!-- <i -->
+                <!-- class="fa-solid fa-folder-tree fa-sm" -->
+                <!-- style="color: #d63384" -->
+              <!-- ></i -->
+              <!-- >&nbsp;Free</a -->
+            <!-- > -->
+          <!-- </li> -->
+        <!-- </ul> -->
+        <span class="text-success"><b>Contact US</b></span>
+        : &nbsp;&nbsp;
+        <a
+          href="mailto:xyz349925756@hotmail.com"
+          target="_blank"
+          class="text-success"
+          ><i class="fa-solid fa-envelope"></i></a
+        >&nbsp;&nbsp;
+
+        <a
+          href="http://wpa.qq.com/msgrd?v=3&uin=349925756&site=qq&menu=yes"
+          target="_blank"
+          class="text-info"
+          ><i class="fa-brands fa-qq"></i></a
+        >&nbsp;&nbsp;
+
+        <a href="tel:18183510256" target="_blank" class="text-success"
+          ><i class="fa fa-phone"></i></a
+        >&nbsp;&nbsp;
+
+        <p class="text-center text-muted">
+          © 2023 <a href="https://cloudb.pub" target="_blank">Cloudb.pub</a>,
+          All rights reserved
+        </p>
+      </footer>
+    </div>
+
     <script>
-        function changeGradient() {
-            var colors = ['#e0ffff', '#f5f5dc', '#ffe4e1', '#f0f8ff', '#f0e68c', '#90d1ee', '#03041965'];
-            var randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.body.style.background = "linear-gradient(to right, #e0ffff, " + randomColor + ")";
-        }
+      function changeGradient() {
+        var colors = [
+          "#e0ffff",
+          "#f5f5dc",
+          "#ffe4e1",
+          "#f0f8ff",
+          "#f0e68c",
+          "#90d1ee",
+          "#03041965",
+        ];
+        var randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.background =
+          "linear-gradient(to right, #e0ffff, " + randomColor + ")";
+      }
     </script>
 
     <script>
-        function searchEngine(engine) {
-            var query = document.getElementById("searchQuery").value;
-            var url;
+      function searchEngine(engine) {
+        var query = document.getElementById("searchQuery").value;
+        var url;
 
-            if (engine === "baidu") {
-                url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query);
-            } else if (engine === "google") {
-                url = "https://www.google.com/search?q=" + encodeURIComponent(query);
-            } else if (engine === "bing") {
-                url = "https://www.bing.com/search?q=" + encodeURIComponent(query);
-            } else if (engine === "f") {
-                url = "https://fsoufsou.com/search?q=" + encodeURIComponent(query);
-            } else if (engine === "github") {
-                url = "https://github.com/search?q=" + encodeURIComponent(query);
-            } else if (engine === "sougou") {
-                url = "https://www.sogou.com/web?query=" + encodeURIComponent(query);
-            } else if (engine === "zhihu") {
-                url = "https://www.zhihu.com/search?q=" + encodeURIComponent(query);
-            } else if (engine === "wechat") {
-                url = "https://weixin.sogou.com/weixin?type=2&query=" + encodeURIComponent(query);
-            } else if (engine === "wechatmp") {
-                url = "https://weixin.sogou.com/weixin?type=1&query=" + encodeURIComponent(query);
-            }
-
-            window.open(url, "_blank");
+        if (engine === "baidu") {
+          url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query);
+        } else if (engine === "google") {
+          url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "bing") {
+          url = "https://www.bing.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "f") {
+          url = "https://fsoufsou.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "github") {
+          url = "https://github.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "sougou") {
+          url = "https://www.sogou.com/web?query=" + encodeURIComponent(query);
+        } else if (engine === "zhihu") {
+          url = "https://www.zhihu.com/search?q=" + encodeURIComponent(query);
+        } else if (engine === "wechat") {
+          url =
+            "https://weixin.sogou.com/weixin?type=2&query=" +
+            encodeURIComponent(query);
+        } else if (engine === "wechatmp") {
+          url =
+            "https://weixin.sogou.com/weixin?type=1&query=" +
+            encodeURIComponent(query);
         }
 
-        document.getElementById("searchQuery").addEventListener("keydown", function (event) {
-            if (event.key === "Enter") { // 13 表示回车键的键码
-                searchEngine("baidu"); // 默认使用百度搜索引擎
-                event.preventDefault(); // 阻止默认的回车键行为
-            }
+        window.open(url, "_blank");
+      }
+
+      document
+        .getElementById("searchQuery")
+        .addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            // 13 表示回车键的键码
+            searchEngine("bing"); // 默认使用百度搜索引擎
+            event.preventDefault(); // 阻止默认的回车键行为
+          }
         });
-
     </script>
 
     <script>
-        const WEEK = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+      const WEEK = [
+        "星期日",
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五",
+        "星期六",
+      ];
 
-        function updateTime() {
-            var now = new Date();
+      function updateTime() {
+        var now = new Date();
 
-            document.getElementById("time").innerText =
-                zeroPadding(now.getHours(), 2) + ":" +
-                zeroPadding(now.getMinutes(), 2) + ":" +
-                zeroPadding(now.getSeconds(), 2);
+        // document.getElementById("time").innerText =
+        //   zeroPadding(now.getHours(), 2) +
+        //   ":" +
+        //   zeroPadding(now.getMinutes(), 2) +
+        //   ":" +
+        //   zeroPadding(now.getSeconds(), 2);
 
-            document.getElementById("date").innerText =
-                now.getFullYear() + "-" +
-                zeroPadding(now.getMonth() + 1, 2) + "-" +
-                zeroPadding(now.getDate(), 2) + "  " +
-                WEEK[now.getDay()];
-        }
+        document.getElementById("date").innerText =
+          now.getFullYear() +
+          "-" +
+          zeroPadding(now.getMonth() + 1, 2) +
+          "-" +
+          zeroPadding(now.getDate(), 2) +
+          "  " +
+          WEEK[now.getDay()];
+      }
 
-        updateTime();
-        setInterval(updateTime, 1000);
+      updateTime();
+      setInterval(updateTime, 1000);
 
-        function zeroPadding(num, digit) {
-            return String(num).padStart(digit, '0');
-        }
-
+      function zeroPadding(num, digit) {
+        return String(num).padStart(digit, "0");
+      }
     </script>
 
+    <!-- <script>
+      function rollDice() {
+        var roll = Math.floor(Math.random() * 6) + 1;
+
+        var diceIcon = document.getElementById("diceIcon");
+
+        switch (roll) {
+          case 1:
+            diceIcon.className = "fa-solid fa-dice-one fa-2xl";
+            break;
+          case 2:
+            diceIcon.className = "fa-solid fa-dice-two fa-2xl";
+            break;
+          case 3:
+            diceIcon.className = "fa-solid fa-dice-three fa-2xl";
+            break;
+          case 4:
+            diceIcon.className = "fa-solid fa-dice-four fa-2xl";
+            break;
+          case 5:
+            diceIcon.className = "fa-solid fa-dice-five fa-2xl";
+            break;
+          case 6:
+            diceIcon.className = "fa-solid fa-dice-six fa-2xl";
+            break;
+        }
+      }
+    </script> -->
 
     <script>
-        function rollDice() {
-            var roll = Math.floor(Math.random() * 6) + 1;
+      window.onload = function () {
+        var text = "Welcome  On";
+        var colors = [
+          "#0d6efd",
+          "#dc3545",
+          "#fd7e14",
+          "#198754",
+          "#6610f2",
+          "#0dcaf0",
+          "#dc3545",
+        ];
+        var container = document.getElementById("welcome");
 
-            var diceIcon = document.getElementById("diceIcon");
-
-            switch (roll) {
-                case 1:
-                    diceIcon.className = "fa-solid fa-dice-one fa-2xl";
-                    break;
-                case 2:
-                    diceIcon.className = "fa-solid fa-dice-two fa-2xl";
-                    break;
-                case 3:
-                    diceIcon.className = "fa-solid fa-dice-three fa-2xl";
-                    break;
-                case 4:
-                    diceIcon.className = "fa-solid fa-dice-four fa-2xl";
-                    break;
-                case 5:
-                    diceIcon.className = "fa-solid fa-dice-five fa-2xl";
-                    break;
-                case 6:
-                    diceIcon.className = "fa-solid fa-dice-six fa-2xl";
-                    break;
-            }
+        function startAnimation() {
+          container.innerHTML = ""; // 清空容器
+          for (var i = 0; i < text.length; i++) {
+            var span = document.createElement("span");
+            span.textContent = text[i];
+            span.className = "char";
+            span.style.color = colors[i % colors.length];
+            span.style.animationDelay = i * 0.2 + "s";
+            container.appendChild(span);
+          }
         }
+
+        startAnimation();
+
+        setInterval(function () {
+          startAnimation();
+        }, (text.length * 0.2 + 15) * 1000); // 在动画结束后等待15秒再重新开始
+      };
     </script>
 
-</body>
+    <script>
+      let hr = document.querySelector("#hr");
+      let mn = document.querySelector("#mn");
+      let sc = document.querySelector("#sc");
 
+      setInterval(() => {
+        let day = new Date();
+        let hh = day.getHours() * 30;
+        let mm = day.getMinutes() * 6;
+        let ss = day.getSeconds() * 6;
+        hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+        mn.style.transform = `rotateZ(${mm}deg)`;
+        sc.style.transform = `rotateZ(${ss}deg)`;
+
+        let hours = document.getElementById("hours");
+        let minutes = document.getElementById("minutes");
+        let seconds = document.getElementById("seconds");
+        // let ampm = document.getElementById("ampm");
+
+        let h = new Date().getHours();
+        let m = new Date().getMinutes();
+        let s = new Date().getSeconds();
+        // let am = h >= 12 ? "PM" : "AM";
+
+        // if (h > 12) {
+        //   h = h - 12;
+        // }
+
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+
+        hours.innerHTML = h;
+        minutes.innerHTML = m;
+        seconds.innerHTML = s;
+        ampm.innerHTML = am;
+      });
+    </script>
+  </body>
 </html>
