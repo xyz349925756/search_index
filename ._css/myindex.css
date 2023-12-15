@@ -47,39 +47,40 @@ body {
 
 
 /* 潮水*/
-.content {
+/* .content {
     position: relative;
     width: 100%;
     height: 150px;
 }
 
-.content h2 {
+.content h5 {
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 9em;
-    font-family: fantasy;
-}
+    font-size: 5em;
+    /* font-family: fantasy; */
+/* } */
 
-.content h2:nth-child(1) {
+/* .content h5:nth-child(1) {
     color: transparent;
     -webkit-text-stroke: 2px #03a9f4;
-}
-
-.content h2:nth-child(2) {
+} */
+/* 
+.content h5:nth-child(2) {
     color: #03a9f4;
-    animation: animate 4s ease-in-out infinite;
-}
+    animation: chaoshui 4s ease-in-out infinite;
+} */
 
-@keyframes animate {
+/* @keyframes chaoshui {
     0%, 100% {
         clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
     }
     50% {
         clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 36%, 100% 32%, 100% 100%, 0% 100%);
     }
-}
+} */ 
+
 
 
 #welcome {
@@ -190,22 +191,24 @@ body {
     background: var(--clr);
     opacity: 0.75;
     transform-origin: bottom;
-    transform: scaleY(0.5);
+    transform: scaleY(0.75);
 }
 .circle:nth-child(1) i{
     width: 2px;
+    transform: scaleY(0.5);
 }
 .circle:nth-child(2) i{
     width: 6px;
+    transform: scaleY(0.5);
 }
 .circle2{
-    width: 170px;
-    height: 170px;
+    width: 160px;
+    height: 160px;
     z-index: 9;
 }
 .circle3{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     z-index: 8;
 }
 .circle::before{
@@ -224,7 +227,7 @@ body {
 #time1{
     /* margin-bottom: 40px; */
     display: flex;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     /* font-size: 2em;
     font-weight: 600; */
     /* border: 2px solid rgba(0, 0, 0, 0.5);
@@ -273,10 +276,27 @@ div#date_div {
 }
 span#date {
     /* border: 1px solid red; */
-    border-bottom: solid 2px #dc3545;
-    padding: 5px;
-    border-radius: 20%;
+    padding: 20px;
+    border-radius: 50%;
+    border-left: 30px var(--bs-gray-dark) outset;
+    border-top: 2px var(--bs-gray-dark) outset;
+    border-right: 30px var(--bs-gray-600) inset;
+    border-bottom: 2px var(--bs-gray-600) inset;
 }
 div#change_color {
     margin-left: 95%;
+}
+
+div#hours {
+    background: #ffffff30;
+    border-radius: 20px 0px 0px 20px;
+}
+
+div#minutes {
+    background: #ffffff30;
+    border-radius: 0px;
+}
+div#seconds {
+    background: #ffffff30;
+    border-radius: 0px 20px 20px 0px;
 }

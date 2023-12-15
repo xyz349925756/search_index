@@ -14,8 +14,12 @@
     <div class="container1">
       <div class="clock1">
         <div class="circle" id="sc" style="--clr: var(--bs-green)"><i></i></div>
-        <div class="circle circle2" id="mn" style="--clr: var(--bs-warning)"><i></i></div>
-        <div class="circle circle3" id="hr" style="--clr: var(--bs-danger)"><i></i></div>
+        <div class="circle circle2" id="mn" style="--clr: var(--bs-warning)">
+          <i></i>
+        </div>
+        <div class="circle circle3" id="hr" style="--clr: var(--bs-danger)">
+          <i></i>
+        </div>
         <span style="--i: 1"><b>1</b></span>
         <span style="--i: 2"><b>2</b></span>
         <span style="--i: 3"><b>3</b></span>
@@ -40,14 +44,9 @@
 
     <div id="change_color">
       <button onclick="changeGradient()" class="btn">
-        <i
-          class="fa-solid fa-lightbulb fa-beat"
-          style="color: darkcyan"
-        ></i>
+        <i class="fa-solid fa-lightbulb fa-beat" style="color: darkcyan"></i>
       </button>
     </div>
-
-
 
     <div class="container text-center">
       <!--clock-->
@@ -55,15 +54,17 @@
         <div class="col-1 col-md-1"></div>
         <div class="col-10 col-md-10 clock">
           <div id="date_div">
+            <!-- <div class="content"> -->
+              <!-- <h5 id="date"></h5> -->
+              <!-- <h5 id="date1"></h5> -->
+              
+            <!-- </div>  -->
             <span id="date" class="text-danger"></span>
-
-
           </div>
         </div>
         <!-- <hr /> -->
         <div class="col-1 col-md-1"></div>
       </div>
-
 
       <!-- 搜素引擎 -->
       <div class="row">
@@ -71,10 +72,11 @@
         <div class="col-10 col-md-10">
           <div class="text-center p-4">
             <!--                <img src="./.media/logo-no-background.png" class="rounded" alt="logo" width="40%">-->
-            <div class="content" id="welcome">
-              <!-- <h2>Cloudb</h2>
-                        <h2>Cloudb</h2> -->
-            </div>
+            <!-- <div class="content" id="welcome">
+               <h2>Cloudb</h2> -->
+            <!-- <h2>Cloudb</h2>  -->
+            <!-- </div>  -->
+            <div id="welcome"></div>
           </div>
 
           <div class="input-group mb-3">
@@ -124,8 +126,6 @@
               >&nbsp;微信公众号
             </button>
           </div>
-
-
         </div>
         <div class="col-1 col-md-1">
           <i id="diceIcon"></i>
@@ -137,31 +137,31 @@
         <div class="col-8"></div>
         <div class="col-4">
           <p>
-                      <!-- ai search -->
+            <!-- ai search -->
 
-          <a
-          class="btn btn-outline-warning"
-          data-bs-toggle="collapse"
-          href="#ai"
-          role="button"
-          aria-expanded="false"
-          aria-controls="ai"
-        >
-          <i class="fa-regular fa-comments fa-sm"></i> &nbsp;Ai
-        </a>
-        
-        <a
-          class="btn btn-outline-success"
-          data-bs-toggle="collapse"
-          href="#search"
-          role="button"
-          aria-expanded="false"
-          aria-controls="search"
-        >
-          <i class="fa-solid fa-magnifying-glass fa-sm"></i> &nbsp;Search
-        </a>
-       
-        <!-- <button
+            <a
+              class="btn btn-outline-warning"
+              data-bs-toggle="collapse"
+              href="#ai"
+              role="button"
+              aria-expanded="false"
+              aria-controls="ai"
+            >
+              <i class="fa-regular fa-comments fa-sm"></i> &nbsp;Ai
+            </a>
+
+            <a
+              class="btn btn-outline-success"
+              data-bs-toggle="collapse"
+              href="#search"
+              role="button"
+              aria-expanded="false"
+              aria-controls="search"
+            >
+              <i class="fa-solid fa-magnifying-glass fa-sm"></i> &nbsp;Search
+            </a>
+
+            <!-- <button
             class="btn btn-outline-dark"
             type="button"
             onclick="rollDice()"
@@ -169,7 +169,7 @@
             Roll Dice
           </button> -->
 
-        <!-- ai search end -->
+            <!-- ai search end -->
             <button
               class="btn btn-outline-dark"
               type="button"
@@ -189,7 +189,6 @@
       <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-
           <div class="collapse" id="ai">
             <div class="card card-body">
               <h6 class="text-danger">
@@ -419,10 +418,6 @@
               </h6>
             </div>
           </div>
-
-
-
-
         </div>
         <div class="col-2"></div>
       </div>
@@ -434,116 +429,116 @@
       <!--    </div>-->
 
       <footer class="py-3 my-4">
-        <!-- <h6 class="text-warning"><b>Local Services </b></h6> -->
-        <!-- <ul -->
-          <!-- class="nav justify-content-center border-bottom pb-3 mb-3 text-primary" -->
-        <!-- > -->
-          <!-- <li class="nav-item"> -->
-            <!-- <a href="https://cloudb.pub/" class="nav-link px-2" target="_blank"> -->
-              <!-- <i class="fa-solid fa-house" style="color: #dc3545"></i -->
-              <!-- >&nbsp;Home</a -->
-            <!-- > -->
-          <!-- </li> -->
+        <h6 class="text-warning"><b>Local Services</b></h6>
+        <ul
+          class="nav justify-content-center border-bottom pb-3 mb-3 text-primary"
+        >
+          <li class="nav-item">
+            <a href="https://cloudb.pub/" class="nav-link px-2" target="_blank">
+              <i class="fa-solid fa-house" style="color: #dc3545"></i
+              >&nbsp;Home</a
+            >
+          </li>
 
-          <!-- <li class="nav-item"> -->
-            <!-- <a href="index1.html" class="nav-link px-2" target="_blank"> -->
-              <!-- <i class="fa-brands fa-leanpub fa-sm" style="color: #0dcaf0"></i -->
-              <!-- >&nbsp;Knowledge</a -->
-            <!-- > -->
-          <!-- </li> -->
+          <li class="nav-item">
+            <a href="index1.html" class="nav-link px-2" target="_blank">
+              <i class="fa-brands fa-leanpub fa-sm" style="color: #0dcaf0"></i
+              >&nbsp;Knowledge</a
+            >
+          </li>
 
-          <!-- <li class="nav-item"> -->
-            <!-- <a -->
-              <!-- href="http://localhost:809" -->
-              <!-- class="nav-link px-2" -->
-              <!-- target="_blank" -->
-            <!-- > -->
-              <!-- <i class="fa-brands fa-windows fa-sm" style="color: #198754"></i -->
-              <!-- >&nbsp;Soft</a -->
-            <!-- > -->
-          <!-- </li> -->
+          <li class="nav-item">
+            <a
+              href="http://localhost:809"
+              class="nav-link px-2"
+              target="_blank"
+            >
+              <i class="fa-brands fa-windows fa-sm" style="color: #198754"></i
+              >&nbsp;Soft</a
+            >
+          </li>
 
-          <!-- <li class="nav-item"> -->
-            <!-- <a -->
-              <!-- href="http://localhost:810" -->
-              <!-- class="nav-link px-2" -->
-              <!-- target="_blank" -->
-            <!-- > -->
-              <!-- <i -->
-                <!-- class="fa-solid fa-compact-disc fa-sm" -->
-                <!-- style="color: #ffc107" -->
-              <!-- ></i -->
-              <!-- >&nbsp;ISO</a -->
-            <!-- > -->
-          <!-- </li> -->
+          <li class="nav-item">
+            <a
+              href="http://localhost:810"
+              class="nav-link px-2"
+              target="_blank"
+            >
+              <i
+                class="fa-solid fa-compact-disc fa-sm"
+                style="color: #ffc107"
+              ></i
+              >&nbsp;ISO</a
+            >
+          </li>
 
-          <!-- <li class="nav-item"> -->
-            <!-- <a -->
-              <!-- href="http://localhost:811" -->
-              <!-- class="nav-link px-2" -->
-              <!-- target="_blank" -->
-            <!-- > -->
-              <!-- <i class="fa-solid fa-swatchbook fa-sm" style="color: #6f42c1"></i -->
-              <!-- >&nbsp;Books</a -->
-            <!-- > -->
-          <!-- </li> -->
+          <li class="nav-item">
+            <a
+              href="http://localhost:811"
+              class="nav-link px-2"
+              target="_blank"
+            >
+              <i class="fa-solid fa-swatchbook fa-sm" style="color: #6f42c1"></i
+              >&nbsp;Books</a
+            >
+          </li>
 
-          <!-- <li class="nav-item"> -->
-            <!-- <a -->
-              <!-- href="http://localhost:808" -->
-              <!-- class="nav-link px-2" -->
-              <!-- target="_blank" -->
-            <!-- > -->
-              <!-- <i -->
-                <!-- class="fa-solid fa-book-open-reader fa-sm" -->
-                <!-- style="color: #20c997" -->
-              <!-- ></i -->
-              <!-- >&nbsp;Neat Reader</a -->
-            <!-- > -->
-          <!-- </li> -->
+          <li class="nav-item">
+            <a
+              href="http://localhost:808"
+              class="nav-link px-2"
+              target="_blank"
+            >
+              <i
+                class="fa-solid fa-book-open-reader fa-sm"
+                style="color: #20c997"
+              ></i
+              >&nbsp;Neat Reader</a
+            >
+          </li>
 
-          <!-- <li class="nav-item"> -->
-            <!-- <a -->
-              <!-- href="http://360.tiandi.com/?td_2_6216" -->
-              <!-- class="nav-link px-2" -->
-              <!-- target="_blank" -->
-            <!-- > -->
-              <!-- <i -->
-                <!-- class="fa-brands fa-internet-explorer fa-sm" -->
-                <!-- style="color: #1a1e21" -->
-              <!-- ></i -->
-              <!-- >&nbsp;360</a -->
-            <!-- > -->
-          <!-- </li> -->
+          <li class="nav-item">
+            <a
+              href="http://360.tiandi.com/?td_2_6216"
+              class="nav-link px-2"
+              target="_blank"
+            >
+              <i
+                class="fa-brands fa-internet-explorer fa-sm"
+                style="color: #1a1e21"
+              ></i
+              >&nbsp;360</a
+            >
+          </li>
 
-          <!-- <li class="nav-item"> -->
-            <!-- <a -->
-              <!-- href="https://github.com/xyz349925756" -->
-              <!-- class="nav-link px-2" -->
-              <!-- target="_blank" -->
-            <!-- > -->
-              <!-- <i -->
-                <!-- class="fa-brands fa-square-github fa-sm" -->
-                <!-- style="color: #000000" -->
-              <!-- ></i -->
-              <!-- >&nbsp;Github</a -->
-            <!-- > -->
-          <!-- </li> -->
+          <li class="nav-item">
+            <a
+              href="https://github.com/xyz349925756"
+              class="nav-link px-2"
+              target="_blank"
+            >
+              <i
+                class="fa-brands fa-square-github fa-sm"
+                style="color: #000000"
+              ></i
+              >&nbsp;Github</a
+            >
+          </li>
 
-          <!-- <li class="nav-item"> -->
-            <!-- <a -->
-              <!-- href="http://localhost:807" -->
-              <!-- class="nav-link px-2" -->
-              <!-- target="_blank" -->
-            <!-- > -->
-              <!-- <i -->
-                <!-- class="fa-solid fa-folder-tree fa-sm" -->
-                <!-- style="color: #d63384" -->
-              <!-- ></i -->
-              <!-- >&nbsp;Free</a -->
-            <!-- > -->
-          <!-- </li> -->
-        <!-- </ul> -->
+          <li class="nav-item">
+            <a
+              href="http://localhost:807"
+              class="nav-link px-2"
+              target="_blank"
+            >
+              <i
+                class="fa-solid fa-folder-tree fa-sm"
+                style="color: #d63384"
+              ></i
+              >&nbsp;Free</a
+            >
+          </li>
+        </ul>
         <span class="text-success"><b>Contact US</b></span>
         : &nbsp;&nbsp;
         <a
@@ -660,6 +655,16 @@
           zeroPadding(now.getDate(), 2) +
           "  " +
           WEEK[now.getDay()];
+
+
+        // document.getElementById("date1").innerText =
+        //   now.getFullYear() +
+        //   "-" +
+        //   zeroPadding(now.getMonth() + 1, 2) +
+        //   "-" +
+        //   zeroPadding(now.getDate(), 2) +
+        //   "  " +
+        //   WEEK[now.getDay()];
       }
 
       updateTime();
