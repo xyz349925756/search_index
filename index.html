@@ -55,9 +55,9 @@
         <div class="col-10 col-md-10 clock">
           <div id="date_div">
             <!-- <div class="content"> -->
-              <!-- <h5 id="date"></h5> -->
-              <!-- <h5 id="date1"></h5> -->
-              
+            <!-- <h5 id="date"></h5> -->
+            <!-- <h5 id="date1"></h5> -->
+
             <!-- </div>  -->
             <span id="date" class="text-danger"></span>
           </div>
@@ -93,35 +93,59 @@
             role="group"
             aria-label="Basic mixed styles example"
           >
-            <button onclick="searchEngine('baidu')" class="btn btn-primary">
+            <button
+              onclick="searchEngine('baidu')"
+              class="btn btn-sm btn-primary"
+            >
               <i class="fa-solid fa-paw fa-beat fa-sm"></i>&nbsp;百度
             </button>
-            <button onclick="searchEngine('google')" class="btn btn-danger">
+            <button
+              onclick="searchEngine('google')"
+              class="btn btn-sm btn-danger"
+            >
               <i class="fa-brands fa-google fa-spin fa-sm"></i>&nbsp;Google
             </button>
-            <button onclick="searchEngine('bing')" class="btn btn-success">
+            <button
+              onclick="searchEngine('bing')"
+              class="btn btn-sm btn-success"
+            >
               <i
                 class="fa-brands fa-microsoft fa-spin fa-spin-reverse fa-sm"
               ></i
               >&nbsp;Bing
             </button>
-            <button onclick="searchEngine('f')" class="btn btn-primary">
+            <button onclick="searchEngine('f')" class="btn btn-sm btn-primary">
               <i class="fa-solid fa-f fa-bounce fa-sm"></i>&nbsp;f
             </button>
-            <button onclick="searchEngine('github')" class="btn btn-dark">
+            <button
+              onclick="searchEngine('github')"
+              class="btn btn-sm btn-dark"
+            >
               <i class="fa-brands fa-github fa-beat fa-sm"></i>&nbsp;GitHub
             </button>
-            <button onclick="searchEngine('sougou')" class="btn btn-warning">
+            <button
+              onclick="searchEngine('sougou')"
+              class="btn btn-sm btn-warning"
+            >
               <i class="fa-solid fa-dog fa-shake fa-sm"></i>&nbsp;搜狗
             </button>
-            <button onclick="searchEngine('zhihu')" class="btn btn-primary">
+            <button
+              onclick="searchEngine('zhihu')"
+              class="btn btn-sm btn-primary"
+            >
               <i class="fa-solid fa-book-open-reader fa-fade fa-sm"></i
               >&nbsp;知乎
             </button>
-            <button onclick="searchEngine('wechat')" class="btn btn-success">
+            <button
+              onclick="searchEngine('wechat')"
+              class="btn btn-sm btn-success"
+            >
               <i class="fa-brands fa-weixin fa-sm"></i>&nbsp;微信
             </button>
-            <button onclick="searchEngine('wechatmp')" class="btn btn-info">
+            <button
+              onclick="searchEngine('wechatmp')"
+              class="btn btn-sm btn-info"
+            >
               <i class="fa-solid fa-comments fa-beat-fade fa-sm"></i
               >&nbsp;微信公众号
             </button>
@@ -131,16 +155,37 @@
           <i id="diceIcon"></i>
         </div>
       </div>
-
+      <hr />
       <!-- Columns are always 50% wide, on mobile and desktop -->
       <div class="row">
-        <div class="col-8"></div>
-        <div class="col-4">
+        <!-- <div class="col-8"></div> -->
+        <div class="col-12">
           <p>
             <!-- ai search -->
+            <a
+              class="btn btn-sm btn-outline-danger"
+              data-bs-toggle="collapse"
+              href="#localipinfo"
+              role="button"
+              aria-expanded="false"
+              aria-controls="ipinfo"
+            >
+              <i class="fa-solid fa-circle-info"></i> &nbsp;Locl_IP_Info
+            </a>
 
             <a
-              class="btn btn-outline-warning"
+              class="btn btn-sm btn-outline-primary"
+              data-bs-toggle="collapse"
+              href="#ipinfo"
+              role="button"
+              aria-expanded="false"
+              aria-controls="ipinfo"
+            >
+              <i class="fa-solid fa-circle-info"></i> &nbsp;IP_Info
+            </a>
+
+            <a
+              class="btn btn-sm btn-outline-warning"
               data-bs-toggle="collapse"
               href="#ai"
               role="button"
@@ -151,7 +196,7 @@
             </a>
 
             <a
-              class="btn btn-outline-success"
+              class="btn btn-sm btn-outline-success"
               data-bs-toggle="collapse"
               href="#search"
               role="button"
@@ -171,7 +216,7 @@
 
             <!-- ai search end -->
             <button
-              class="btn btn-outline-dark"
+              class="btn btn-sm btn-outline-dark"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#jq"
@@ -228,6 +273,21 @@
                   </tr>
                   <tr>
                     <th scope="row">2</th>
+                    <td>讯飞星火</td>
+                    <td>
+                      <a
+                        class="list-group-item list-group-item-action text-danger"
+                        href="https://xinghuo.xfyun.cn/"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-twitter fa-shake"></i>
+                        讯飞星火</a
+                      >
+                    </td>
+                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
                     <td>Bing AI</td>
                     <td>
                       <a
@@ -243,16 +303,16 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">3</th>
-                    <td>Google Bard</td>
+                    <th scope="row">4</th>
+                    <td>Google Gemini</td>
                     <td>
                       <a
                         class="list-group-item list-group-item-action text-danger"
                         target="_blank"
-                        href="https://bard.google.com/"
+                        href="https://gemini.google.com/"
                       >
                         <i class="fa-brands fa-google-plus-g fa-spin"></i>
-                        bard</a
+                        Gemini</a
                       >
                     </td>
                     <td class="text-danger">
@@ -260,7 +320,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">4</th>
+                    <th scope="row">5</th>
                     <td>Claude</td>
                     <td>
                       <a
@@ -277,7 +337,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">5</th>
+                    <th scope="row">6</th>
                     <td>ChatGPT</td>
                     <td>
                       <a
@@ -296,7 +356,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">6</th>
+                    <th scope="row">7</th>
                     <td>P-ChatGPT</td>
                     <td>
                       <a
@@ -313,7 +373,7 @@
                     <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
                   </tr>
                   <tr>
-                    <th scope="row">7</th>
+                    <th scope="row">8</th>
                     <td>P-Bing Ai</td>
                     <td>
                       <a
@@ -416,6 +476,112 @@
                 <span class="badge bg-dark">7</span>
                 Google搜索按"/"迅速回到搜索框.
               </h6>
+            </div>
+          </div>
+
+          <div class="collapse" id="ipinfo">
+            <div class="card card-body text-lg-start">
+              <!-- <h1>当前IP信息：</h1> -->
+              <div id="ip-info">正在获取IP信息...</div>
+
+              <script>
+                // 获取当前IP地址
+                fetch("https://ipinfo.io/ip")
+                  .then((response) => response.text())
+                  .then((ip) => {
+                    // 构建URL
+                    const apiUrl = `https://ipinfo.io/widget/demo/${ip.trim()}`;
+                    // 请求IP信息
+                    fetch(apiUrl)
+                      .then((response) => response.json())
+                      .then((data) => {
+                        const ipInfoDiv = document.getElementById("ip-info");
+                        // 动态显示IP信息
+                        ipInfoDiv.innerHTML = `
+                                    <p><strong>IP地址:</strong> ${data.data.ip}</p>
+                                    <p><strong>位置:</strong> ${data.data.city}, ${data.data.region}, ${data.data.country}</p>
+                                    <p><strong>经纬度:</strong> ${data.data.loc}</p>
+                                    <p><strong>ISP:</strong> ${data.data.org}</p>
+                                    <p><strong>邮政编码:</strong> ${data.data.postal}</p>
+                                    <p><strong>时区:</strong> ${data.data.timezone}</p>
+
+                                `;
+                      })
+                      .catch((error) => {
+                        console.error("获取IP信息时出错:", error);
+                        const ipInfoDiv = document.getElementById("ip-info");
+                        ipInfoDiv.innerHTML = "无法获取IP信息。";
+                      });
+                  })
+                  .catch((error) => {
+                    console.error("获取IP地址时出错:", error);
+                    const ipInfoDiv = document.getElementById("ip-info");
+                    ipInfoDiv.innerHTML = "无法获取IP地址。";
+                  });
+              </script>
+              <!-- <p><strong>ASN:</strong> ${data.data.asn.asn}</p>
+  <p><strong>ASN名称:</strong> ${data.data.asn.name}</p>
+  <p><strong>ASN域名:</strong> ${data.data.asn.domain}</p>
+  <p><strong>ASN路由:</strong> ${data.data.asn.route}</p>
+  <p><strong>ASN类型:</strong> ${data.data.asn.type}</p>
+  <p><strong>公司名称:</strong> ${data.data.company.name}</p>
+  <p><strong>公司域名:</strong> ${data.data.company.domain}</p>
+  <p><strong>公司类型:</strong> ${data.data.company.type}</p>
+  <p><strong>隐私:</strong> VPN: ${data.data.privacy.vpn}, Proxy: ${data.data.privacy.proxy}, TOR: ${data.data.privacy.tor}, Relay: ${data.data.privacy.relay}, Hosting: ${data.data.privacy.hosting}, 服务: ${data.data.privacy.service}</p>
+  <p><strong>滥用:</strong> 地址: ${data.data.abuse.address}, 国家: ${data.data.abuse.country}, 电子邮件: ${data.data.abuse.email}, 名称: ${data.data.abuse.name}, 网络: ${data.data.abuse.network}, 电话: ${data.data.abuse.phone}</p> -->
+            </div>
+          </div>
+
+          <div class="collapse" id="localipinfo">
+            <div class="card card-body text-lg-start">
+              <div id="localip-info" style="display: none">
+                <script type="application/json" id="ip-data">
+                  {
+                    /* 数据将在这里插入 */
+                  }
+                </script>
+              </div>
+
+              <div id="localip-details">
+                <p><strong>IP地址:</strong> <span id="ip"></span></p>
+                <p><strong>大陆:</strong> <span id="continent"></span></p>
+                <p><strong>国家:</strong> <span id="country"></span></p>
+                <p><strong>时区:</strong> <span id="timezone"></span></p>
+                <p><strong>经纬度:</strong> <span id="coordinates"></span></p>
+                <p><strong>精确度:</strong> <span id="accuracy"></span></p>
+                <p><strong>所有者:</strong> <span id="owner"></span></p>
+                <p><strong>ISP:</strong> <span id="isp"></span></p>
+                <p><strong>省:</strong> <span id="province"></span></p>
+                <p><strong>市:</strong> <span id="city"></span></p>
+                <p><strong>区/县:</strong> <span id="district"></span></p>
+            </div>
+
+
+
+              <script>
+                  // 使用fetch从API获取数据
+        fetch('https://qifu-api.baidubce.com/ip/local/geo/v1/district?')
+            .then(response => response.json())
+            .then(data => {
+                const ipInfo = data.data;
+                // 将获取到的数据填充到HTML中
+                document.getElementById("ip-data").textContent = JSON.stringify(ipInfo);
+                document.getElementById("ip").textContent = data.ip; // 更新这行
+                document.getElementById("continent").textContent = ipInfo.continent;
+                document.getElementById("country").textContent = ipInfo.country;
+                document.getElementById("timezone").textContent = ipInfo.timezone;
+                document.getElementById("coordinates").textContent = `${ipInfo.lat}, ${ipInfo.lng}`;
+                document.getElementById("accuracy").textContent = ipInfo.accuracy;
+                document.getElementById("owner").textContent = ipInfo.owner;
+                document.getElementById("isp").textContent = ipInfo.isp;
+                document.getElementById("province").textContent = ipInfo.prov;
+                document.getElementById("city").textContent = ipInfo.city;
+                document.getElementById("district").textContent = ipInfo.district;
+                // 显示IP位置信息
+                document.getElementById("localip-info").style.display = "block";
+            })
+            .catch(error => console.error('获取数据时出错:', error));
+              </script>
             </div>
           </div>
         </div>
@@ -527,13 +693,38 @@
 
           <li class="nav-item">
             <a
-              href="http://localhost:807"
+              href="http://localhost:812"
+              class="nav-link px-2"
+              target="_blank"
+            >
+              <i class="fa-regular fa-file-code" style="color: #dc3545"></i
+              >&nbsp;SQLalchemy doc</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a
+              href="http://localhost:813"
               class="nav-link px-2"
               target="_blank"
             >
               <i
                 class="fa-solid fa-folder-tree fa-sm"
                 style="color: #d63384"
+              ></i
+              >&nbsp;scrapy</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a
+              href="http://localhost:807"
+              class="nav-link px-2"
+              target="_blank"
+            >
+              <i
+                class="fa-solid fa-folder-tree fa-sm"
+                style="color: lightbulb"
               ></i
               >&nbsp;Free</a
             >
@@ -655,7 +846,6 @@
           zeroPadding(now.getDate(), 2) +
           "  " +
           WEEK[now.getDay()];
-
 
         // document.getElementById("date1").innerText =
         //   now.getFullYear() +
