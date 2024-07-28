@@ -1,32 +1,6 @@
+
 # 项目说明
 
-由于搜索引擎搜索到的内容被和谐,很多时候不得不换很多种搜索引擎来寻找我们想要获取的正确的知识.所以就整合了这套引擎集合.下面是预览图:
+This project is mainly a collection search page composed of html + js, which allows searching by entering keywords. In some countries, the search engine may be inaccessible. A proxy server needs to be used to solve this problem. I won't introduce it here because it's illegal.
 
-![1](.README.assets/1.gif)
-
-里面有免费的Ai
-
-下面导航是我自己的使用中常用到的功能和组件.最下面email qq tel 可以直接联系我.
-
-# 使用
-
-windows四种方式任选
-
-- 下载下来可以直接点击index.html 
-
-- 直接使用我打包好的压缩文件,桌面会创建一个快捷方式双击打开就可以使用了.[弃用]
-
-- 有基础的直接搭建一个web服务器也可以访问
-
-- 实在不想搭建直接使用 https://cloudb.pub  或者 https://xyz349925756.gitee.io
-
-  https://s.0256.website
-
-其他系统
-
-- 搭建 nginx 环境访问即可
-
-> google  这些被限制的需要代理访问.
-
-
-
+此项目主要是html + js 组成的集合搜索页面，可以通过输入关键字进行搜索。某些国家的搜索引擎可能会出现不能访问的情况。就需要使用代理服务器来解决这个问题。这里不做介绍，因为违法了。
