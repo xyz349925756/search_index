@@ -1,818 +1,603 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8" />
-  <title>云端知识库</title>
-  <link rel="stylesheet" href="._css/bootstrap.css" />
-  <link rel="stylesheet" href="._css/all.css" />
-  <link rel="stylesheet" href="._css/myindex.css" />
-  <script src="._js/all.js"></script>
-  <script src="._js/bootstrap.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>云知识库</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="._css/bootstrap.css" />
+    <link rel="icon" type="image/png" href=".images/logo-no-background.png">
+
+    <link rel="stylesheet" href="._css/all.css">
+    <link rel="stylesheet" href="._css/font_all.css">
+
+    <script src="._js/bootstrap.js"></script>
+    <script src="._js/script.js"></script>
 </head>
 
 <body>
-  <div class="container1">
-    <div class="clock1">
-      <div class="circle" id="sc" style="--clr: var(--bs-green)"><i></i></div>
-      <div class="circle circle2" id="mn" style="--clr: var(--bs-warning)">
-        <i></i>
-      </div>
-      <div class="circle circle3" id="hr" style="--clr: var(--bs-danger)">
-        <i></i>
-      </div>
-      <span style="--i: 1"><b>1</b></span>
-      <span style="--i: 2"><b>2</b></span>
-      <span style="--i: 3"><b>3</b></span>
-      <span style="--i: 4"><b>4</b></span>
-      <span style="--i: 5"><b>5</b></span>
-      <span style="--i: 6"><b>6</b></span>
-      <span style="--i: 7"><b>7</b></span>
-      <span style="--i: 8"><b>8</b></span>
-      <span style="--i: 9"><b>9</b></span>
-      <span style="--i: 10"><b>10</b></span>
-      <span style="--i: 11"><b>11</b></span>
-      <span style="--i: 12"><b>12</b></span>
-    </div>
+    <div class="container-fluid">
 
-    <div id="time1">
-      <div id="hours" style="--clr: var(--bs-danger)">00</div>
-      <div id="minutes" style="--clr: var(--bs-warning)">00</div>
-      <div id="seconds" style="--clr: var(--bs-green)">00</div>
-      <!-- <div id="ampm">AM</div> -->
-    </div>
-  </div>
 
-  <div id="change_color">
-    <button onclick="changeGradient()" class="btn">
-      <i class="fa-solid fa-lightbulb fa-beat" style="color: darkcyan"></i>
-    </button>
-  </div>
 
-  <div class="container text-center">
-    <!--clock-->
-    <div class="row m-3">
-      <div class="col-1 col-md-1"></div>
-      <div class="col-10 col-md-10 clock">
-        <div id="date_div">
-          <!-- <div class="content"> -->
-          <!-- <h5 id="date"></h5> -->
-          <!-- <h5 id="date1"></h5> -->
 
-          <!-- </div>  -->
-          <span id="date" class="text-danger"></span>
-        </div>
-      </div>
-      <!-- <hr /> -->
-      <div class="col-1 col-md-1"></div>
-    </div>
+        <div class="row">
+            <div class="col-2 left-pt">
+                <div class="nav flex-column nav-pills me-3 left-meun" id="v-pills-tab" role="tablist"
+                    aria-orientation="vertical">
 
-    <!-- 搜素引擎 -->
-    <div class="row">
-      <div class="col-1 col-md-1"></div>
-      <div class="col-10 col-md-10">
-        <div class="text-center p-4">
-          <!--                <img src="./.media/logo-no-background.png" class="rounded" alt="logo" width="40%">-->
-          <!-- <div class="content" id="welcome">
-               <h2>Cloudb</h2> -->
-          <!-- <h2>Cloudb</h2>  -->
-          <!-- </div>  -->
-          <div id="welcome"></div>
-        </div>
+                    <div class="time-container reflection-container">
+                        <div id="currentTime"></div>
+                        <hr>
+                        <div id="currentTimeReflection" class="time-reflection"></div>
+                    </div>
 
-        <div class="input-group mb-3">
-          <input type="text" id="searchQuery" class="form-control" placeholder="请输入搜索的关键" />
-        </div>
+                    <div class="bbtn">
+                        <button class="nav-link active" id="v-pills-search-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-search" type="button" role="tab" aria-controls="v-pills-search"
+                            aria-selected="true">
+                            <i class="fa-solid fa-magnifying-glass fa-beat"></i>&nbsp;&nbsp;
+                            Search
+                        </button>
+                    </div>
 
-        <div class="btn-group p-2" role="group" aria-label="Basic mixed styles example">
-          <button onclick="searchEngine('baidu')" class="btn btn-sm btn-primary">
-            <i class="fa-solid fa-paw fa-beat fa-sm"></i>&nbsp;百度
-          </button>
-          <button onclick="searchEngine('google')" class="btn btn-sm btn-danger">
-            <i class="fa-brands fa-google fa-spin fa-sm"></i>&nbsp;Google
-          </button>
-          <button onclick="searchEngine('bing')" class="btn btn-sm btn-success">
-            <i class="fa-brands fa-microsoft fa-spin fa-spin-reverse fa-sm"></i>&nbsp;Bing
-          </button>
-          <button onclick="searchEngine('f')" class="btn btn-sm btn-primary">
-            <i class="fa-solid fa-f fa-bounce fa-sm"></i>&nbsp;f
-          </button>
-          <button onclick="searchEngine('github')" class="btn btn-sm btn-dark">
-            <i class="fa-brands fa-github fa-beat fa-sm"></i>&nbsp;GitHub
-          </button>
-          <button onclick="searchEngine('sougou')" class="btn btn-sm btn-warning">
-            <i class="fa-solid fa-dog fa-shake fa-sm"></i>&nbsp;搜狗
-          </button>
-          <button onclick="searchEngine('zhihu')" class="btn btn-sm btn-primary">
-            <i class="fa-solid fa-book-open-reader fa-fade fa-sm"></i>&nbsp;知乎
-          </button>
-          <button onclick="searchEngine('wechat')" class="btn btn-sm btn-success">
-            <i class="fa-brands fa-weixin fa-sm"></i>&nbsp;微信
-          </button>
-          <button onclick="searchEngine('wechatmp')" class="btn btn-sm btn-info">
-            <i class="fa-solid fa-comments fa-beat-fade fa-sm"></i>&nbsp;微信公众号
-          </button>
-        </div>
-      </div>
-      <div class="col-1 col-md-1">
-        <i id="diceIcon"></i>
-      </div>
-    </div>
-    <hr />
-    <!-- Columns are always 50% wide, on mobile and desktop -->
-    <div class="row">
-      <!-- <div class="col-8"></div> -->
-      <div class="col-12">
-        <p>
-          <!-- ai search -->
-          <a class="btn btn-sm btn-outline-danger" data-bs-toggle="collapse" href="#localipinfo" role="button"
-            aria-expanded="false" aria-controls="ipinfo">
-            <i class="fa-solid fa-circle-info"></i> &nbsp;Locl_IP_Info
-          </a>
 
-          <a class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" href="#ipinfo" role="button"
-            aria-expanded="false" aria-controls="ipinfo">
-            <i class="fa-solid fa-circle-info"></i> &nbsp;IP_Info
-          </a>
+                    <div class="bbtn">
+                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai"
+                            type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false">
+                            <i class="fa-brands fa-bots fa-xl fa-beat-fade"></i>&nbsp;&nbsp;
+                            Ai
+                        </button>
+                    </div>
 
-          <a class="btn btn-sm btn-outline-warning" data-bs-toggle="collapse" href="#ai" role="button"
-            aria-expanded="false" aria-controls="ai">
-            <i class="fa-regular fa-comments fa-sm"></i> &nbsp;Ai
-          </a>
+                    <div class="bbtn">
+                        <button class="nav-link" id="v-pills-services-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-services" type="button" role="tab" aria-controls="v-pills-services"
+                            aria-selected="false">
+                            <i class="fa-solid fa-server fa-fade fa-lg"></i>&nbsp;&nbsp;
+                            Services
+                        </button>
+                    </div>
 
-          <a class="btn btn-sm btn-outline-success" data-bs-toggle="collapse" href="#search" role="button"
-            aria-expanded="false" aria-controls="search">
-            <i class="fa-solid fa-magnifying-glass fa-sm"></i> &nbsp; Services
-          </a>
+                    <div class="bbtn">
+                        <button class="nav-link" id="v-pills-net-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-net" type="button" role="tab" aria-controls="v-pills-net"
+                            aria-selected="false">
+                            <i class="fa-solid fa-globe fa-spin fa-lg"></i>&nbsp;&nbsp;
+                            Network
+                        </button>
+                    </div>
 
-          <!-- <button
-            class="btn btn-outline-dark"
-            type="button"
-            onclick="rollDice()"
-          >
-            Roll Dice
-          </button> -->
+                    <div class="bbtn">
+                        <button class="nav-link" id="v-pills-local-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-local" type="button" role="tab" aria-controls="v-pills-local"
+                            aria-selected="false">
+                            <i class="fa-solid fa-bell fa-shake fa-lg"></i>&nbsp;&nbsp;
+                            Local
+                        </button>
+                    </div>
 
-          <!-- ai search end -->
-          <button class="btn btn-sm btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#jq"
-            aria-expanded="false" aria-controls="jq">
-            <i class="fa-solid fa-lightbulb"></i>
-            技巧
-          </button>
-        </p>
-      </div>
-    </div>
+                    <div class="bbtn">
+                        <button class="nav-link" id="v-pills-other-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-other" type="button" role="tab" aria-controls="v-pills-other"
+                            aria-selected="false">
+                            <i class="fa-solid fa-sliders fa-bounce fa-lg"></i>&nbsp;&nbsp;
+                            Wrapper
+                        </button>
+                    </div>
+                    <!-- <div class="bbtn">
+                        <button id="theme-toggle" class="nav-link">
+                            <i class="fa-solid fa-repeat fa-spin fa-lg"></i>&nbsp;&nbsp;
+                            切换主题
+                        </button>
+                    </div> -->
+                    <footer class="text-center m-3 mt-5 text-m text-danger">
+                        <p>
+                            © 2024 <a href="https://cloudb.pub" target="_blank">Cloudb.pub</a>,
+                        </p>
+                        <p>All rights reserved</p>
+                    </footer>
 
-    <!-- 搜索技巧 -->
-    <div class="row">
-      <div class="col-2"></div>
-      <div class="col-8">
-        <div class="collapse" id="ai">
-          <div class="card card-body">
-            <h6 class="text-danger">
-              Google,Bing Ai ,Google Bard,Claude 在中国不能使用!
-            </h6>
-            <table class="table table-striped table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">
-                    <i class="fa-brands fa-ideal fa-sm"></i> &nbsp;ID
-                  </th>
-                  <th scope="col">
-                    <i class="fa-solid fa-diamond fa-sm"></i> &nbsp;Name
-                  </th>
-                  <th scope="col">
-                    <i class="fa-solid fa-link fa-sm"></i> &nbsp;Link
-                  </th>
-                  <th scope="col">
-                    <i class="fa-solid fa-globe fa-sm"></i> &nbsp;VPN/Proxy
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>百度</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-primary" href="https://chat.baidu.com/"
-                      target="_blank">
-                      <i class="fa-solid fa-b fa-spin"></i> 百度</a>
-                  </td>
-                  <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>讯飞星火</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-danger" href="https://xinghuo.xfyun.cn/"
-                      target="_blank">
-                      <i class="fa-brands fa-twitter fa-shake"></i>
-                      讯飞星火</a>
-                  </td>
-                  <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Bing AI</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-success" href="https://copilot.microsoft.com/"
-                      target="_blank">
-                      <i class="fa-brands fa-microsoft fa-spin"></i> Bing</a>
-                  </td>
-                  <td class="text-danger">
-                    <i class="fa-solid fa-check fa-beat fa-sm"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Google Gemini</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-danger" target="_blank"
-                      href="https://gemini.google.com/">
-                      <i class="fa-brands fa-google-plus-g fa-spin"></i>
-                      Gemini</a>
-                  </td>
-                  <td class="text-danger">
-                    <i class="fa-solid fa-check fa-beat fa-sm"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Claude</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-warning" target="_blank"
-                      href="https://claude.ai/chats">
-                      <i class="fa-regular fa-comment fa-beat fa-sm"></i>
-                      claude</a>
-                  </td>
-                  <td class="text-danger">
-                    <i class="fa-solid fa-check fa-beat fa-sm"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>ChatGPT</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-info" target="_blank"
-                      href="https://chatgpt.com">
-                      <i class="fa-solid fa-comments-dollar fa-beat fa-sm"></i>
-                      ChatGPT</a>
-                  </td>
-                  <td class="text-danger">
-                    <i class="fa-solid fa-check fa-beat fa-sm"></i>
-                  </td>
-                </tr>
-                <!-- <tr>
-                    <th scope="row">7</th>
-                    <td>P-ChatGPT</td>
-                    <td>
-                      <a
-                        class="list-group-item list-group-item-action text-dark"
-                        target="_blank"
-                        href="https://ai.0256.website/"
-                      >
-                        <i
-                          class="fa-solid fa-comments-dollar fa-beat fa-sm"
-                        ></i>
-                        P-ChatGPT</a
-                      >
-                    </td>
-                    <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                  </tr> -->
-                <!-- <tr>
-                  <th scope="row">7</th>
-                  <td>Google翻译</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-success"
-                      href="https://googletranslate.cloudb.us.kg/" target="_blank" rel="noopener noreferrer"><i
-                        class="fa-brands fa-microsoft fa-beat-fade"></i>
-                      Google Translate</a>
-                  </td>
-                  <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                </tr> -->
-              </tbody>
-            </table>
-          </div>
-        </div>
+                </div>
 
-        <div class="collapse" id="search">
-          <div class="card card-body">
-            <table class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">
-                    <i class="fa-brands fa-ideal fa-sm"></i> &nbsp;ID
-                  </th>
-                  <th scope="col">
-                    <i class="fa-solid fa-diamond fa-sm"></i> &nbsp;Name
-                  </th>
-                  <th scope="col">
-                    <i class="fa-solid fa-link fa-sm"></i> &nbsp;Link
-                  </th>
-                  <th scope="col">
-                    <i class="fa-solid fa-globe fa-sm"></i> &nbsp;VPN/Proxy
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Cloudb</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-primary" href="https://cloudb.pub"
-                      target="_blank" rel="noopener noreferrer">https://cloudb.pub</a>
-                  </td>
-                  <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Google</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-primary" href="https://google.0256.us.kg"
-                      target="_blank" rel="noopener noreferrer">https://google.0256.us.kg/</a>
-                  </td>
-                  <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Translate</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-primary" href="https://googletranslate.cloudb.us.kg"
-                      target="_blank" rel="noopener noreferrer">https://googletranslate.cloudb.us.kg/</a>
-                  </td>
-                  <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Copilot</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-primary" href="https://copilot.0256.us.kg"
-                      target="_blank" rel="noopener noreferrer">https://copilot.0256.us.kg</a>
-                  </td>
-                  <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>pxory</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-primary" href="https://proxy.cloudb.us.kg"
-                      target="_blank" rel="noopener noreferrer">https://proxy.cloudb.us.kg</a>
-                  </td>
-                  <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>代理订阅</td>
-                  <td>
-                    <a class="list-group-item list-group-item-action text-primary" href="https://v2.0256.website/trojan/pty"
-                      target="_blank" rel="noopener noreferrer">https://v2.0256.website/trojan/pty</a>
-                  </td>
-                  <td><i class="fa-solid fa-xmark fa-beat fa-sm"></i></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
 
-        <div class="collapse" id="jq">
-          <div class="card card-body text-lg-start">
-            <h6>
-              <span class="badge bg-danger">1</span>
-              精准搜索加双引号或者书名号《》.例:"python"
-            </h6>
-            <h6>
-              <span class="badge bg-warning">2</span>
-              指定站点内搜索相关关键词.例:site: 52pojie.cn python
-            </h6>
-            <h6>
-              <span class="badge bg-primary">3</span>
-              标题里包含被搜索的关键字.例:intitle:python
-            </h6>
-            <h6>
-              <span class="badge bg-success">4</span>
-              精准搜索文件类型.例:python filetype:doc
-            </h6>
-            <h6>
-              <span class="badge bg-info">5</span>
-              搜索url中含有关键字的链接:例inurl:python
-            </h6>
-            <h6>
-              <span class="badge bg-secondary">6</span>
-              搜索关键词减号是排除,加号是包含,通配符*,匹配...
-            </h6>
-            <h6>
-              <span class="badge bg-dark">7</span>
-              Google搜索按"/"迅速回到搜索框.
-            </h6>
-          </div>
-        </div>
 
-        <div class="collapse" id="ipinfo">
-          <div class="card card-body text-lg-start">
-            <!-- <h1>当前IP信息：</h1> -->
-            <div id="ip-info">正在获取IP信息...</div>
-
-            <script>
-              // 获取当前IP地址
-              fetch("https://ipinfo.io/ip")
-                .then((response) => response.text())
-                .then((ip) => {
-                  // 构建URL
-                  const apiUrl = `https://ipinfo.io/widget/demo/${ip.trim()}`;
-                  // 请求IP信息
-                  fetch(apiUrl)
-                    .then((response) => response.json())
-                    .then((data) => {
-                      const ipInfoDiv = document.getElementById("ip-info");
-                      // 动态显示IP信息
-                      ipInfoDiv.innerHTML = `
-                                    <p><strong>IP地址:</strong> ${data.data.ip}</p>
-                                    <p><strong>位置:</strong> ${data.data.city}, ${data.data.region}, ${data.data.country}</p>
-                                    <p><strong>经纬度:</strong> ${data.data.loc}</p>
-                                    <p><strong>ISP:</strong> ${data.data.org}</p>
-                                    <p><strong>邮政编码:</strong> ${data.data.postal}</p>
-                                    <p><strong>时区:</strong> ${data.data.timezone}</p>
-
-                                `;
-                    })
-                    .catch((error) => {
-                      console.error("获取IP信息时出错:", error);
-                      const ipInfoDiv = document.getElementById("ip-info");
-                      ipInfoDiv.innerHTML = "无法获取IP信息。";
-                    });
-                })
-                .catch((error) => {
-                  console.error("获取IP地址时出错:", error);
-                  const ipInfoDiv = document.getElementById("ip-info");
-                  ipInfoDiv.innerHTML = "无法获取IP地址。";
-                });
-            </script>
-            <!-- <p><strong>ASN:</strong> ${data.data.asn.asn}</p>
-  <p><strong>ASN名称:</strong> ${data.data.asn.name}</p>
-  <p><strong>ASN域名:</strong> ${data.data.asn.domain}</p>
-  <p><strong>ASN路由:</strong> ${data.data.asn.route}</p>
-  <p><strong>ASN类型:</strong> ${data.data.asn.type}</p>
-  <p><strong>公司名称:</strong> ${data.data.company.name}</p>
-  <p><strong>公司域名:</strong> ${data.data.company.domain}</p>
-  <p><strong>公司类型:</strong> ${data.data.company.type}</p>
-  <p><strong>隐私:</strong> VPN: ${data.data.privacy.vpn}, Proxy: ${data.data.privacy.proxy}, TOR: ${data.data.privacy.tor}, Relay: ${data.data.privacy.relay}, Hosting: ${data.data.privacy.hosting}, 服务: ${data.data.privacy.service}</p>
-  <p><strong>滥用:</strong> 地址: ${data.data.abuse.address}, 国家: ${data.data.abuse.country}, 电子邮件: ${data.data.abuse.email}, 名称: ${data.data.abuse.name}, 网络: ${data.data.abuse.network}, 电话: ${data.data.abuse.phone}</p> -->
-          </div>
-        </div>
-
-        <div class="collapse" id="localipinfo">
-          <div class="card card-body text-lg-start">
-            <div id="localip-info" style="display: none">
-              <script type="application/json" id="ip-data">
-                  {
-                    /* 数据将在这里插入 */
-                  }
-                </script>
             </div>
+            <div class="col-10">
 
-            <div id="localip-details">
-              <p><strong>IP地址:</strong> <span id="ip"></span></p>
-              <p><strong>大陆:</strong> <span id="continent"></span></p>
-              <p><strong>国家:</strong> <span id="country"></span></p>
-              <p><strong>时区:</strong> <span id="timezone"></span></p>
-              <p><strong>经纬度:</strong> <span id="coordinates"></span></p>
-              <p><strong>精确度:</strong> <span id="accuracy"></span></p>
-              <p><strong>所有者:</strong> <span id="owner"></span></p>
-              <p><strong>ISP:</strong> <span id="isp"></span></p>
-              <p><strong>省:</strong> <span id="province"></span></p>
-              <p><strong>市:</strong> <span id="city"></span></p>
-              <p><strong>区/县:</strong> <span id="district"></span></p>
+                <div class="tab-content" id="v-pills-tabContent">
+                    <!-- search -->
+                    <div class="tab-pane fade show active text-center" id="v-pills-search" role="tabpanel"
+                        aria-labelledby="v-pills-search-tab" tabindex="0">
+                        <div class="mt-3">
+                            <img src=".images/logo-no-background.svg" class="rounded img-box" alt="logo">
+                        </div>
+
+                        <div class="input-group m-3 search-icon">
+                            <i class="fa-solid fa-magnifying-glass fa-search" aria-hidden="true"></i>
+                            <!-- <i class="fa-solid fa-spinner fa-spin-pulse fa-lg"></i> -->
+                            <input type="text" id="searchQuery" class="form-control" placeholder="Search" />
+                        </div>
+
+
+                        <div class="btn-group p-2" role="group" aria-label="Basic mixed styles example">
+                            <button onclick="searchEngine('baidu')" class="btn btn-primary">
+                                <i class="fa-solid fa-paw fa-beat fa-sm"></i>&nbsp;百度
+                            </button>
+                            <button onclick="searchEngine('google')" class="btn btn-danger">
+                                <i class="fa-brands fa-google fa-spin fa-sm"></i>&nbsp;Google
+                            </button>
+                            <button onclick="searchEngine('bing')" class="btn  btn-success">
+                                <i class="fa-brands fa-microsoft fa-spin fa-spin-reverse fa-sm"></i>&nbsp;Bing
+                            </button>
+                            <button onclick="searchEngine('github')" class="btn btn-dark">
+                                <i class="fa-brands fa-github fa-beat fa-sm"></i>&nbsp;GitHub
+                            </button>
+                            <button onclick="searchEngine('sougou')" class="btn btn-warning">
+                                <i class="fa-solid fa-dog fa-shake fa-sm"></i>&nbsp;搜狗
+                            </button>
+                            <button onclick="searchEngine('zhihu')" class="btn btn-primary">
+                                <i class="fa-solid fa-book-open-reader fa-fade fa-sm"></i>&nbsp;知乎
+                            </button>
+                            <button onclick="searchEngine('wechat')" class="btn btn-success">
+                                <i class="fa-brands fa-weixin fa-sm"></i>&nbsp;微信
+                            </button>
+                            <button onclick="searchEngine('wechatmp')" class="btn btn-info">
+                                <i class="fa-solid fa-comments fa-beat-fade fa-sm"></i>&nbsp;微信公众号
+                            </button>
+                        </div>
+
+                        <div>
+                            <div class="text-lg-start text-success m-2">
+                                <h6>
+                                    <span class="badge bg-danger">1</span>&nbsp;&nbsp;
+                                    精准搜索加双引号或者书名号《》.例:"python"
+                                </h6>
+                                <h6>
+                                    <span class="badge bg-warning">2</span>&nbsp;&nbsp;
+                                    指定站点内搜索相关关键词.例:site: 52pojie.cn python
+                                </h6>
+                                <h6>
+                                    <span class="badge bg-primary">3</span>&nbsp;&nbsp;
+                                    标题里包含被搜索的关键字.例:intitle:python
+                                </h6>
+                                <h6>
+                                    <span class="badge bg-success">4</span>&nbsp;&nbsp;
+                                    精准搜索文件类型.例:python filetype:doc
+                                </h6>
+                                <h6>
+                                    <span class="badge bg-info">5</span>&nbsp;&nbsp;
+                                    搜索url中含有关键字的链接:例inurl:python
+                                </h6>
+                                <h6>
+                                    <span class="badge bg-secondary">6</span>&nbsp;&nbsp;
+                                    搜索关键词减号是排除,加号是包含,通配符*,匹配...
+                                </h6>
+                                <h6>
+                                    <span class="badge bg-dark">7</span>&nbsp;&nbsp;
+                                    Google搜索按"/"迅速回到搜索框.
+                                </h6>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="text-lg-start text-warning m-2">
+                            <iframe src="https://ip.skk.moe/simple-dark" style="width: 90%; border: 0"></iframe>
+                        </div>
+                       
+
+                    </div>
+
+
+                    <!-- Ai相关 -->
+                    <div class="tab-pane fade m-4" id="v-pills-ai" role="tabpanel" aria-labelledby="v-pills-ai-tab"
+                        tabindex="0">
+
+                        <div class="text-center m-3">
+                            <h1>Ai</h1>
+                            <p>大公司通常拥有更丰富的资源和技术积累，能够投入大量资金和人力来开发和维护 AI 系统。</p>
+                            <p class="text-start text-success m-3">
+                                优点： 研发先进的技术、优化性能、保持更新、品牌信誉、安全保障、完整的生态系统、成本效益、服务稳定性、长期支持、丰富的学习资源、多元的竞争优势
+                            </p>
+                            <p class="text-start text-danger m-3">缺点： 很多需要科学上网。 </p>
+                        </div>
+
+
+                        <div class="row align-items-start">
+                            <div class="col openai m-3">
+                                <a href="https://chatgpt.com" target="_blank">
+                                    <img src=".images/logo/openai_logo_icon.svg" alt="openai">
+                                </a>
+                            </div>
+                            <div class="col gemini m-3">
+                                <a href="https://gemini.google.com" target="_blank">
+                                    <img src=".images/logo/Google_icon-icons.com.svg" alt="gemini">
+                                </a>
+                            </div>
+                            <div class="col copilot m-3">
+                                <a href="https://copilot.microsoft.com" target="_blank">
+                                    <img src=".images/logo/microsoft_icon.svg" alt="copilot">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-start">
+                            <div class="col claude m-3">
+                                <a href="https://claude.ai" target="_blank">
+                                    <img src=".images/logo/chat-43_icon-icons.com_65949.svg" alt="claude">
+                                    <span> Claude </span>
+                                </a>
+                            </div>
+                            <div class="col baidu m-3">
+                                <a href="https://chat.baidu.com" target="_blank">
+                                    <img src=".images/logo/baidu_logo.png" alt="baidu">
+                                </a>
+                            </div>
+                            <div class="col xinghuo m-3">
+                                <a href="https://xinghuo.xfyun.cn" target="_blank">
+                                    <img src=".images/logo/xinghuo.svg" alt="xinghuo">
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="row align-items-start">
+                            <div class="col tongyi m-3">
+                                <a href="https://tongyi.aliyun.com/qianwen" target="_blank">
+                                    <img src=".images/logo/tongyi.png" alt="tongyi">
+                                </a>
+                            </div>
+                            <div class="col suda m-3">
+                                <a href="https://bangong.360.cn" target="_blank">
+                                    <img src=".images/logo/suda.png" alt="suda">
+                                </a>
+                            </div>
+                            <div class="col doubao m-3">
+                                <a href="https://www.doubao.com" target="_blank">
+                                    <img src=".images/logo/doubao.png" alt="doubao">
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- 我的服务器 -->
+                    <div class="tab-pane fade m-4" id="v-pills-services" role="tabpanel"
+                        aria-labelledby="v-pills-services-tab" tabindex="0">
+
+                        <section class="container">
+                            <section class="card__container">
+
+                                <div class="card__bx" style="--clr: #89ec5b">
+                                    <div class="card__data">
+                                        <div class="card__icon">
+                                            <i class="fa-brands fa-cloudversify fa-fade"></i>
+                                        </div>
+                                        <div class="card__content">
+                                            <h3>我的网站</h3>
+                                            <p>
+                                                将日常搜索引擎汇集于此，避免输入重复的搜索内容；
+                                                整理了世界一二流AI平台提供的AI服务；
+                                                自己搭建了一些代理节点和反向代理服务。
+                                            </p>
+                                            <a href="https://cloudb.pub" target="_blank">Cloudb</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card__bx" style="--clr: #dc3545">
+                                    <div class="card__data">
+                                        <div class="card__icon">
+                                            <i class="fa-brands fa-github fa-flip fa-lg"></i>
+                                        </div>
+                                        <div class="card__content">
+                                            <h3>Github</h3>
+                                            <p>
+                                                将自己的项目源码发布于此，方便访问。使用 Github 的 pages 服务搭建很多服务。
+                                            </p>
+                                            <a href="https://github.com/xyz349925756" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card__bx" style="--clr: #5b98eb">
+                                    <div class="card__data">
+                                        <div class="card__icon">
+                                            <i class="fa-solid fa-code fa-beat-fade"></i>
+                                        </div>
+                                        <div class="card__content">
+                                            <h3>Proxy</h3>
+                                            <p>通过代理服务器，提供丰富的服务和高性能的网络连接。可以访问很多世界性的网站。</p>
+                                            <a href="https://proxy.cloudb.us.kg" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card__bx" style="--clr: #f85032">
+                                    <div class="card__data">
+                                        <div class="card__icon">
+                                            <i class="fa-brands fa-google fa-spin"></i>
+                                        </div>
+                                        <div class="card__content">
+                                            <h3>Google</h3>
+                                            <p>使用代理技术访问Google搜索。</p>
+                                            <a href="https://google.0256.us.kg" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card__bx" style="--clr: #904e95">
+                                    <div class="card__data">
+                                        <div class="card__icon">
+                                            <i class="fa-solid fa-language fa-fade"></i>
+                                        </div>
+                                        <div class="card__content">
+                                            <h3>Translate</h3>
+                                            <p>
+                                                使用代理技术访问Google Translate,供 vscode pot 等 app api调用。
+                                            </p>
+                                            <a href="https://googletranslate.cloudb.us.kg" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card__bx" style="--clr: #f79d00">
+                                    <div class="card__data">
+                                        <div class="card__icon">
+                                            <i class="fa-solid fa-network-wired fa-bounce"></i>
+                                        </div>
+                                        <div class="card__content">
+                                            <h3>公益V2ray代理</h3>
+                                            <p>此地址就是订阅链接，高峰YouTube码流30000 左右。内含6个节点，比一些小机场更快。</p>
+                                            <a href="https://v2.0256.website/trojan/pty" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </section>
+
+
+                    </div>
+
+
+                    <!-- net -->
+                    <div class="tab-pane fade m-5" id="v-pills-net" role="tabpanel" aria-labelledby="v-pills-net-tab"
+                        tabindex="0">
+                        <h2 class="text-center text-danger">IP信息</h2>
+                        <table id="ip-info" class="table m-5 table-dark table-hover">
+                            <tr class="table-active">
+                                <th>IP</th>
+                                <th>位置</th>
+                                <th>运营商</th>
+                            </tr>
+                        </table>
+
+                        <h2 class="text-center text-danger">网站连通性检测</h2>
+                        <table id="connectivity-check" class="table m-5 table-dark table-hover">
+                            <tr class="table-active">
+                                <th>网站</th>
+                                <th>状态</th>
+                                <th>延迟</th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- local -->
+                    <div class="tab-pane fade" id="v-pills-local" role="tabpanel" aria-labelledby="v-pills-local-tab"
+                        tabindex="0">
+                        <div class="row align-items-center m-5">
+                            <div class="col local-div m-3 p-2">
+                                <a href="index1.html" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/bookshelf_icon-icons.com_54414.svg" alt="">
+                                </a>
+                                <p>知识库</p>
+                            </div>
+                            <div class="col local-div2 m-3 p-2">
+                                <a href="http://localhost:809/" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/play-store-google-android-game-service-marketplace_83394.svg"
+                                        alt="">
+                                </a>
+                                <p>Soft</p>
+                            </div>
+                            <div class="col local-div m-3 p-2">
+                                <a href="http://localhost:810/" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/ISO_36881.png" alt="">
+                                </a>
+                                <p>ISO</p>
+                            </div>
+                            <div class="col local-div m-3 p-2">
+                                <a href="http://localhost:811/" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/education_rating_grade_paper_document_pencil_icon_141968.svg"
+                                        alt="">
+                                </a>
+                                <p>电子书库</p>
+                            </div>
+                        </div>
+
+
+                        <div class="row align-items-center m-5">
+                            <div class="col local-div m-3 p-2">
+                                <a href="http://localhost:808/" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/book_online_learn_reading_education_ebook_icon_220063.svg"
+                                        alt="">
+                                </a>
+                                <p>电子书阅读器</p>
+                            </div>
+                            <div class="col local-div m-3 p-2">
+                                <a href="http://localhost:812/" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/search_find_database_16703.png" alt="">
+                                </a>
+                                <p>SQLAlchemy</p>
+                            </div>
+                            <div class="col local-div m-3 p-2">
+                                <a href="http://localhost:813/" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/networkserver_92603.svg" alt="">
+                                </a>
+                                <p>Scrapy</p>
+                            </div>
+                            <div class="col local-div m-3 p-2">
+                                <a href="http://localhost:807/" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/free_farm_icons_vector_template_icon_153809.png" alt="">
+                                </a>
+                                <p>Free</p>
+                            </div>
+                        </div>
+
+
+                        <div class="row align-items-center m-5">
+                            <div class="col local-div m-3 p-2">
+                                <a href="mailto:xyz349925756@hotmail.com" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/emailgmaillogomailsocialsocialmedia.svg" alt="">
+                                </a>
+                                <p>Email</p>
+                            </div>
+                            <div class="col local-div2 m-3 p-2">
+                                <a href="http://wpa.qq.com/msgrd?v=3&uin=349925756&site=qq&menu=yes" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src=".images/local/qq_icon_130848.svg" alt="">
+                                </a>
+                                <p>QQ</p>
+                            </div>
+                            <div class="col local-div m-3 p-2">
+                                <a href="weixin://contacts/profile/Fly_349925756" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src=".images/local/iconfinder-social-media-applications-9wechat-4102581_113790.svg"
+                                        alt="">
+                                </a>
+                                <p>微信</p>
+                            </div>
+                            <div class="col local-div m-3 p-2">
+                                <a href="tel:18183510256" target="_blank" rel="noopener noreferrer">
+                                    <img src=".images/local/Phone_31105.png" alt="">
+                                </a>
+                                <p>电话</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- OTHER -->
+                    <div class="tab-pane fade bg-dark" id="v-pills-other" role="tabpanel"
+                        aria-labelledby="v-pills-other-tab" tabindex="0">
+                        <div class="row">
+                            <div class="wrapper">
+                                <div class="items">
+                                    <div class="item" tabindex="0" style="background-image: url(.images/wrapper/1.jpg)">
+                                    </div>
+                                    <div class="item" tabindex="0" style="background-image: url(.images/wrapper/2.jpg)">
+                                    </div>
+                                    <div class="item" tabindex="0" style="background-image: url(.images/wrapper/3.jpg)">
+                                    </div>
+                                    <div class="item" tabindex="0" style="background-image: url(.images/wrapper/4.jpg)">
+                                    </div>
+                                    <div class="item" tabindex="0" style="background-image: url(.images/wrapper/5.jpg)">
+                                    </div>
+                                    <div class="item" tabindex="0" style="background-image: url(.images/wrapper/6.jpg)">
+                                    </div>
+                                    <div class="item" tabindex="0" style="background-image: url(.images/wrapper/7.jpg)">
+                                    </div>
+                                    <div class="item" tabindex="0" style="background-image: url(.images/wrapper/8.jpg)">
+                                    </div>
+                                    <div class="item" tabindex="0" style="background-image: url(.images/wrapper/9.jpg)">
+                                    </div>
+                                    <div class="item" tabindex="0"
+                                        style="background-image: url(.images/wrapper/10.jpg)"></div>
+                                    <div class="item" tabindex="0"
+                                        style="background-image: url(.images/wrapper/11.jpg)"></div>
+                                    <div class="item" tabindex="0"
+                                        style="background-image: url(.images/wrapper/12.jpg)"></div>
+                                    <div class="item" tabindex="0"
+                                        style="background-image: url(.images/wrapper/13.jpg)"></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
             </div>
-
-            <script>
-              // 使用fetch从API获取数据
-              fetch("https://qifu-api.baidubce.com/ip/local/geo/v1/district?")
-                .then((response) => response.json())
-                .then((data) => {
-                  const ipInfo = data.data;
-                  // 将获取到的数据填充到HTML中
-                  document.getElementById("ip-data").textContent =
-                    JSON.stringify(ipInfo);
-                  document.getElementById("ip").textContent = data.ip; // 更新这行
-                  document.getElementById("continent").textContent =
-                    ipInfo.continent;
-                  document.getElementById("country").textContent =
-                    ipInfo.country;
-                  document.getElementById("timezone").textContent =
-                    ipInfo.timezone;
-                  document.getElementById(
-                    "coordinates"
-                  ).textContent = `${ipInfo.lat}, ${ipInfo.lng}`;
-                  document.getElementById("accuracy").textContent =
-                    ipInfo.accuracy;
-                  document.getElementById("owner").textContent = ipInfo.owner;
-                  document.getElementById("isp").textContent = ipInfo.isp;
-                  document.getElementById("province").textContent =
-                    ipInfo.prov;
-                  document.getElementById("city").textContent = ipInfo.city;
-                  document.getElementById("district").textContent =
-                    ipInfo.district;
-                  // 显示IP位置信息
-                  document.getElementById("localip-info").style.display =
-                    "block";
-                })
-                .catch((error) => console.error("获取数据时出错:", error));
-            </script>
-          </div>
         </div>
-      </div>
-      <div class="col-2"></div>
+
+
+
+
+
+
     </div>
 
-    <!-- Columns are always 50% wide, on mobile and desktop -->
-    <!--    <div class="row">-->
-    <!--        <div class="col-6">.col-6</div>-->
-    <!--        <div class="col-6">.col-6</div>-->
-    <!--    </div>-->
-
-    <footer class="py-3 my-4">
-      <h6 class="text-warning"><b>Local Services</b></h6>
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3 text-primary">
-        <li class="nav-item">
-          <a href="https://cloudb.pub/" class="nav-link px-2" target="_blank">
-            <i class="fa-solid fa-house" style="color: #dc3545"></i>&nbsp;Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="index1.html" class="nav-link px-2" target="_blank">
-            <i class="fa-brands fa-leanpub fa-sm" style="color: #0dcaf0"></i>&nbsp;Knowledge</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="http://localhost:809" class="nav-link px-2" target="_blank">
-            <i class="fa-brands fa-windows fa-sm" style="color: #198754"></i>&nbsp;Soft</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="http://localhost:810" class="nav-link px-2" target="_blank">
-            <i class="fa-solid fa-compact-disc fa-sm" style="color: #ffc107"></i>&nbsp;ISO</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="http://localhost:811" class="nav-link px-2" target="_blank">
-            <i class="fa-solid fa-swatchbook fa-sm" style="color: #6f42c1"></i>&nbsp;Books</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="http://localhost:808" class="nav-link px-2" target="_blank">
-            <i class="fa-solid fa-book-open-reader fa-sm" style="color: #20c997"></i>&nbsp;Neat Reader</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="http://360.tiandi.com/?td_2_6216" class="nav-link px-2" target="_blank">
-            <i class="fa-brands fa-internet-explorer fa-sm" style="color: #1a1e21"></i>&nbsp;360</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="https://github.com/xyz349925756" class="nav-link px-2" target="_blank">
-            <i class="fa-brands fa-square-github fa-sm" style="color: #000000"></i>&nbsp;Github</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="http://localhost:812" class="nav-link px-2" target="_blank">
-            <i class="fa-regular fa-file-code" style="color: #dc3545"></i>&nbsp;SQLalchemy doc</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="http://localhost:813" class="nav-link px-2" target="_blank">
-            <i class="fa-solid fa-folder-tree fa-sm" style="color: #d63384"></i>&nbsp;scrapy</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="http://localhost:807" class="nav-link px-2" target="_blank">
-            <i class="fa-solid fa-folder-tree fa-sm" style="color: lightbulb"></i>&nbsp;Free</a>
-        </li>
-      </ul>
-      <span class="text-success"><b>Contact US</b></span>
-      : &nbsp;&nbsp;
-      <a href="mailto:xyz349925756@hotmail.com" target="_blank" class="text-success"><i
-          class="fa-solid fa-envelope"></i></a>&nbsp;&nbsp;
-
-      <a href="http://wpa.qq.com/msgrd?v=3&uin=349925756&site=qq&menu=yes" target="_blank" class="text-info"><i
-          class="fa-brands fa-qq"></i></a>&nbsp;&nbsp;
 
 
-      <p class="text-center text-muted">
-        © 2024 <a href="https://cloudb.pub" target="_blank">Cloudb.pub</a>,
-        All rights reserved
-      </p>
-    </footer>
-  </div>
 
-  <script>
-    function changeGradient() {
-      var colors = [
-        "#f4433660",
-        "#ff980060",
-        "#673AB760",
-        "#4CAF5060",
-        "#0b486b60",
-        "#a8e06360",
-        "#ef629f60",
-      ];
-      var randomColor = colors[Math.floor(Math.random() * colors.length)];
-      document.body.style.background =
-        "linear-gradient(to right, #e0ffff, " + randomColor + ")";
-    }
-  </script>
 
-  <script>
-    function searchEngine(engine) {
-      var query = document.getElementById("searchQuery").value;
-      var url;
+    <!-- search -->
+    <script>
+        function searchEngine(engine) {
+            var query = document.getElementById("searchQuery").value;
+            var url;
 
-      if (engine === "baidu") {
-        url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query);
-      } else if (engine === "google") {
-        url = "https://www.google.com/search?q=" + encodeURIComponent(query);
-      } else if (engine === "bing") {
-        url = "https://www.bing.com/search?q=" + encodeURIComponent(query);
-      } else if (engine === "f") {
-        url = "https://fsoufsou.com/search?q=" + encodeURIComponent(query);
-      } else if (engine === "github") {
-        url = "https://github.com/search?q=" + encodeURIComponent(query);
-      } else if (engine === "sougou") {
-        url = "https://www.sogou.com/web?query=" + encodeURIComponent(query);
-      } else if (engine === "zhihu") {
-        url = "https://www.zhihu.com/search?q=" + encodeURIComponent(query);
-      } else if (engine === "wechat") {
-        url =
-          "https://weixin.sogou.com/weixin?type=2&query=" +
-          encodeURIComponent(query);
-      } else if (engine === "wechatmp") {
-        url =
-          "https://weixin.sogou.com/weixin?type=1&query=" +
-          encodeURIComponent(query);
-      }
+            if (engine === "baidu") {
+                url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query);
+            } else if (engine === "google") {
+                url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+            } else if (engine === "bing") {
+                url = "https://www.bing.com/search?q=" + encodeURIComponent(query);
+            } else if (engine === "github") {
+                url = "https://github.com/search?q=" + encodeURIComponent(query);
+            } else if (engine === "sougou") {
+                url = "https://www.sogou.com/web?query=" + encodeURIComponent(query);
+            } else if (engine === "zhihu") {
+                url = "https://www.zhihu.com/search?q=" + encodeURIComponent(query);
+            } else if (engine === "wechat") {
+                url =
+                    "https://weixin.sogou.com/weixin?type=2&query=" +
+                    encodeURIComponent(query);
+            } else if (engine === "wechatmp") {
+                url =
+                    "https://weixin.sogou.com/weixin?type=1&query=" +
+                    encodeURIComponent(query);
+            }
 
-      window.open(url, "_blank");
-    }
-
-    document
-      .getElementById("searchQuery")
-      .addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-          // 13 表示回车键的键码
-          searchEngine("bing"); // 默认使用百度搜索引擎
-          event.preventDefault(); // 阻止默认的回车键行为
+            window.open(url, "_blank");
         }
-      });
-  </script>
 
-  <script>
-    const WEEK = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
+        document
+            .getElementById("searchQuery")
+            .addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    // 13 表示回车键的键码
+                    searchEngine("bing"); // 默认使用bing搜索引擎
+                    event.preventDefault(); // 阻止默认的回车键行为
+                }
+            });
+    </script>
+    <script>
+        // clock
+        function updateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
 
-    function updateTime() {
-      var now = new Date();
+            const formattedTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
-      // document.getElementById("time").innerText =
-      //   zeroPadding(now.getHours(), 2) +
-      //   ":" +
-      //   zeroPadding(now.getMinutes(), 2) +
-      //   ":" +
-      //   zeroPadding(now.getSeconds(), 2);
-
-      document.getElementById("date").innerText =
-        now.getFullYear() +
-        "-" +
-        zeroPadding(now.getMonth() + 1, 2) +
-        "-" +
-        zeroPadding(now.getDate(), 2) +
-        "  " +
-        WEEK[now.getDay()];
-
-      // document.getElementById("date1").innerText =
-      //   now.getFullYear() +
-      //   "-" +
-      //   zeroPadding(now.getMonth() + 1, 2) +
-      //   "-" +
-      //   zeroPadding(now.getDate(), 2) +
-      //   "  " +
-      //   WEEK[now.getDay()];
-    }
-
-    updateTime();
-    setInterval(updateTime, 1000);
-
-    function zeroPadding(num, digit) {
-      return String(num).padStart(digit, "0");
-    }
-  </script>
-
-  <!-- <script>
-      function rollDice() {
-        var roll = Math.floor(Math.random() * 6) + 1;
-
-        var diceIcon = document.getElementById("diceIcon");
-
-        switch (roll) {
-          case 1:
-            diceIcon.className = "fa-solid fa-dice-one fa-2xl";
-            break;
-          case 2:
-            diceIcon.className = "fa-solid fa-dice-two fa-2xl";
-            break;
-          case 3:
-            diceIcon.className = "fa-solid fa-dice-three fa-2xl";
-            break;
-          case 4:
-            diceIcon.className = "fa-solid fa-dice-four fa-2xl";
-            break;
-          case 5:
-            diceIcon.className = "fa-solid fa-dice-five fa-2xl";
-            break;
-          case 6:
-            diceIcon.className = "fa-solid fa-dice-six fa-2xl";
-            break;
+            document.getElementById('currentTime').textContent = formattedTime;
+            document.getElementById('currentTimeReflection').textContent = formattedTime;
         }
-      }
-    </script> -->
 
-  <script>
-    window.onload = function () {
-      var text = "Welcome  On";
-      var colors = [
-        "#0d6efd",
-        "#dc3545",
-        "#fd7e14",
-        "#198754",
-        "#6610f2",
-        "#0dcaf0",
-        "#dc3545",
-      ];
-      var container = document.getElementById("welcome");
+        setInterval(updateTime, 1000);
+        updateTime(); // Initial call to display the time immediately
 
-      function startAnimation() {
-        container.innerHTML = ""; // 清空容器
-        for (var i = 0; i < text.length; i++) {
-          var span = document.createElement("span");
-          span.textContent = text[i];
-          span.className = "char";
-          span.style.color = colors[i % colors.length];
-          span.style.animationDelay = i * 0.2 + "s";
-          container.appendChild(span);
-        }
-      }
+    </script>
 
-      startAnimation();
-
-      setInterval(function () {
-        startAnimation();
-      }, (text.length * 0.2 + 15) * 1000); // 在动画结束后等待15秒再重新开始
-    };
-  </script>
-
-  <script>
-    let hr = document.querySelector("#hr");
-    let mn = document.querySelector("#mn");
-    let sc = document.querySelector("#sc");
-
-    setInterval(() => {
-      let day = new Date();
-      let hh = day.getHours() * 30;
-      let mm = day.getMinutes() * 6;
-      let ss = day.getSeconds() * 6;
-      hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
-      mn.style.transform = `rotateZ(${mm}deg)`;
-      sc.style.transform = `rotateZ(${ss}deg)`;
-
-      let hours = document.getElementById("hours");
-      let minutes = document.getElementById("minutes");
-      let seconds = document.getElementById("seconds");
-      // let ampm = document.getElementById("ampm");
-
-      let h = new Date().getHours();
-      let m = new Date().getMinutes();
-      let s = new Date().getSeconds();
-      // let am = h >= 12 ? "PM" : "AM";
-
-      // if (h > 12) {
-      //   h = h - 12;
-      // }
-
-      h = h < 10 ? "0" + h : h;
-      m = m < 10 ? "0" + m : m;
-      s = s < 10 ? "0" + s : s;
-
-      hours.innerHTML = h;
-      minutes.innerHTML = m;
-      seconds.innerHTML = s;
-      // ampm.innerHTML = am;
-    });
-  </script>
 </body>
 
 </html>
