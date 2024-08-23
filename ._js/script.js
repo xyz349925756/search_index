@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {name: 'YouTube', url: 'https://www.youtube.com'},
 		{name: '腾讯', url: 'https://www.qq.com'},
 		{name: 'Microsoft', url: 'https://www.microsoft.com/zh-cn/'},
-		{name: '我的网站', url: 'https://cloudb.pub'},
+		{name: '我的网站', url: 'https://www.cloudb.pub'},
 		{name: 'Google proxy', url: 'https://google.0256.us.kg'},
     ];
 
