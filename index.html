@@ -23,98 +23,166 @@
 
 
         <div class="row">
-            <div class="col-2 left-pt">
-                <div class="nav flex-column nav-pills me-3 left-meun" id="v-pills-tab" role="tablist"
-                    aria-orientation="vertical">
 
-                    <div class="time-container reflection-container">
-                        <div id="currentTime"></div>
-                        <hr>
-                        <div id="currentTimeReflection" class="time-reflection"></div>
+            <nav class="navbar navbar-dark fixed-top">
+                <div class="container-fluid">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+
+                        <i class="fa-solid fa-bars fa-beat" style="color: #fff;"></i>
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                    </button>
+                    <span>
+
+                        <a class="navbar-brand " href="http://360.tiandi.com/?td_2_6216" target="_blank">
+                            <i class="fa-brands fa-edge fa-spin"></i></a>
+                        <a class="navbar-brand " href="http://h.tiandi.com/?td_1_6216" target="_blank">
+                            <i class="fa-brands fa-edge-legacy fa-spin fa-spin-reverse"></i></a>
+                        <a class="navbar-brand " href="https://github.com/xyz349925756" target="_blank">
+                            <i class="fa-brands fa-square-github fa-beat-fade"></i></a>
+                        <a class="navbar-brand " href="https://www.cloudb.pub" target="_blank">
+                            <i class="fa-solid fa-house-chimney fa-bounce"></i></a>
+
+                    </span>
+                    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                        aria-labelledby="offcanvasDarkNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body">
+                            <div class="left-pt">
+
+                                <div class="nav flex-column nav-pills me-3 left-meun" id="v-pills-tab" role="tablist"
+                                    aria-orientation="vertical">
+
+                                    <!-- <div class="time-container reflection-container">
+                                    <div id="currentTime"></div>
+                                    <hr>
+                                    <div id="currentTimeReflection" class="time-reflection"></div>
+                                </div> -->
+
+                                    <div class="bbtn">
+                                        <button class="nav-link active" id="v-pills-search-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-search" type="button" role="tab"
+                                            aria-controls="v-pills-search" aria-selected="true">
+                                            <i class="fa-solid fa-magnifying-glass fa-beat"></i>&nbsp;&nbsp;
+                                            Search
+                                        </button>
+                                    </div>
+
+
+                                    <div class="bbtn">
+                                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-ai" type="button" role="tab"
+                                            aria-controls="v-pills-ai" aria-selected="false">
+                                            <i class="fa-brands fa-bots fa-xl fa-beat-fade"></i>&nbsp;&nbsp;
+                                            Ai
+                                        </button>
+                                    </div>
+
+                                    <div class="bbtn">
+                                        <button class="nav-link" id="v-pills-services-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-services" type="button" role="tab"
+                                            aria-controls="v-pills-services" aria-selected="false">
+                                            <i class="fa-solid fa-server fa-fade fa-lg"></i>&nbsp;&nbsp;
+                                            Services
+                                        </button>
+                                    </div>
+
+                                    <div class="bbtn">
+                                        <button class="nav-link" id="v-pills-net-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-net" type="button" role="tab"
+                                            aria-controls="v-pills-net" aria-selected="false">
+                                            <i class="fa-solid fa-globe fa-spin fa-lg"></i>&nbsp;&nbsp;
+                                            Network
+                                        </button>
+                                    </div>
+
+                                    <div class="bbtn">
+                                        <button class="nav-link" id="v-pills-local-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-local" type="button" role="tab"
+                                            aria-controls="v-pills-local" aria-selected="false">
+                                            <i class="fa-solid fa-bell fa-shake fa-lg"></i>&nbsp;&nbsp;
+                                            Local
+                                        </button>
+                                    </div>
+
+                                    <div class="bbtn">
+                                        <button class="nav-link" id="v-pills-other-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-other" type="button" role="tab"
+                                            aria-controls="v-pills-other" aria-selected="false">
+                                            <i class="fa-solid fa-sliders fa-bounce fa-lg"></i>&nbsp;&nbsp;
+                                            Wrapper
+                                        </button>
+                                    </div>
+                                    <!-- <div class="bbtn">
+                                    <button id="theme-toggle" class="nav-link">
+                                        <i class="fa-solid fa-repeat fa-spin fa-lg"></i>&nbsp;&nbsp;
+                                        切换主题
+                                    </button>
+                                </div> -->
+                                    <!-- <footer class="text-center m-3 mt-5 text-m text-danger"> -->
+                                    <!-- <p>
+                                        © 2024 <a href="https://www.cloudb.pub" target="_blank">www.cloudb.pub</a>,
+                                    </p>
+                                    <p>All rights reserved</p> -->
+                                    <!-- </footer> -->
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
                     </div>
-
-                    <div class="bbtn">
-                        <button class="nav-link active" id="v-pills-search-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-search" type="button" role="tab" aria-controls="v-pills-search"
-                            aria-selected="true">
-                            <i class="fa-solid fa-magnifying-glass fa-beat"></i>&nbsp;&nbsp;
-                            Search
-                        </button>
-                    </div>
-
-
-                    <div class="bbtn">
-                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai"
-                            type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false">
-                            <i class="fa-brands fa-bots fa-xl fa-beat-fade"></i>&nbsp;&nbsp;
-                            Ai
-                        </button>
-                    </div>
-
-                    <div class="bbtn">
-                        <button class="nav-link" id="v-pills-services-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-services" type="button" role="tab" aria-controls="v-pills-services"
-                            aria-selected="false">
-                            <i class="fa-solid fa-server fa-fade fa-lg"></i>&nbsp;&nbsp;
-                            Services
-                        </button>
-                    </div>
-
-                    <div class="bbtn">
-                        <button class="nav-link" id="v-pills-net-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-net" type="button" role="tab" aria-controls="v-pills-net"
-                            aria-selected="false">
-                            <i class="fa-solid fa-globe fa-spin fa-lg"></i>&nbsp;&nbsp;
-                            Network
-                        </button>
-                    </div>
-
-                    <div class="bbtn">
-                        <button class="nav-link" id="v-pills-local-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-local" type="button" role="tab" aria-controls="v-pills-local"
-                            aria-selected="false">
-                            <i class="fa-solid fa-bell fa-shake fa-lg"></i>&nbsp;&nbsp;
-                            Local
-                        </button>
-                    </div>
-
-                    <div class="bbtn">
-                        <button class="nav-link" id="v-pills-other-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-other" type="button" role="tab" aria-controls="v-pills-other"
-                            aria-selected="false">
-                            <i class="fa-solid fa-sliders fa-bounce fa-lg"></i>&nbsp;&nbsp;
-                            Wrapper
-                        </button>
-                    </div>
-                    <!-- <div class="bbtn">
-                        <button id="theme-toggle" class="nav-link">
-                            <i class="fa-solid fa-repeat fa-spin fa-lg"></i>&nbsp;&nbsp;
-                            切换主题
-                        </button>
-                    </div> -->
-                    <footer class="text-center m-3 mt-5 text-m text-danger">
-                        <p>
-                            © 2024 <a href="https://www.cloudb.pub" target="_blank">www.cloudb.pub</a>,
-                        </p>
-                        <p>All rights reserved</p>
-                    </footer>
-
                 </div>
+            </nav>
 
+            <!-- <div class="col mt-5"> -->
+            <!-- <div class="container-c">
+                    <div class="clock">
+                      <div class="circle" id="sc" style="--clr: #04fc43"><i></i></div>
+                      <div class="circle circle2" id="mn" style="--clr: #fee800"><i></i></div>
+                      <div class="circle circle3" id="hr" style="--clr: #ff2972"><i></i></div>
+                      <span style="--i: 1"><b>1</b></span>
+                      <span style="--i: 2"><b>2</b></span>
+                      <span style="--i: 3"><b>3</b></span>
+                      <span style="--i: 4"><b>4</b></span>
+                      <span style="--i: 5"><b>5</b></span>
+                      <span style="--i: 6"><b>6</b></span>
+                      <span style="--i: 7"><b>7</b></span>
+                      <span style="--i: 8"><b>8</b></span>
+                      <span style="--i: 9"><b>9</b></span>
+                      <span style="--i: 10"><b>10</b></span>
+                      <span style="--i: 11"><b>11</b></span>
+                      <span style="--i: 12"><b>12</b></span>
+                    </div>
+              
+                    <div id="time">
+                      <div id="hours" style="--clr: #ff2972">00</div>
+                      <div id="minutes" style="--clr: #fee800">00</div>
+                      <div id="seconds" style="--clr: #04fc43">00</div>
+                      <div id="ampm">AM</div>
+                    </div>
+                  </div> -->
 
-
-            </div>
-            <div class="col-10">
+            <!-- </div> -->
+            <div class="col-12 mt-5">
 
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- search -->
                     <div class="tab-pane fade show active text-center" id="v-pills-search" role="tabpanel"
                         aria-labelledby="v-pills-search-tab" tabindex="0">
-                        <div class="mt-3">
+                        <div class="mt-5">
                             <img src=".images/logo-no-background.svg" class="rounded img-box" alt="logo">
                         </div>
 
-                        <div class="input-group m-3 search-icon">
+                        <div class="input-group search-icon">
                             <i class="fa-solid fa-magnifying-glass fa-search" aria-hidden="true"></i>
                             <!-- <i class="fa-solid fa-spinner fa-spin-pulse fa-lg"></i> -->
                             <input type="text" id="searchQuery" class="form-control" placeholder="Search" />
@@ -148,43 +216,43 @@
                             </button>
                         </div>
 
-                        <div>
-                            <div class="text-lg-start text-success m-2">
-                                <h6>
-                                    <span class="badge bg-danger">1</span>&nbsp;&nbsp;
-                                    精准搜索加双引号或者书名号《》.例:"python"
-                                </h6>
-                                <h6>
-                                    <span class="badge bg-warning">2</span>&nbsp;&nbsp;
-                                    指定站点内搜索相关关键词.例:site: 52pojie.cn python
-                                </h6>
-                                <h6>
-                                    <span class="badge bg-primary">3</span>&nbsp;&nbsp;
-                                    标题里包含被搜索的关键字.例:intitle:python
-                                </h6>
-                                <h6>
-                                    <span class="badge bg-success">4</span>&nbsp;&nbsp;
-                                    精准搜索文件类型.例:python filetype:doc
-                                </h6>
-                                <h6>
-                                    <span class="badge bg-info">5</span>&nbsp;&nbsp;
-                                    搜索url中含有关键字的链接:例inurl:python
-                                </h6>
-                                <h6>
-                                    <span class="badge bg-secondary">6</span>&nbsp;&nbsp;
-                                    搜索关键词减号是排除,加号是包含,通配符*,匹配...
-                                </h6>
-                                <h6>
-                                    <span class="badge bg-dark">7</span>&nbsp;&nbsp;
-                                    Google搜索按"/"迅速回到搜索框.
-                                </h6>
-                            </div>
+
+                        <div class="text-lg-start text-success text-algin">
+                            <h6>
+                                <span class="badge bg-danger">1</span>&nbsp;&nbsp;
+                                精准搜索加双引号或者书名号《》.例:"python"
+                            </h6>
+                            <h6>
+                                <span class="badge bg-warning">2</span>&nbsp;&nbsp;
+                                指定站点内搜索相关关键词.例:site: 52pojie.cn python
+                            </h6>
+                            <h6>
+                                <span class="badge bg-primary">3</span>&nbsp;&nbsp;
+                                标题里包含被搜索的关键字.例:intitle:python
+                            </h6>
+                            <h6>
+                                <span class="badge bg-success">4</span>&nbsp;&nbsp;
+                                精准搜索文件类型.例:python filetype:doc
+                            </h6>
+                            <h6>
+                                <span class="badge bg-info">5</span>&nbsp;&nbsp;
+                                搜索url中含有关键字的链接:例inurl:python
+                            </h6>
+                            <h6>
+                                <span class="badge bg-secondary">6</span>&nbsp;&nbsp;
+                                搜索关键词减号是排除,加号是包含,通配符*,匹配...
+                            </h6>
+                            <h6>
+                                <span class="badge bg-dark">7</span>&nbsp;&nbsp;
+                                Google搜索按"/"迅速回到搜索框.
+                            </h6>
                         </div>
-                        <hr>
-                        <div class="text-lg-start text-warning m-2">
-                            <iframe src="https://ip.skk.moe/simple-dark" style="width: 90%; border: 0"></iframe>
-                        </div>
-                       
+
+                        <!-- <hr> -->
+                        <!-- <div class="text-lg-start text-warning m-2"> -->
+                        <!-- <iframe src="https://ip.skk.moe/simple-dark" style="width: 90%; border: 0"></iframe> -->
+                        <!-- </div> -->
+
 
                     </div>
 
@@ -193,11 +261,13 @@
                     <div class="tab-pane fade m-4" id="v-pills-ai" role="tabpanel" aria-labelledby="v-pills-ai-tab"
                         tabindex="0">
 
-                        <div class="text-center m-3">
-                            <h1>Ai</h1>
-                            <p>大公司通常拥有更丰富的资源和技术积累，能够投入大量资金和人力来开发和维护 AI 系统。</p>
+                        <div class="text-center">
+                            <!-- <h1>Ai</h1> -->
+                            <!-- <p>大公司通常拥有更丰富的资源和技术积累，能够投入大量资金和人力来开发和维护 AI 系统。</p> -->
                             <p class="text-start text-success m-3">
-                                优点： 研发先进的技术、优化性能、保持更新、品牌信誉、安全保障、完整的生态系统、成本效益、服务稳定性、长期支持、丰富的学习资源、多元的竞争优势
+                                优点：
+                                研发先进的技术、优化性能、保持更新、品牌信誉、安全保障、完整的生态系统、成本效益、服务稳定性、长期支持、丰富的学习资源、多元的竞争优势。大公司通常拥有更丰富的资源和技术积累，能够投入大量资金和人力来开发和维护
+                                AI 系统。
                             </p>
                             <p class="text-start text-danger m-3">缺点： 很多需要科学上网。 </p>
                         </div>
@@ -276,11 +346,9 @@
                                             <i class="fa-brands fa-cloudversify fa-fade"></i>
                                         </div>
                                         <div class="card__content">
-                                            <h3>我的网站</h3>
+                                            <!-- <h3>My website</h3> -->
                                             <p>
-                                                将日常搜索引擎汇集于此，避免输入重复的搜索内容；
-                                                整理了世界一二流AI平台提供的AI服务；
-                                                自己搭建了一些代理节点和反向代理服务。
+                                                My website
                                             </p>
                                             <a href="https://www.cloudb.pub" target="_blank">Cloudb</a>
                                         </div>
@@ -293,24 +361,24 @@
                                             <i class="fa-brands fa-github fa-flip fa-lg"></i>
                                         </div>
                                         <div class="card__content">
-                                            <h3>Github</h3>
+                                            <!-- <h3>My Github homepage</h3> -->
                                             <p>
-                                                将自己的项目源码发布于此，方便访问。使用 Github 的 pages 服务搭建很多服务。
+                                                My Github homepage
                                             </p>
-                                            <a href="https://github.com/xyz349925756" target="_blank">Read More</a>
+                                            <a href="https://github.com/xyz349925756" target="_blank">Github</a>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="card__bx" style="--clr: #5b98eb">
+                                <div class="card__bx" style="--clr: #f79d00">
                                     <div class="card__data">
                                         <div class="card__icon">
                                             <i class="fa-solid fa-code fa-beat-fade"></i>
                                         </div>
                                         <div class="card__content">
-                                            <h3>Proxy</h3>
-                                            <p>通过代理服务器，提供丰富的服务和高性能的网络连接。可以访问很多世界性的网站。</p>
-                                            <a href="https://proxy.cloudb.us.kg" target="_blank">Read More</a>
+                                            <!-- <h3>My proxy server</h3> -->
+                                            <p>My proxy server</p>
+                                            <a href="https://proxy.cloudb.us.kg" target="_blank">Proxy</a>
                                         </div>
                                     </div>
                                 </div>
@@ -320,9 +388,9 @@
                                             <i class="fa-brands fa-google fa-spin"></i>
                                         </div>
                                         <div class="card__content">
-                                            <h3>Google</h3>
-                                            <p>使用代理技术访问Google搜索。</p>
-                                            <a href="https://google.0256.us.kg" target="_blank">Read More</a>
+                                            <!-- <h3>Google Agent</h3> -->
+                                            <p>Google Agent</p>
+                                            <a href="https://google.0256.us.kg" target="_blank">Google</a>
                                         </div>
                                     </div>
                                 </div>
@@ -332,26 +400,53 @@
                                             <i class="fa-solid fa-language fa-fade"></i>
                                         </div>
                                         <div class="card__content">
-                                            <h3>Translate</h3>
+                                            <!-- <h3>Translate</h3> -->
                                             <p>
-                                                使用代理技术访问Google Translate,供 vscode pot 等 app api调用。
+                                                Google Translate Agent
                                             </p>
-                                            <a href="https://googletranslate.cloudb.us.kg" target="_blank">Read More</a>
+                                            <a href="https://googletranslate.cloudb.us.kg" target="_blank">Translate</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card__bx" style="--clr: #f79d00">
+                                <div class="card__bx" style="--clr: #5b98eb">
                                     <div class="card__data">
                                         <div class="card__icon">
-                                            <i class="fa-solid fa-network-wired fa-bounce"></i>
+                                            <i class="fa-brands fa-docker fa-bounce"></i>
                                         </div>
                                         <div class="card__content">
-                                            <h3>公益V2ray代理</h3>
-                                            <p>此地址就是订阅链接，高峰YouTube码流30000 左右。内含6个节点，比一些小机场更快。</p>
-                                            <a href="https://v2.0256.website/trojan/pty" target="_blank">Read More</a>
+                                            <!-- <h3>Docker</h3> -->
+                                            <p>Docker Agent</p>
+                                            <a href="https://docker.0256.us.kg" target="_blank">Docker</a>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="card__bx" style="--clr: #67b26f">
+                                    <div class="card__data">
+                                        <div class="card__icon">
+                                            <i class="fa-solid fa-book-open fa-flip"></i>
+                                        </div>
+                                        <div class="card__content">
+                                            <!-- <h3>Neat-Reader</h3> -->
+                                            <p>E -book reader</p>
+                                            <a href="https://neat-reader.cloudb.pub" target="_blank">Neat-Reader</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card__bx" style="--clr: #ffafbd">
+                                    <div class="card__data">
+                                        <div class="card__icon">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </div>
+                                        <div class="card__content">
+                                            <!-- <h3>Search</h3> -->
+                                            <p>Search Pages</p>
+                                            <a href="https://s.cloudb.pub/" target="_blank">Search</a>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </section>
 
                         </section>
@@ -363,8 +458,10 @@
                     <!-- net -->
                     <div class="tab-pane fade m-5" id="v-pills-net" role="tabpanel" aria-labelledby="v-pills-net-tab"
                         tabindex="0">
-                        <h2 class="text-center text-danger">IP信息</h2>
-                        <table id="ip-info" class="table m-5 table-dark table-hover">
+
+
+                        <h2 class="text-center text-danger">您的IP信息</h2>
+                        <table id="ip-info" class="table m-5 table-sm table-dark table-striped table-hover">
                             <tr class="table-active">
                                 <th>IP</th>
                                 <th>位置</th>
@@ -372,8 +469,8 @@
                             </tr>
                         </table>
 
-                        <h2 class="text-center text-danger">网站连通性检测</h2>
-                        <table id="connectivity-check" class="table m-5 table-dark table-hover">
+                        <h2 class="text-center text-danger">我的代理网站连通性检测</h2>
+                        <table id="connectivity-check" class="table m-5 table-sm  table-dark table-striped table-hover">
                             <tr class="table-active">
                                 <th>网站</th>
                                 <th>状态</th>
@@ -385,7 +482,15 @@
                     <!-- local -->
                     <div class="tab-pane fade" id="v-pills-local" role="tabpanel" aria-labelledby="v-pills-local-tab"
                         tabindex="0">
-                        <div class="row align-items-center m-5">
+                        <div class="text-center m-3">
+                            <!-- <h1>本地服务</h1> -->
+                            <p>此页是开发者本地电脑上的服务，外网不能打开。</p>
+                            <!-- <p class="text-start text-success m-3">
+                                包含电子书阅读器、本地知识库、软件、电子书下载、世界一流系统镜像文件下。
+                            </p>
+                            <p class="text-start text-danger m-3">最后一行是我的联系方式。 </p> -->
+                        </div>
+                        <div class="row align-items-center">
                             <div class="col local-div m-3 p-2">
                                 <a href="index1.html" target="_blank" rel="noopener noreferrer">
                                     <img src=".images/local/bookshelf_icon-icons.com_54414.svg" alt="">
@@ -415,7 +520,7 @@
                         </div>
 
 
-                        <div class="row align-items-center m-5">
+                        <div class="row align-items-center">
                             <div class="col local-div m-3 p-2">
                                 <a href="http://localhost:808/" target="_blank" rel="noopener noreferrer">
                                     <img src=".images/local/book_online_learn_reading_education_ebook_icon_220063.svg"
@@ -444,7 +549,7 @@
                         </div>
 
 
-                        <div class="row align-items-center m-5">
+                        <div class="row align-items-center">
                             <div class="col local-div m-3 p-2">
                                 <a href="mailto:xyz349925756@hotmail.com" target="_blank" rel="noopener noreferrer">
                                     <img src=".images/local/emailgmaillogomailsocialsocialmedia.svg" alt="">
@@ -478,8 +583,8 @@
 
 
                     <!-- OTHER -->
-                    <div class="tab-pane fade bg-dark" id="v-pills-other" role="tabpanel"
-                        aria-labelledby="v-pills-other-tab" tabindex="0">
+                    <div class="tab-pane fade" id="v-pills-other" role="tabpanel" aria-labelledby="v-pills-other-tab"
+                        tabindex="0">
                         <div class="row">
                             <div class="wrapper">
                                 <div class="items">
@@ -522,6 +627,10 @@
 
                 </div>
             </div>
+
+
+
+
         </div>
 
 
@@ -597,7 +706,44 @@
         updateTime(); // Initial call to display the time immediately
 
     </script>
-
+    <!-- <script>
+        let hr = document.querySelector("#hr");
+        let mn = document.querySelector("#mn");
+        let sc = document.querySelector("#sc");
+  
+        setInterval(() => {
+          let day = new Date();
+          let hh = day.getHours() * 30;
+          let mm = day.getMinutes() * 6;
+          let ss = day.getSeconds() * 6;
+          hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+          mn.style.transform = `rotateZ(${mm}deg)`;
+          sc.style.transform = `rotateZ(${ss}deg)`;
+  
+          let hours = document.getElementById("hours");
+          let minutes = document.getElementById("minutes");
+          let seconds = document.getElementById("seconds");
+          let ampm = document.getElementById("ampm");
+  
+          let h = new Date().getHours();
+          let m = new Date().getMinutes();
+          let s = new Date().getSeconds();
+          let am = h >= 12 ? "PM" : "AM";
+  
+          if (h > 12) {
+            h = h - 12;
+          }
+  
+          h = (h < 10) ? "0" + h : h;
+          m = (m < 10) ? "0" + m : m;
+          s = (s < 10) ? "0" + s : s;
+  
+          hours.innerHTML = h;
+          minutes.innerHTML = m;
+          seconds.innerHTML = s;
+          ampm.innerHTML = am;
+        });
+      </script> -->
 </body>
 
 </html>
