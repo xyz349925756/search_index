@@ -35,14 +35,21 @@
                     </button>
                     <span>
 
-                        <a class="navbar-brand " href="http://360.tiandi.com/?td_2_6216" target="_blank">
+                        <a class="navbar-brand text-success" href="http://360.tiandi.com/?td_2_6216" target="_blank">
                             <i class="fa-brands fa-edge fa-spin"></i></a>
-                        <a class="navbar-brand " href="http://h.tiandi.com/?td_1_6216" target="_blank">
-                            <i class="fa-brands fa-edge-legacy fa-spin fa-spin-reverse"></i></a>
-                        <a class="navbar-brand " href="https://github.com/xyz349925756" target="_blank">
-                            <i class="fa-brands fa-square-github fa-beat-fade"></i></a>
-                        <a class="navbar-brand " href="https://www.cloudb.pub" target="_blank">
-                            <i class="fa-solid fa-house-chimney fa-bounce"></i></a>
+                        <a class="navbar-brand text-primary" href="http://h.tiandi.com/?td_1_6216" target="_blank">
+                        <img src=".images/ie.png" width="25px" height="25px">    
+                        </a>
+
+                        <a class="navbar-brand" href="https://dash.cloudflare.com/" target="_blank">
+                            <img src=".images/cloudflare.svg" width="25px" height="25px">
+                        </a>
+                        <a class="navbar-brand" href="https://github.com/xyz349925756" target="_blank">
+                        <img src=".images/github.svg" width="25px" height="25px"> 
+                        </a>
+                        <a class="navbar-brand text-success" href="https://www.cloudb.pub" target="_blank">
+                        <img src=".images/home.svg" width="25px" height="25px">    
+                        </a>
 
                     </span>
                     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
@@ -178,7 +185,7 @@
                     <!-- search -->
                     <div class="tab-pane fade show active text-center" id="v-pills-search" role="tabpanel"
                         aria-labelledby="v-pills-search-tab" tabindex="0">
-                        <div class="mt-5">
+                        <div>
                             <img src=".images/logo-no-background.svg" class="rounded img-box" alt="logo">
                         </div>
 
@@ -240,10 +247,14 @@
                             </h6>
                             <h6>
                                 <span class="badge bg-secondary">6</span>&nbsp;&nbsp;
-                                搜索关键词减号是排除,加号是包含,通配符*,匹配...
+                                related:cloudflare.com 搜索与Cloudflare类似的网站
                             </h6>
                             <h6>
                                 <span class="badge bg-dark">7</span>&nbsp;&nbsp;
+                                搜索关键词减号是排除,加号是包含,通配符*,匹配...
+                            </h6>
+                            <h6>
+                                <span class="badge bg-danger">8</span>&nbsp;&nbsp;
                                 Google搜索按"/"迅速回到搜索框.
                             </h6>
                         </div>
@@ -685,65 +696,7 @@
                 }
             });
     </script>
-    <script>
-        // clock
-        function updateTime() {
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const day = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
 
-            const formattedTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
-            document.getElementById('currentTime').textContent = formattedTime;
-            document.getElementById('currentTimeReflection').textContent = formattedTime;
-        }
-
-        setInterval(updateTime, 1000);
-        updateTime(); // Initial call to display the time immediately
-
-    </script>
-    <!-- <script>
-        let hr = document.querySelector("#hr");
-        let mn = document.querySelector("#mn");
-        let sc = document.querySelector("#sc");
-  
-        setInterval(() => {
-          let day = new Date();
-          let hh = day.getHours() * 30;
-          let mm = day.getMinutes() * 6;
-          let ss = day.getSeconds() * 6;
-          hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
-          mn.style.transform = `rotateZ(${mm}deg)`;
-          sc.style.transform = `rotateZ(${ss}deg)`;
-  
-          let hours = document.getElementById("hours");
-          let minutes = document.getElementById("minutes");
-          let seconds = document.getElementById("seconds");
-          let ampm = document.getElementById("ampm");
-  
-          let h = new Date().getHours();
-          let m = new Date().getMinutes();
-          let s = new Date().getSeconds();
-          let am = h >= 12 ? "PM" : "AM";
-  
-          if (h > 12) {
-            h = h - 12;
-          }
-  
-          h = (h < 10) ? "0" + h : h;
-          m = (m < 10) ? "0" + m : m;
-          s = (s < 10) ? "0" + s : s;
-  
-          hours.innerHTML = h;
-          minutes.innerHTML = m;
-          seconds.innerHTML = s;
-          ampm.innerHTML = am;
-        });
-      </script> -->
 </body>
 
 </html>
