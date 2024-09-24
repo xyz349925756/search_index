@@ -27,6 +27,19 @@ body {
     align-items: center;
 }
 
+.ip_img {
+    position: relative;
+    top: 70%;
+    left: 20px;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: var(--bs-border-color) 1px solid;
+}
+
 .container-fluid .bbtn button {
     position: absolute;
     top: 0;
