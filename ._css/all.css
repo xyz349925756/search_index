@@ -411,7 +411,9 @@ body {
     box-shadow: 0 0 20px 10px var(--bs-cyan);
 }
 
-
+.navbar-brand:hover, .navbar-brand:focus{
+	color: transparent;
+}
 /* 未点击（未访问）的链接样式 */
 a:link {
     color: #fff;
@@ -430,7 +432,7 @@ a:visited {
 
 /* 鼠标悬停在链接上时的样式 */
 a:hover {
-    color: #fff;
+
     /* 鼠标悬停时的颜色 */
     text-decoration: underline;
     /* 显示下划线 */
