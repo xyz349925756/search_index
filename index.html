@@ -137,6 +137,7 @@
             <div class="col-12 mt-5">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- search -->
+					<!-- https://www.youtube.com/results?search_query=%E7%8E%9B%E8%8E%8E%E4%B8%8E%E7%86%8A -->
                     <div class="tab-pane fade show active text-center" id="v-pills-search" role="tabpanel"
                         aria-labelledby="v-pills-search-tab" tabindex="0">
                         <div>
@@ -150,14 +151,17 @@
                         </div>
 
                         <div class="btn-group-sm p-2" role="group" aria-label="Basic mixed styles example">
-                            <button onclick="searchEngine('baidu')" class="btn btn-primary">
-                                <i class="fa-solid fa-paw fa-beat fa-sm"></i>&nbsp;百度
-                            </button>
                             <button onclick="searchEngine('google')" class="btn btn-danger">
                                 <i class="fa-brands fa-google fa-spin fa-sm"></i>&nbsp;Google
                             </button>
                             <button onclick="searchEngine('bing')" class="btn btn-success">
                                 <i class="fa-brands fa-microsoft fa-spin fa-spin-reverse fa-sm"></i>&nbsp;Bing
+                            </button>
+							<button onclick="searchEngine('baidu')" class="btn btn-primary">
+                                <i class="fa-solid fa-poo fa-sm"></i>&nbsp;百度
+                            </button>
+							<button onclick="searchEngine('youtube')" class="btn btn-danger">
+                                <i class="fa-brands fa-youtube fa-beat-fade"></i>&nbsp;Youtube
                             </button>
                             <button onclick="searchEngine('github')" class="btn btn-dark">
                                 <i class="fa-brands fa-github fa-beat fa-sm"></i>&nbsp;GitHub
@@ -621,11 +625,14 @@
             var query = document.getElementById("searchQuery").value;
             var url;
 
-            if (engine === "baidu") {
-                url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query);
+            if (engine === "youtube") {
+                <!-- url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query); -->
+				url = "https://www.youtube.com/results?search_query=" + encodeURIComponent(query);
             } else if (engine === "google") {
                 url = "https://www.google.com/search?q=" + encodeURIComponent(query);
-            } else if (engine === "bing") {
+            } else if (engine === "baidu") {
+                url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query);
+            }else if (engine === "bing") {
                 url = "https://www.bing.com/search?q=" + encodeURIComponent(query);
             } else if (engine === "github") {
                 url = "https://github.com/search?q=" + encodeURIComponent(query);
