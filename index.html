@@ -40,7 +40,7 @@
                         <a class="navbar-brand text-success" href="http://360.tiandi.com/?td_2_6216" target="_blank">
                             <i class="fa-brands fa-edge fa-spin"></i></a>
                         <!-- <a class="navbar-brand" href="http://h.tiandi.com/?td_1_6216" target="_blank"> -->
-                            <!-- <img src=".images/ie.png" width="25px" height="25px" /> -->
+                        <!-- <img src=".images/ie.png" width="25px" height="25px" /> -->
                         <!-- </a> -->
 
                         <a class="navbar-brand" href="https://dash.cloudflare.com/" target="_blank">
@@ -74,7 +74,7 @@
                                     <div class="bbtn">
                                         <button class="nav-link active" id="v-pills-search-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-search" type="button" role="tab"
-                                            aria-controls="v-pills-search" aria-selected="true">
+                                            aria-controls="v-pills-search" aria-selected="true" onclick="hideSidebar()">
                                             <i class="fa-solid fa-magnifying-glass fa-beat"></i>&nbsp;&nbsp; Search
                                         </button>
                                     </div>
@@ -82,7 +82,7 @@
                                     <div class="bbtn">
                                         <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-ai" type="button" role="tab"
-                                            aria-controls="v-pills-ai" aria-selected="false">
+                                            aria-controls="v-pills-ai" aria-selected="false" onclick="hideSidebar()">
                                             <i class="fa-brands fa-bots fa-xl fa-beat-fade"></i>&nbsp;&nbsp; Ai
                                         </button>
                                     </div>
@@ -90,7 +90,8 @@
                                     <div class="bbtn">
                                         <button class="nav-link" id="v-pills-services-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-services" type="button" role="tab"
-                                            aria-controls="v-pills-services" aria-selected="false">
+                                            aria-controls="v-pills-services" aria-selected="false"
+                                            onclick="hideSidebar()">
                                             <i class="fa-solid fa-server fa-fade fa-lg"></i>&nbsp;&nbsp; Services
                                         </button>
                                     </div>
@@ -98,7 +99,7 @@
                                     <div class="bbtn">
                                         <button class="nav-link" id="v-pills-net-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-net" type="button" role="tab"
-                                            aria-controls="v-pills-net" aria-selected="false">
+                                            aria-controls="v-pills-net" aria-selected="false" onclick="hideSidebar()">
                                             <i class="fa-solid fa-globe fa-spin fa-lg"></i>&nbsp;&nbsp; Network
                                         </button>
                                     </div>
@@ -106,7 +107,7 @@
                                     <div class="bbtn">
                                         <button class="nav-link" id="v-pills-local-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-local" type="button" role="tab"
-                                            aria-controls="v-pills-local" aria-selected="false">
+                                            aria-controls="v-pills-local" aria-selected="false" onclick="hideSidebar()">
                                             <i class="fa-solid fa-bell fa-shake fa-lg"></i>&nbsp;&nbsp; Local
                                         </button>
                                     </div>
@@ -114,7 +115,7 @@
                                     <div class="bbtn">
                                         <button class="nav-link" id="v-pills-other-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-other" type="button" role="tab"
-                                            aria-controls="v-pills-other" aria-selected="false">
+                                            aria-controls="v-pills-other" aria-selected="false" onclick="hideSidebar()">
                                             <i class="fa-solid fa-sliders fa-bounce fa-lg"></i>&nbsp;&nbsp; Wrapper
                                         </button>
                                     </div>
@@ -137,7 +138,7 @@
             <div class="col-12 mt-5">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- search -->
-					<!-- https://www.youtube.com/results?search_query=%E7%8E%9B%E8%8E%8E%E4%B8%8E%E7%86%8A -->
+                    <!-- https://www.youtube.com/results?search_query=%E7%8E%9B%E8%8E%8E%E4%B8%8E%E7%86%8A -->
                     <div class="tab-pane fade show active text-center" id="v-pills-search" role="tabpanel"
                         aria-labelledby="v-pills-search-tab" tabindex="0">
                         <div>
@@ -157,10 +158,10 @@
                             <button onclick="searchEngine('bing')" class="btn btn-success">
                                 <i class="fa-brands fa-microsoft fa-spin fa-spin-reverse fa-sm"></i>&nbsp;Bing
                             </button>
-							<button onclick="searchEngine('baidu')" class="btn btn-primary">
+                            <button onclick="searchEngine('baidu')" class="btn btn-primary">
                                 <i class="fa-solid fa-poo fa-sm"></i>&nbsp;百度
                             </button>
-							<button onclick="searchEngine('youtube')" class="btn btn-danger">
+                            <button onclick="searchEngine('youtube')" class="btn btn-danger">
                                 <i class="fa-brands fa-youtube fa-beat-fade"></i>&nbsp;Youtube
                             </button>
                             <button onclick="searchEngine('github')" class="btn btn-dark">
@@ -296,16 +297,16 @@
                     <!-- 我的服务器 -->
                     <div class="tab-pane fade m-4" id="v-pills-services" role="tabpanel"
                         aria-labelledby="v-pills-services-tab" tabindex="0">
-						
 
-						
+
+
                         <section class="container-fluid">
                             <section class="card__container">
                                 <div class="card__bx" style="--clr: #89ec5b">
                                     <div class="card__data">
                                         <div class="card__icon">
                                             <i class="fa-brands fa-cloudversify fa-fade"></i>
-                                            
+
                                         </div>
                                         <div class="card__content">
                                             <!-- <h3>My website</h3> -->
@@ -327,7 +328,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="card__bx" style="--clr: #45D3D8">
                                     <div class="card__data">
                                         <div class="card__icon">
@@ -445,9 +446,9 @@
                                         </div>
                                     </div>
                                 </div>
-								
-								
-								<div class="card__bx" style="--clr: #0a58ca">
+
+
+                                <div class="card__bx" style="--clr: #0a58ca">
                                     <div class="card__data">
                                         <div class="card__icon">
                                             <i class="fa-solid fa-brain"></i>
@@ -462,10 +463,12 @@
 
                             </section>
                         </section>
-						
-						<div class="text-center">
+
+                        <div class="text-center">
                             <p class="text-start text-success m-3">
-                             说明： 这页是我自己搭建的服务器。Proxy,Google,Translate,Docker,使用了cdn，有时候会出现连接失败的情况需要多刷新一下。因为中国各地的运营商组建的是城域网，很多url需要路由。我服务器是在国外，寻址时间可能会长一些。这跟营运商的设置有关，某些地区的运营商不能访问。因为他们封了一些国际云服务商。Google访问会出现验证失败的情况是因为您的IP地址被滥用导致google 检测不通过导致。
+                                说明：
+                                这页是我自己搭建的服务器。Proxy,Google,Translate,Docker,使用了cdn，有时候会出现连接失败的情况需要多刷新一下。因为中国各地的运营商组建的是城域网，很多url需要路由。我服务器是在国外，寻址时间可能会长一些。这跟营运商的设置有关，某些地区的运营商不能访问。因为他们封了一些国际云服务商。Google访问会出现验证失败的情况是因为您的IP地址被滥用导致google
+                                检测不通过导致。
                             </p>
 
                         </div>
@@ -483,7 +486,8 @@
                             </tr>
                         </table>
 
-                        <h2 class="text-center text-danger"><a href="https://proxy.cloudb.us.kg" target="_blank">proxy.cloudb.us.kg</a>代理网站连通性检测</h2>
+                        <h2 class="text-center text-danger"><a href="https://proxy.cloudb.us.kg"
+                                target="_blank">proxy.cloudb.us.kg</a>代理网站连通性检测</h2>
                         <table id="connectivity-check" class="table m-5 table-sm table-dark table-striped table-hover">
                             <tr class="table-active">
                                 <th>网站</th>
@@ -641,12 +645,12 @@
 
             if (engine === "youtube") {
                 <!-- url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query); -->
-				url = "https://www.youtube.com/results?search_query=" + encodeURIComponent(query);
+                url = "https://www.youtube.com/results?search_query=" + encodeURIComponent(query);
             } else if (engine === "google") {
                 url = "https://www.google.com/search?q=" + encodeURIComponent(query);
             } else if (engine === "baidu") {
                 url = "https://www.baidu.com/s?wd=" + encodeURIComponent(query);
-            }else if (engine === "bing") {
+            } else if (engine === "bing") {
                 url = "https://www.bing.com/search?q=" + encodeURIComponent(query);
             } else if (engine === "github") {
                 url = "https://github.com/search?q=" + encodeURIComponent(query);
@@ -676,6 +680,14 @@
                     event.preventDefault(); // 阻止默认的回车键行为
                 }
             });
+    </script>
+    <script>
+        function hideSidebar() {
+            const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('offcanvasDarkNavbar'));
+            if (offcanvas) {
+                offcanvas.hide();
+            }
+        }
     </script>
 </body>
 
