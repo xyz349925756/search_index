@@ -242,6 +242,9 @@
                             <p class="text-start text-danger m-3">
                                 缺点： 很多需要科学上网。
                             </p>
+                            <p class="text-start text-warning m-3">
+                                国内也有一些优秀的Ai,这里就不列举出来了。 强烈推荐<a href="https://api.v3.cm/register?aff=OPzx" style="color: #F0939D;" target="_blank"> v3 api </a>有免费的大模型，付费的也比官网便宜一半以上！
+                            </p>
                         </div>
 
                         <div class="row align-items-start">
@@ -253,6 +256,12 @@
                             <div class="col gemini m-3">
                                 <a href="https://gemini.google.com" target="_blank">
                                     <img src=".images/logo/Google_icon-icons.com.svg" alt="gemini" />
+                                </a>
+                            </div>
+                            <div class="col claude m-3">
+                                <a href="https://aistudio.google.com/prompts/new_chat" target="_blank">
+                                    <img src=".images/logo/google_aistudio.svg" alt=" google aistudio" />
+                                    
                                 </a>
                             </div>
                             <div class="col copilot m-3">
@@ -269,9 +278,15 @@
                                     <span> Claude </span>
                                 </a>
                             </div>
-                            <div class="col baidu m-3">
-                                <a href="https://chat.baidu.com" target="_blank">
-                                    <img src=".images/logo/baidu_logo.png" alt="baidu" />
+                            <div class="col gemini m-3">
+                                <a href="https://github.com/copilot" target="_blank">
+                                    <img src=".images/logo/github_copilot.svg" alt="claude" />
+                                </a>
+                            </div>
+                            <div class="col claude m-3">
+                                <a href="https://console.groq.com/playground" target="_blank">
+                                    <img src=".images/logo/g_3469.png" alt="baidu" />
+                                    <!-- <p>Groq</p> -->
                                 </a>
                             </div>
                             <div class="col xinghuo m-3">
@@ -295,6 +310,11 @@
                             <div class="col doubao m-3">
                                 <a href="https://www.doubao.com" target="_blank">
                                     <img src=".images/logo/doubao.png" alt="doubao" />
+                                </a>
+                            </div>
+                            <div class="col baidu m-3">
+                                <a href="https://chat.baidu.com" target="_blank">
+                                    <img src=".images/logo/baidu_logo.png" alt="baidu" />
                                 </a>
                             </div>
                         </div>
@@ -481,26 +501,36 @@
                     </div>
 
                     <!-- net -->
-                    <div class="tab-pane fade m-5" id="v-pills-net" role="tabpanel" aria-labelledby="v-pills-net-tab"
-                        tabindex="0">
-                        <h2 class="text-center text-danger">您的IP信息</h2>
-                        <table id="ip-info" class="table m-5 table-sm table-dark table-striped table-hover">
-                            <tr class="table-active">
-                                <th>IP</th>
-                                <th>位置</th>
-                                <th>运营商</th>
-                            </tr>
-                        </table>
+                    <div class="tab-pane fade m-5 text-center" id="v-pills-net" role="tabpanel" aria-labelledby="v-pills-net-tab"
+                        tabindex="0" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); border-radius: 15px; padding: 30px; box-shadow: 0 0 20px rgba(0,255,255,0.1);">
+                        
+                        <div class="ip-info-container" style="position: relative; margin-bottom: 40px;">
+                            <h2 class="text-center" style="color: #00ffff; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; text-shadow: 0 0 10px rgba(0,255,255,0.5);">
+                                <i class="fas fa-network-wired me-2"></i>您的IP信息
+                            </h2>
+                            <table id="ip-info" class="table table-dark mx-auto" style="background: rgba(0,0,0,0.6); border-radius: 10px; backdrop-filter: blur(10px); border: 1px solid rgba(0,255,255,0.1);">
+                                <tr style="border-bottom: 1px solid rgba(0,255,255,0.2);">
+                                    <th style="color: #00ffff; padding: 15px;">IP</th>
+                                    <th style="color: #00ffff; padding: 15px;">位置</th>
+                                    <th style="color: #00ffff; padding: 15px;">运营商</th>
+                                </tr>
+                            </table>
+                        </div>
 
-                        <h2 class="text-center text-danger"><a href="https://proxy.cloudb.us.kg"
-                                target="_blank">proxy</a>&nbsp;&nbsp;代理网站连通性检测</h2>
-                        <table id="connectivity-check" class="table m-5 table-sm table-dark table-striped table-hover">
-                            <tr class="table-active">
-                                <th>网站</th>
-                                <th>状态</th>
-                                <th>延迟</th>
-                            </tr>
-                        </table>
+                        <div class="connectivity-container" style="position: relative;">
+                            <h2 class="text-center" style="color: #00ffff; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; text-shadow: 0 0 10px rgba(0,255,255,0.5);">
+                                <i class="fas fa-globe me-2"></i>
+                                <a href="https://proxy.cloudb.us.kg" target="_blank" style="color: #00ffff; text-decoration: none; transition: all 0.3s ease;">proxy</a>
+                                &nbsp;代理网站连通性检测
+                            </h2>
+                            <table id="connectivity-check" class="table table-dark mx-auto" style="background: rgba(0,0,0,0.6); border-radius: 10px; backdrop-filter: blur(10px); border: 1px solid rgba(0,255,255,0.1);">
+                                <tr style="border-bottom: 1px solid rgba(0,255,255,0.2);">
+                                    <th style="color: #00ffff; padding: 15px;">网站</th>
+                                    <th style="color: #00ffff; padding: 15px;">状态</th>
+                                    <th style="color: #00ffff; padding: 15px;">延迟</th>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
 
                     <!-- local -->
