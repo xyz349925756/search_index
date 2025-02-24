@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     websites.forEach(site => {
         const start = new Date().getTime();
-        const proxyUrl = `https://proxy.cloudb.us.kg/${encodeURIComponent(site.url)}`;
+        const proxyUrl = `https://proxy.cloudb.pub/${encodeURIComponent(site.url)}`;
         
         fetch(proxyUrl)
             .then(response => {
