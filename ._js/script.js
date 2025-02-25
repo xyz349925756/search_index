@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		{name: '腾讯', url: 'https://www.qq.com'},
 		{name: 'Microsoft', url: 'https://www.microsoft.com/zh-cn/'},
 		{name: '我的网站', url: 'https://www.cloudb.pub'},
-		{name: 'Google proxy', url: 'https://google.0256.us.kg'},
+		{name: 'Google', url: 'https://www.google.com'},
     ];
 
     const connectivityCheck = document.getElementById('connectivity-check');
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const latency = new Date().getTime() - start;
                     connectivityCheck.innerHTML += `
                         <tr>
-                            <th>${site.name}</th>
+                            <th><a href="${site.url}" target="_blank">${site.name}</a></th>
                             <td style="color: green;">在线</td>
                             <td class="latency">${latency}ms</td>
                         </tr>
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     connectivityCheck.innerHTML += `
                         <tr>
-                            <th>${site.name}</th>
+                            <th><a href="${site.url}" target="_blank">${site.name}</a></th>
                             <td style="color: red;">响应错误</td>
                             <td>不可用</td>
                         </tr>
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(() => {
                 connectivityCheck.innerHTML += `
                     <tr>
-                        <th>${site.name}</th>
+                        <th><a href="${site.url}" target="_blank">${site.name}</a></th>
                         <td style="color: red;">离线</td>
                         <td>不可用</td>
                     </tr>
