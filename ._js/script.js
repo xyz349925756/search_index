@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		{name: '腾讯', url: 'https://www.qq.com'},
 		{name: 'Microsoft', url: 'https://www.microsoft.com/zh-cn/'},
 		{name: '我的网站', url: 'https://www.cloudb.pub'},
-		{name: 'Google', url: 'https://www.google.com'},
     ];
 
     const connectivityCheck = document.getElementById('connectivity-check');
