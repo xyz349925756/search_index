@@ -198,88 +198,124 @@ main.hidden {
 
 /* h1 -h6样式 */
 h1 {
-  text-align: center;
-margin: 40px;
+    font-size: 2rem;
+    text-align: center;
+    padding: 25px 0px;
+    margin: 0px;
 }
 h1 .anchor{
     border-radius: 5px;
-    padding: 2px 30px 4px;
-    color: white;
-    border-left: 100px solid darkturquoise;
-    border-top: 30px solid transparent;
-    border-right: 100px solid darkorange;
-    border-bottom: 0px solid darkorange;
+    padding: 3px 50px;
+    /* border-left: 100px solid darkorange; */
+    /* border-top: 1px solid darkorange; */
+    border-right: 1px solid #56ab2f;
+    border-bottom: 1px solid #56ab2f;
+    background: #8BC34A;
+    /* color: white; */
+    background-image: url(https://cdn.icon-icons.com/icons2/1527/PNG/512/doc_106706.png);
+    background-size: 35px;
+    background-repeat: no-repeat; 
+    /* background-attachment: fixed; */
+    background-position: right; 
+    box-shadow: 10px 10px 10px 5px #333333;
+}
+h1 a.anchor:hover {
+    box-shadow: 0 0 20px 10px #56ab2f;
 }
 h2 {
-  border-bottom: solid 1px darkorange;
-  border-right: double 90px #0288d1;
-  border-radius: 0px 5px 5px 0px;
+	border-bottom: solid 1px #cb3066;
 }
 h2 .anchor{
-  background-image: linear-gradient(to right,darkorange,#2196F3);
-  border-radius: 0px 5px 0px 0px;
-  padding: 2px 30px 2px;
-  color: rgb(255, 255, 255);
-  border-bottom: solid 1px orange;
-  border-top: solid 1px #0288d1;
+    background-image: linear-gradient(to right, #16bffd, #cb3066);
+    border-radius: 0px 5px 0px 0px;
+    padding: 2px 30px 2px;
+    color: white;
+    border-top: solid 1px white;
+    box-shadow: 4px 4px 2px #16bffd;
 }
+h2 a.anchor:hover {
+    box-shadow: 0 0 20px 10px #16bffd;
+}
+h2:hover{
+    box-shadow: 0 15px 10px -10px #cb3066;
+}
+
 h3 {
-  border-bottom: solid 1px darkcyan;
-  /* border-right: solid 25px yellow; */
-  border-radius: 0px 5px 0px 0px;
+	border-bottom: solid 1px #ff9800;
 }
 h3 .anchor{
-  background-image: linear-gradient(to right,darkcyan,darkgray);
-  border-radius: 0px 6px 0px 0px;
-  padding: 2px 30px 2px;
-  color: white;
-  border-bottom: solid 1px darkcyan;
-  border-top: solid 1px darkgray;
+    background-image: linear-gradient(to right, #cb3066, #ff9800);
+    border-radius: 0px 5px 0px 0px;
+    padding: 2px 30px 2px;
+    color: white;
+    border-top: solid 1px white;
+    box-shadow: 4px 4px 2px #cb3066;
 }
+h3 a.anchor:hover {
+    box-shadow: 0 0 20px 10px #cb3066;
+}
+h3:hover{
+    box-shadow: 0 15px 10px -10px #ff9800;
+}
+
 h4 {
-  border-bottom: solid 1px darkred;
-  border-right: ridge 20px darkred;
-  border-radius: 0px 4px;
+	border-bottom: solid 1px #16bffd;
 }
 h4 .anchor{
-	background-image: linear-gradient(to right,#f44336,#ff9800);
-	border-radius: 0px 5px 0px 0px;
-	padding: 2px 30px 2px;
-	color: white;
-	border-top: solid 1px #FF9800;
-	border-bottom: solid 1px red;
+    background-image: linear-gradient(to right, #ff9800, #16bffd);
+    border-radius: 0px 5px 0px 0px;
+    padding: 2px 30px 2px;
+    color: white;
+    border-top: solid 1px white;
+    box-shadow: 4px 4px 2px #ff9800;
+}
+h4 a.anchor:hover {
+    box-shadow: 0 0 20px 10px #ff9800;
+}
+h4:hover{
+    box-shadow: 0 15px 10px -10px #16bffd;
 }
 h5 {
-  border-bottom: solid 1px cyan;
-  border-right: groove 20px cyan;
+	border-bottom: solid 1px #673AB7;
 }
 h5 .anchor{
-  background-image: linear-gradient(to right,cyan,#2196F3);
-  border-radius: 0px 4px 0px 0px;
-  padding: 2px 30px 2px;
-  color: white;
-  border-top: solid 1px #2196F3;
-  border-bottom: solid 1px cyan;
+    background-image: linear-gradient(to right, #673AB7, #56ab2f);
+    border-radius: 0px 4px 0px 0px;
+    padding: 2px 30px 2px;
+    color: white;
+    border-top: solid 1px white;
+    box-shadow: 4px 4px 2px #673ab7;
+}
+h5 a.anchor:hover {
+    box-shadow: 0 0 20px 10px #673AB7;
+}
+h5:hover{
+    box-shadow: 0 15px 10px -10px #673AB7;
 }
 h6 {
-  border-bottom: solid 1px darkgreen;
-  border-right: dotted 20px darkgreen;
+	border-bottom: solid 1px #56ab2f;
 }
 h6 .anchor{
-  background-image: linear-gradient(to right,#673AB7,#4CAF50);
-  border-radius: 0px 4px 0px 0px;
-  padding: 2px 30px 2px;
-  color: white;
-  border-top: solid 1px #673AB7;
-  border-bottom: solid 1px green;
+    background-image: linear-gradient(to right, #56ab2f, #a8e063);
+    border-radius: 0px 4px 0px 0px;
+    padding: 2px 30px 2px;
+    color: white;
+    border-top: solid 1px white;
+    box-shadow: 4px 4px #56ab2f;
+}
+h6 a.anchor:hover {
+    box-shadow: 0 0 20px 10px #56ab2f;
+}
+h6:hover{
+    box-shadow: 0 15px 10px -10px #56ab2f;
 }
 
 .anchor span {
   color: #34495e;
 }
-.anchor:hover {
-  text-decoration: underline;
-}
+/* .anchor:hover { */
+  /* text-decoration: underline; */
+/* } */
 .sidebar {
   border-right: 1px solid rgba(0,0,0,0.07);
   overflow-y: auto;
